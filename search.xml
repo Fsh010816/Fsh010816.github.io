@@ -11,6 +11,12 @@
         <content type="html"><![CDATA[<h1 id="我的博客"><a class="markdownIt-Anchor" href="#我的博客">#</a> 我的博客</h1><a id="more"></a><h2 id="标题"><a class="markdownIt-Anchor" href="#标题">#</a> 标题</h2><h2 id="段落"><a class="markdownIt-Anchor" href="#段落">#</a> 段落</h2><p>段落 1</p><p>段落 2</p><h2 id="区块引用"><a class="markdownIt-Anchor" href="#区块引用">#</a> 区块引用</h2><blockquote><p>区块引用</p></blockquote><h2 id="超链接"><a class="markdownIt-Anchor" href="#超链接">#</a> 超链接</h2><p><a href="https://www.baidu.com/">百度</a></p><h2 id="图片"><a class="markdownIt-Anchor" href="#图片">#</a> 图片</h2><p><img src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2613803656,2704722557&amp;fm=26&amp;gp=0.jpg" alt="动漫"></p><h2 id="无序列表"><a class="markdownIt-Anchor" href="#无序列表">#</a> 无序列表</h2><ul><li>1</li><li>2</li><li>3</li></ul><h2 id="有序列表"><a class="markdownIt-Anchor" href="#有序列表">#</a> 有序列表</h2><ol><li>1</li><li>2</li><li>3</li></ol><h2 id="分割线"><a class="markdownIt-Anchor" href="#分割线">#</a> 分割线</h2><hr><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=1403318151&amp;auto=0&amp;height=66"></iframe>]]></content>
       
       
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
       
     </entry>
     
