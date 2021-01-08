@@ -26,7 +26,7 @@
 &lt;p&gt;JAVA_HOME:bin 的上一层目录&lt;/p&gt;
 &lt;p&gt;path:%JAVA_HOME%/bin&lt;/p&gt;
 &lt;h2 id=&#34;第一个java程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一个java程序&#34;&gt;#&lt;/a&gt; 第一个 Java 程序&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;/2021/01/08/1-java-yu-yan-gai-shu/C:%5CUsers%5CHP%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210108213413728.png&#34; alt=&#34;avatar&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210109001413925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;avatar&#34;&gt;&lt;/p&gt;
 &lt;p&gt;字节码文件名是类名&lt;/p&gt;
 &lt;h2 id=&#34;注释&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注释&#34;&gt;#&lt;/a&gt; 注释&lt;/h2&gt;
 &lt;p&gt;1.// 单行&lt;/p&gt;
