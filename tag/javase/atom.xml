@@ -3,8 +3,151 @@
     <id>http://Fsh010816.github.io</id>
     <title>Fsh • Posts by &#34;javase&#34; tag</title>
     <link href="http://Fsh010816.github.io" />
-    <updated>2021-01-08T11:52:47.000Z</updated>
+    <updated>2021-01-09T02:11:52.000Z</updated>
     <category term="JavaSE" />
+    <entry>
+        <id>http://fsh010816.github.io/2021/01/09/2-java-ji-ben-yu-fa/</id>
+        <title>2_Java基本语法</title>
+        <link rel="alternate" href="http://fsh010816.github.io/2021/01/09/2-java-ji-ben-yu-fa/"/>
+        <content type="html">&lt;h1 id=&#34;java基本语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java基本语法&#34;&gt;#&lt;/a&gt; Java 基本语法&lt;/h1&gt;
+&lt;h2 id=&#34;关键字与保留字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键字与保留字&#34;&gt;#&lt;/a&gt; 关键字与保留字&lt;/h2&gt;
+&lt;h3 id=&#34;关键字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键字&#34;&gt;#&lt;/a&gt; 关键字&lt;/h3&gt;
+&lt;p&gt;定义：被 被 Java 语言赋予了特殊含义，用做专门用途的字符串（单词）&lt;br&gt;
+特点： 关键字中所有字母都为小写&lt;/p&gt;
+&lt;h3 id=&#34;保留字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#保留字&#34;&gt;#&lt;/a&gt; 保留字&lt;/h3&gt;
+&lt;p&gt;Java 保留字：现有 Java 版本尚未使用，但以后版本可能会作为关键字使&lt;br&gt;
+用。自己命名标识符时要避免使用这些保留字&lt;br&gt;
+ goto 、const&lt;/p&gt;
+&lt;h2 id=&#34;标识符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标识符&#34;&gt;#&lt;/a&gt; 标识符&lt;/h2&gt;
+&lt;h3 id=&#34;标识符-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标识符-2&#34;&gt;#&lt;/a&gt; 标识符&lt;/h3&gt;
+&lt;p&gt;Java 对各种 变量、 方法和 类等要素命名时使用的字符序列称为标识符&lt;br&gt;
+ 技巧：凡是自己可以起名字的地方都叫标识符&lt;/p&gt;
+&lt;h3 id=&#34;定义合法标识符规则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义合法标识符规则&#34;&gt;#&lt;/a&gt; 定义合法标识符规则：&lt;/h3&gt;
+&lt;p&gt;由 26 个英文字母大小写，0-9  ，_或 或 $  组成&lt;br&gt;
+ 数字不可以开头。&lt;br&gt;
+ 不可以使用关键字和保留字，但能包含关键字和保留字。&lt;br&gt;
+Java 中严格区分大小写，长度无限制。&lt;br&gt;
+ 标识符不能包含空格&lt;/p&gt;
+&lt;h3 id=&#34;java中的名称命名规范&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java中的名称命名规范&#34;&gt;#&lt;/a&gt; Java 中的名称命名规范&lt;/h3&gt;
+&lt;p&gt; 包名：多单词组成时所有字母都小写：xxxyyyzzz&lt;br&gt;
+ 类名、接口名：多单词组成时，所有单词的首字母大写：XxxYyyZzz&lt;br&gt;
+ 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个&lt;br&gt;
+单词首字母大写：xxxYyyZzz&lt;br&gt;
+ 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ&lt;/p&gt;
+&lt;h2 id=&#34;变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量&#34;&gt;#&lt;/a&gt; 变量&lt;/h2&gt;
+&lt;h3 id=&#34;变量-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量-2&#34;&gt;#&lt;/a&gt; 变量&lt;/h3&gt;
+&lt;p&gt;内存中的一个存储区域&lt;br&gt;
+该区域的数据可以在同一类型范围内不断变化&lt;br&gt;
+变量是程序中最基本的存储单元。包含变量类型、变量名和存储的值&lt;/p&gt;
+&lt;h3 id=&#34;注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意&#34;&gt;#&lt;/a&gt; 注意&lt;/h3&gt;
+&lt;p&gt;Java 中每个变量必须先声明，后使用&lt;br&gt;
+使用变量名来访问这块区域的数据&lt;br&gt;
+变量的作用域：其定义所在的一对 { } 内&lt;br&gt;
+变量只有在其作用域内才有效&lt;br&gt;
+同一个作用域内，不能定义重名的变量&lt;/p&gt;
+&lt;h3 id=&#34;声明-赋值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明-赋值&#34;&gt;#&lt;/a&gt; 声明 赋值&lt;/h3&gt;
+&lt;p&gt;声明变量&lt;br&gt;
+ 语法：&amp;lt;数据类型&amp;gt; &amp;lt; 变量名称 &amp;gt;&lt;br&gt;
+ 例如：int var;&lt;br&gt;
+ 变量的赋值&lt;br&gt;
+ 语法：&amp;lt;变量名称&amp;gt; = &amp;lt; 值 &amp;gt;&lt;br&gt;
+ 例如：var = 10;&lt;br&gt;
+ 声明和赋值变量&lt;br&gt;
+ 语法： &amp;lt;数据类型&amp;gt; &amp;lt; 变量名 &amp;gt; = &amp;lt; 初始化值 &amp;gt;&lt;br&gt;
+ 例如：int var = 10;&lt;/p&gt;
+&lt;h3 id=&#34;变量的分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量的分类&#34;&gt;#&lt;/a&gt; 变量的分类&lt;/h3&gt;
+&lt;h4 id=&#34;按数据类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#按数据类型&#34;&gt;#&lt;/a&gt; 按数据类型&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210109211327831.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;数据类型分类&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;按声明的位置的不同&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#按声明的位置的不同&#34;&gt;#&lt;/a&gt; 按声明的位置的不同&lt;/h4&gt;
+&lt;p&gt;  在方法体外，类体内声明的变量称为 成员变量 。&lt;br&gt;
+  在方法体内部声明的变量称为 局部变量 。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210109211850402.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;按声明的位置的不同&#34;&gt;&lt;/p&gt;
+&lt;p&gt;● 注意：二者在初始化值方面的异同:&lt;br&gt;
+ 同：都有生命周期 异：局部变量除形参外，需显式初始化&lt;/p&gt;
+&lt;h2 id=&#34;整数类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#整数类型&#34;&gt;#&lt;/a&gt; 整数类型&lt;/h2&gt;
+&lt;p&gt;java 的整型常量默认为 int 型，声明 long 型常量须后加‘l’或‘L’&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210109212151917.png#pic_center&#34; alt=&#34;整数&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;浮点类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浮点类型&#34;&gt;#&lt;/a&gt; 浮点类型&lt;/h2&gt;
+&lt;p&gt;浮点型常量有两种表示形式：&lt;br&gt;
+十进制数形式：如：5.12 512.0f .512 (必须有小数点）&lt;br&gt;
+科学计数法形式：如：5.12e2 512E2 100E-2&lt;br&gt;
+ float: 单精度，尾数可以精确到 7 位有效数字。很多情况下，精度很难满足需求。&lt;br&gt;
+double: 双精度，精度是 float 的两倍。通常采用此类型。&lt;br&gt;
+ Java  的浮点型常量默认为 double 型 型，明 声明 float 型常量，须后加‘f’ 或‘F’ 。&lt;/p&gt;
+&lt;p&gt;float 表示数值的范围比 long 还大&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010352218.png&#34; alt=&#34;浮点类型&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;字符类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符类型&#34;&gt;#&lt;/a&gt; 字符类型&lt;/h2&gt;
+&lt;p&gt;char 型数据用来表示通常意义上 “字符”(2 字节)&lt;br&gt;
+Java 中的所有字符都使用 Unicode 编码，故一个字符可以存储一个字母，一个汉字，或其他书面语的一个字符。&lt;br&gt;
+char 类型是可以进行运算的。因为它都对应有 Unicode 码。&lt;/p&gt;
+&lt;h3 id=&#34;字符型变量的三种表现形式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符型变量的三种表现形式&#34;&gt;#&lt;/a&gt; 字符型变量的三种表现形式&lt;/h3&gt;
+&lt;p&gt;字符常量是用单引号 (‘ ’) 括起来的单个字符。例如：char c1 = ‘a’; char c2= ‘中’; char c3 = ‘9’;&lt;br&gt;
+ Java 中还允许使用转义字符‘\’来将其后的字符转变为特殊字符型常量。例如：char c3 = ‘\n’; // &#39;\n’表示换行符&lt;br&gt;
+直接使用 Unicode 值来表示字符型常量：‘\uXXXX’。其中，XXXX 代表一个十六进制整数。如：\u000a 表示 \n。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010352220.png&#34; alt=&#34;转义字符&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;布尔类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#布尔类型&#34;&gt;#&lt;/a&gt; 布尔类型&lt;/h2&gt;
+&lt;p&gt;Java 虚拟机中没有任何供 boolean 值专用的字节码指令，Java 语言表达所操作的 boolean 值，在编译之后都使用 java 虚拟机中的 int 数据类型来代替：true 用 1 表示，false 用 0 表示。&lt;/p&gt;
+&lt;h2 id=&#34;基本数据类型转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本数据类型转换&#34;&gt;#&lt;/a&gt; 基本数据类型转换&lt;/h2&gt;
+&lt;h3 id=&#34;自动类型转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自动类型转换&#34;&gt;#&lt;/a&gt; 自动类型转换&lt;/h3&gt;
+&lt;p&gt;容量小的类型自动转换为容量大的数据类型。数据类型按容量大小排序为：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010619749.png#pic_center&#34; alt=&#34;自动类型转换&#34;&gt;&lt;/p&gt;
+&lt;p&gt;byte,short,char 之间不会相互转换，他们三者在计算时首先转换为 int 类型。&lt;br&gt;
+boolean 类型不能与其它数据类型运算。&lt;br&gt;
+当把任何基本数据类型的值和字符串 (String) 进行连接运算时 (+)，基本数据类型的值将自动转化为字符串 (String) 类型。&lt;/p&gt;
+&lt;h3 id=&#34;强制类型转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#强制类型转换&#34;&gt;#&lt;/a&gt; 强制类型转换&lt;/h3&gt;
+&lt;p&gt;通常，字符串不能直接转换为基本类型，但通过基本类型对应的包装类则可以实现把字符串转换成基本类型。&lt;/p&gt;
+&lt;p&gt;boolean 类型不可以转换为其它的数据类型。&lt;/p&gt;
+&lt;h2 id=&#34;字符串类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串类型&#34;&gt;#&lt;/a&gt; 字符串类型&lt;/h2&gt;
+&lt;p&gt; 使用方式与基本数据类型一致。例如：String str = “abcd”;&lt;br&gt;
+ 一个字符串可以串接另一个字符串，也可以直接串接其他类型的数据。&lt;/p&gt;
+&lt;h2 id=&#34;进制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#进制&#34;&gt;#&lt;/a&gt; 进制&lt;/h2&gt;
+&lt;p&gt;二进制 (binary) ：0,1 ，满 2 进 1. 以 0b 或 0B 开头。&lt;br&gt;
+八进制 (octal) ：0-7 ，满 8 进 1. 以数字 0 开头表示。&lt;br&gt;
+十六进制 (hex) ：0-9 及 A-F，满 16 进 1. 以 0x 或 0X 开头表示&lt;/p&gt;
+&lt;h2 id=&#34;运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符&#34;&gt;#&lt;/a&gt; 运算符&lt;/h2&gt;
+&lt;p&gt;运算符是一种特殊的符号，用以表示数据的运算、赋值和比较等。&lt;/p&gt;
+&lt;p&gt;算术运算符&lt;br&gt;
+赋值运算符&lt;br&gt;
+比较运算符（关系运算符）&lt;br&gt;
+逻辑运算符&lt;br&gt;
+位运算符&lt;br&gt;
+三元运算符&lt;/p&gt;
+&lt;h3 id=&#34;算术运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#算术运算符&#34;&gt;#&lt;/a&gt; 算术运算符&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010352199.png&#34; alt=&#34;算术运算符&#34;&gt;&lt;/p&gt;
+&lt;p&gt;% 取余运算，结果的符号与被模数的符号相同&lt;/p&gt;
+&lt;p&gt;自增 1 不会改变本身变量的数据类型&lt;/p&gt;
+&lt;h3 id=&#34;赋值运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#赋值运算符&#34;&gt;#&lt;/a&gt; 赋值运算符&lt;/h3&gt;
+&lt;p&gt;符号：=  支持连续赋值。&lt;/p&gt;
+&lt;p&gt;+= 不会改变变量本身的数据类型&lt;/p&gt;
+&lt;h3 id=&#34;比较运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#比较运算符&#34;&gt;#&lt;/a&gt; 比较运算符&lt;/h3&gt;
+&lt;p&gt;比较运算符的结果都是 boolean 型，也就是要么是 true，要么是 false。&lt;/p&gt;
+&lt;p&gt;instanceof 检查是否是类的对象 “Hello” instanceof String true&lt;/p&gt;
+&lt;h3 id=&#34;逻辑运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#逻辑运算符&#34;&gt;#&lt;/a&gt; 逻辑运算符&lt;/h3&gt;
+&lt;p&gt;&amp;amp;— 逻辑与 | — 逻辑或 ！— 逻辑非  &amp;amp;&amp;amp; — 短路与 || — 短路或 ^ — 逻辑异或&lt;/p&gt;
+&lt;p&gt;逻辑运算符用于连接布尔型表达式&lt;/p&gt;
+&lt;p&gt;“&amp;amp;” 和 “&amp;amp;&amp;amp;” 的区别：&lt;br&gt;
+单 &amp;amp; 时，左边无论真假，右边都进行运算；&lt;br&gt;
+双 &amp;amp; 时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。&lt;/p&gt;
+&lt;h3 id=&#34;位运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#位运算符&#34;&gt;#&lt;/a&gt; 位运算符&lt;/h3&gt;
+&lt;p&gt;运算符 运算 范例&lt;br&gt;
+ &amp;lt;&amp;lt;左移 3 &amp;lt;&amp;lt; 2 = 12 --&amp;gt; 3&lt;em&gt;2&lt;/em&gt;2=12&lt;/p&gt;
+&lt;p&gt;右移 3 &amp;gt;&amp;gt; 1 = 1 --&amp;gt; 3/2=1&lt;/p&gt;
+&lt;p&gt;无符号右移 3 &amp;gt;&amp;gt;&amp;gt; 1 = 1 --&amp;gt; 3/2=1&lt;br&gt;
+&amp;amp; 与运算 6 &amp;amp; 3 = 2&lt;br&gt;
+| 或运算 6 | 3 = 7&lt;br&gt;
+^ 异或运算 6 ^ 3 = 5&lt;br&gt;
+~ 取反运算～6 = -7&lt;/p&gt;
+&lt;p&gt;&amp;lt;&amp;lt; 空位补 0，被移除的高位丢弃，空缺位补 0。&lt;/p&gt;
+&lt;p&gt;//&amp;lt;&amp;lt; 被移位的二进制最高位是 0，右移后，空缺位补 0；最高位是 1，空缺位补 1。&lt;/p&gt;
+&lt;p&gt;// &amp;lt;&amp;lt;&amp;lt; 被移位二进制最高位无论是 0 或者是 1，空缺位都用 0 补&lt;/p&gt;
+&lt;h3 id=&#34;三元运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三元运算符&#34;&gt;#&lt;/a&gt; 三元运算符&lt;/h3&gt;
+&lt;p&gt;(条件表达式)? 表达式 1 ：表达式 2&lt;/p&gt;
+&lt;h2 id=&#34;运算符的优先级&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符的优先级&#34;&gt;#&lt;/a&gt; 运算符的优先级&lt;/h2&gt;
+&lt;p&gt;只有单目运算符、三元运算符、	赋值运算符是从右向左运算的。&lt;/p&gt;
+</content>
+        <category term="JavaSE" />
+        <updated>2021-01-09T02:11:52.000Z</updated>
+    </entry>
     <entry>
         <id>http://fsh010816.github.io/2021/01/08/1-java-yu-yan-gai-shu/</id>
         <title>1_Java语言概述</title>

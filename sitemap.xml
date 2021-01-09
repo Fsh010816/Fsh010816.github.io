@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fsh010816.github.io/2021/01/09/2-java-ji-ben-yu-fa/</loc>
+    
+    <lastmod>2021-01-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://fsh010816.github.io/2021/01/08/1-java-yu-yan-gai-shu/</loc>
     
     <lastmod>2021-01-08</lastmod>
@@ -60,7 +67,7 @@
 
   <url>
     <loc>http://fsh010816.github.io/</loc>
-    <lastmod>2021-01-08</lastmod>
+    <lastmod>2021-01-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,7 +75,7 @@
   
   <url>
     <loc>http://fsh010816.github.io/tags/JavaSE/</loc>
-    <lastmod>2021-01-08</lastmod>
+    <lastmod>2021-01-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -77,7 +84,7 @@
   
   <url>
     <loc>http://fsh010816.github.io/categories/JavaSE/</loc>
-    <lastmod>2021-01-08</lastmod>
+    <lastmod>2021-01-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
