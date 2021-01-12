@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.5k
                 </div>
                 
 
@@ -579,6 +579,104 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。<br>
 <p>(条件表达式)? 表达式 1 ：表达式 2</p>
 <h2 id="运算符的优先级"><a class="markdownIt-Anchor" href="#运算符的优先级">#</a> 运算符的优先级</h2>
 <p>只有单目运算符、三元运算符、	赋值运算符是从右向左运算的。</p>
+<h2 id="程序流程控制"><a class="markdownIt-Anchor" href="#程序流程控制">#</a> 程序流程控制</h2>
+<p>顺序结构<br>
+分支结构<br>
+循环结构</p>
+<h3 id="scanner"><a class="markdownIt-Anchor" href="#scanner">#</a> Scanner</h3>
+<p>1 &gt; 导包</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2&gt;Scanner 的实例化</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Scanner</span> scan <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3 &gt; 调用 Scanner 类的相关方法，来获取指定类型的变量</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> num <span class="token operator">=</span> scan<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>对于 char 型的获取，Scanner 没有提供相应的方法</p>
+<h3 id="switch-case"><a class="markdownIt-Anchor" href="#switch-case">#</a> switch-case</h3>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">switch</span><span class="token punctuation">(</span>表达式<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">case</span> 常量<span class="token number">1</span><span class="token operator">:</span>
+        语句<span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// break;</span>
+    <span class="token keyword">case</span> 常量<span class="token number">2</span><span class="token operator">:</span>
+        语句<span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token comment">// break;</span>
+    … …
+    <span class="token keyword">case</span> 常量<span class="token class-name">N</span><span class="token operator">:</span>
+        语句<span class="token class-name">N</span><span class="token punctuation">;</span>
+        <span class="token comment">// break;</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+        语句<span class="token punctuation">;</span>
+        <span class="token comment">// break;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>1&gt;break 语句用来在执行完一个 case 分支后使程序跳出 switch 语句块；如果没有 break，程序会顺序执行到 switch 结尾</p>
+<p>2&gt;switch (表达式) 中表达式的值 必须是下述几种类型之一：byte ，short,char ，int， 枚举 (jdk 5.0) ，String (jdk 7.0)；</p>
+<p>3&gt; default 子句是 可任选的 的。同时，位置也是灵活的。当没有匹配的 case 时，执行 default</p>
+<h3 id="循环结构"><a class="markdownIt-Anchor" href="#循环结构">#</a> 循环结构</h3>
+<p>for 循环<br>
+while 循环<br>
+do-while 循环</p>
+<p>循环语句的四个组成部分<br>
+①初始化部分 (init_statement)<br>
+②循环条件部分 (test_exp)<br>
+③循环体部分 (body_statement)<br>
+④迭代部分 (alter_statement)</p>
+<h4 id="for循环"><a class="markdownIt-Anchor" href="#for循环">#</a> for 循环</h4>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>① 初始化 部分<span class="token punctuation">;</span> ② 循环条件部分<span class="token punctuation">;</span> ④ 迭代部分<span class="token punctuation">)</span>｛
+	③ 循环体部分<span class="token punctuation">;</span>
+｝<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>①初始化部分可以声明多个变量，但必须是同一个类型，用逗号分隔<br>
+④可以有多个变量更新，用逗号分隔</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">ForTest</span><span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">int</span> sum<span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">%</span><span class="token number">2</span><span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				sum<span class="token operator">=</span>i<span class="token punctuation">;</span>
+			<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+				sum<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+错误：可能尚未初始化变量sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="while循环"><a class="markdownIt-Anchor" href="#while循环">#</a> while 循环</h4>
+<p>①初始化部分<br>
+ while (②循环条件部分)｛ ｛<br>
+③循环体部分；<br>
+④迭代部分；<br>
+}</p>
+<h4 id="do-while"><a class="markdownIt-Anchor" href="#do-while">#</a> do-while</h4>
+<p>①初始化部分；<br>
+do{<br>
+③ 循环体部分<br>
+④ 迭代部分<br>
+} while (②循环条件部分);</p>
+<p>do-while 循环至少执行一次循环体</p>
+<h3 id="最简单-无限-循环"><a class="markdownIt-Anchor" href="#最简单-无限-循环">#</a> 最简单 “无限” ”  循环</h3>
+<p>最简单 “无限” ”  循环： 格式：while (true) , for (;😉, 无限循环存在的原因是并不知道循环多少次， 需要 根据循环体内部某些 条件，来 控制 循环的结束</p>
+<h3 id="currenttimemillis"><a class="markdownIt-Anchor" href="#currenttimemillis">#</a> currentTimeMillis()</h3>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">long</span> start<span class="token operator">=</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="break-continue"><a class="markdownIt-Anchor" href="#break-continue">#</a> break continue</h3>
+<p>break 语句用于终止某个语句块的执行，结束当前循环</p>
+<p>continue 语句用于跳过其所在循环语句块的一次执行，继续下一次循环，结束当次循环</p>
+<p>两个关键字后面都不能声明执行语句，会报错</p>
+<h4 id="label"><a class="markdownIt-Anchor" href="#label">#</a> label</h4>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">LabelTest</span><span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		label<span class="token operator">:</span><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">4</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span><span class="token number">10</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				<span class="token keyword">if</span><span class="token punctuation">(</span>j<span class="token operator">%</span><span class="token number">4</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+					<span class="token keyword">continue</span> label<span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="return"><a class="markdownIt-Anchor" href="#return">#</a> return</h3>
+<p>return：并非专门用于结束循环的，它的功能是结束一个方法。当一个方法执行到一个 return 语句时，这个方法将被结束。</p>
 
                 
             </div>
