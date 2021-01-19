@@ -3,8 +3,179 @@
     <id>http://Fsh010816.github.io</id>
     <title>Fsh • Posts by &#34;javase&#34; category</title>
     <link href="http://Fsh010816.github.io" />
-    <updated>2021-01-13T13:47:11.000Z</updated>
+    <updated>2021-01-18T07:02:37.000Z</updated>
     <category term="JavaSE" />
+    <entry>
+        <id>http://fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/</id>
+        <title>4-面向对象(上)</title>
+        <link rel="alternate" href="http://fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/"/>
+        <content type="html">&lt;h1 id=&#34;面向对象上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面向对象上&#34;&gt;#&lt;/a&gt; 面向对象 (上)&lt;/h1&gt;
+&lt;h2 id=&#34;类class和对象object&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类class和对象object&#34;&gt;#&lt;/a&gt; 类 (Class) 和对象 (Object)&lt;/h2&gt;
+&lt;p&gt;类是对一类事物的描述，是抽象的、概念上的定义&lt;br&gt;
+对象是实际存在的该类事物的每个个体，因而也称为实例 (instance)。&lt;/p&gt;
+&lt;h3 id=&#34;类的成员&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类的成员&#34;&gt;#&lt;/a&gt; 类的成员&lt;/h3&gt;
+&lt;p&gt;1 &amp;gt; 属  性：对应类中的成员变量&lt;br&gt;
+ 2 &amp;gt; 行  为：对应类中的成员方法&lt;/p&gt;
+&lt;p&gt;Field =  属性 =  成员变量 = 域、字段，Method = (成员) 方法 =  函数&lt;/p&gt;
+&lt;p&gt;创建类的对象 = 类的实例化 = 实例化类&lt;/p&gt;
+&lt;h3 id=&#34;类和对象的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类和对象的使用&#34;&gt;#&lt;/a&gt; 类和对象的使用&lt;/h3&gt;
+&lt;p&gt;1. 创建类，设计类的成员&lt;/p&gt;
+&lt;p&gt;2. 创建类的对象&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;类名 对象名 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; 类名&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3. 通过 “对象。属性” 或 “对象。方法” 调用对象的结构&lt;/p&gt;
+&lt;h2 id=&#34;类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类&#34;&gt;#&lt;/a&gt; 类&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;修饰符 &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt;  类名 &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    属性声明&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    方法声明&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;	&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;类的正文要用 { } 括起来&lt;/p&gt;
+&lt;h2 id=&#34;内存解析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内存解析&#34;&gt;#&lt;/a&gt; 内存解析&lt;/h2&gt;
+&lt;p&gt;编译完程序以后，生成一个或多个字节码文件，&lt;/p&gt;
+&lt;p&gt;我们使用 JVM 中的类的加载器和解释器对生成的字节码文件进行解释运行，意味着，需要将字节码文件对应的类加载到内存中，涉及到内存解析。&lt;/p&gt;
+&lt;p&gt;堆： 存放对象实例  对象的属性（非 static）new 出来的结构 对象（非 static 成员变量）数组&lt;/p&gt;
+&lt;p&gt;栈： 存储局部变量&lt;/p&gt;
+&lt;p&gt;方法区（Method Area）：用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。 常量池 静态域&lt;/p&gt;
+&lt;h2 id=&#34;对象的内存解析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对象的内存解析&#34;&gt;#&lt;/a&gt; 对象的内存解析&lt;/h2&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210118191251477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;未考虑常量池&#34; style=&#34;zoom:50%;&#34;&gt;
+&lt;h2 id=&#34;匿名对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#匿名对象&#34;&gt;#&lt;/a&gt; 匿名对象&lt;/h2&gt;
+&lt;p&gt;我们也可以不定义对象的句柄，而直接调用这个对象的方法。这样的对象叫做匿名对象。&lt;br&gt;
+如：new Person ().shout ();&lt;/p&gt;
+&lt;p&gt;使用情况&lt;br&gt;
+ 1. 如果对一个对象只需要进行一次方法调用，那么就可以使用匿名对象。&lt;br&gt;
+2. 我们经常将匿名对象作为实参传递给一个方法调用。&lt;/p&gt;
+&lt;h2 id=&#34;属性成员变量-局部变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#属性成员变量-局部变量&#34;&gt;#&lt;/a&gt; 属性 (成员变量) 局部变量&lt;/h2&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210118191737642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; style=&#34;zoom: 80%;&#34;&gt;
+&lt;h3 id=&#34;相同点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#相同点&#34;&gt;#&lt;/a&gt; 相同点&lt;/h3&gt;
+&lt;p&gt;1. 定义变量的格式：数据类型 变量名 = 变量值&lt;/p&gt;
+&lt;p&gt;2. 先声明，后使用&lt;/p&gt;
+&lt;p&gt;3. 变量都有其对应的作用域&lt;/p&gt;
+&lt;h3 id=&#34;不同点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#不同点&#34;&gt;#&lt;/a&gt; 不同点&lt;/h3&gt;
+&lt;p&gt;1. 在类中声明的位置不同&lt;/p&gt;
+&lt;p&gt;成员变量：在方法体外，类体内声明的变量&lt;/p&gt;
+&lt;p&gt;局部变量：声明在方法内、方法形参、代码块内、构造器形参、构造器内部的变量&lt;/p&gt;
+&lt;p&gt;2. 关于权限修饰符的不同&lt;/p&gt;
+&lt;p&gt;属性：可以在声明属性时，指明其权限，使用权限修饰符&lt;/p&gt;
+&lt;p&gt;​			private、public、缺省、protected&lt;/p&gt;
+&lt;p&gt;局部变量：不可使用权限修饰符&lt;/p&gt;
+&lt;p&gt;3. 默认初始化值&lt;/p&gt;
+&lt;p&gt;属性：根据其类型，都有默认初始化值&lt;/p&gt;
+&lt;p&gt;局部变量：没有默认初始化值&lt;/p&gt;
+&lt;p&gt;​					调用局部变量前，必须显示赋值&lt;/p&gt;
+&lt;p&gt;​					特别地，形参在调用时，赋值即可&lt;/p&gt;
+&lt;p&gt;4. 在内存中加载的位置&lt;/p&gt;
+&lt;p&gt;属性：堆（非 static）&lt;/p&gt;
+&lt;p&gt;局部变量：栈&lt;/p&gt;
+&lt;h2 id=&#34;方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法&#34;&gt;#&lt;/a&gt; 方法&lt;/h2&gt;
+&lt;p&gt;Java 里的方法不能独立存在，所有的方法必须定义在类里。&lt;/p&gt;
+&lt;h3 id=&#34;声明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明&#34;&gt;#&lt;/a&gt; 声明&lt;/h3&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;权限修饰符  返回值类型  方法名 （参数类型 形参&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;参数类型 形参&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; …）｛
+    方法体程序代码
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;  返回值&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+｝&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;返回值类型：&lt;/p&gt;
+&lt;p&gt;​	没有返回值：void。 如果使用 return, 只能 &#34;return;&#34;，表示结束此方法的意思&lt;/p&gt;
+&lt;p&gt;​	有返回值，声明出返回值的类型。&lt;/p&gt;
+&lt;h3 id=&#34;tips&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tips&#34;&gt;#&lt;/a&gt; tips&lt;/h3&gt;
+&lt;p&gt;方法的使用中，可以调用当前类的属性或方法&lt;/p&gt;
+&lt;p&gt;​	（例外：static 方法访问非 static，编译不通过 。）&lt;/p&gt;
+&lt;p&gt;方法中，不可以定义方法&lt;/p&gt;
+&lt;h3 id=&#34;重载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重载&#34;&gt;#&lt;/a&gt; 重载&lt;/h3&gt;
+&lt;p&gt;概念：在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或者参数类型不同即可。&lt;/p&gt;
+&lt;h3 id=&#34;可变个数的形参&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#可变个数的形参&#34;&gt;#&lt;/a&gt; 可变个数的形参&lt;/h3&gt;
+&lt;p&gt;JavaSE 5.0 中提供了 Varargs (variable number of arguments) 机制，允许直接定义能和多个实参相匹配的形参。从而，可以用一种更简单的方式，来传递个数可变的实参。&lt;/p&gt;
+&lt;p&gt;声明格式：方法名 (参数的类型名 … 参数名) 此参数名也有 length 属性&lt;/p&gt;
+&lt;p&gt;可变参数：方法参数部分指定类型的参数个数是可变多个：0 个，1 个或多个&lt;/p&gt;
+&lt;p&gt;可变参数方法的使用与方法参数部分使用数组是一致的&lt;/p&gt;
+&lt;h3 id=&#34;方法参数的值传递机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法参数的值传递机制&#34;&gt;#&lt;/a&gt; 方法参数的值传递机制&lt;/h3&gt;
+&lt;p&gt;Java 里方法的参数传递方式只有一种：值传递。 即将实际参数值的副本（复制品）传入方法内，而参数本身不受影响。&lt;br&gt;
+形参是基本数据类型：将实参基本数据类型变量的 “数据值” 传递给形参&lt;br&gt;
+形参是引用数据类型：将实参引用数据类型变量的 “地址值” 传递给形参&lt;/p&gt;
+&lt;h2 id=&#34;封装和隐藏&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#封装和隐藏&#34;&gt;#&lt;/a&gt; 封装和隐藏&lt;/h2&gt;
+&lt;p&gt;信息的封装和隐藏&lt;/p&gt;
+&lt;p&gt;Java 中通过将数据声明为私有的 (private)，再提供公共的（public）方法:getXxx () 和 setXxx () 实现对该属性的操作，以实现下述目的：&lt;br&gt;
+隐藏一个类中不需要对外提供的实现细节；&lt;br&gt;
+使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；&lt;br&gt;
+便于修改，增强代码的可维护性&lt;/p&gt;
+&lt;h3 id=&#34;权限修饰符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#权限修饰符&#34;&gt;#&lt;/a&gt; 权限修饰符&lt;/h3&gt;
+&lt;p&gt;4 种权限修饰符都可以修饰类的内部结构：属性、方法、构造器、内部类&lt;/p&gt;
+&lt;p&gt;修饰类，只能用：缺省和 public&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210119101911903.png#pic_center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;构造器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造器&#34;&gt;#&lt;/a&gt; 构造器&lt;/h2&gt;
+&lt;h3 id=&#34;构造器的特征&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造器的特征&#34;&gt;#&lt;/a&gt; 构造器的特征&lt;/h3&gt;
+&lt;p&gt;它具有与类相同的名称&lt;br&gt;
+它不声明返回值类型。（与声明为 void 不同）&lt;br&gt;
+不能被 static、final、synchronized、abstract、native 修饰，不能有 return 语句返回值&lt;/p&gt;
+&lt;h3 id=&#34;构造器的作用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造器的作用&#34;&gt;#&lt;/a&gt; 构造器的作用&lt;/h3&gt;
+&lt;p&gt;创建对象；给对象进行初始化&lt;/p&gt;
+&lt;p&gt;如：Order o = new Order (); Person p = new Person (“Peter”,15);&lt;/p&gt;
+&lt;h3 id=&#34;语法格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法格式&#34;&gt;#&lt;/a&gt; 语法格式 ：&lt;/h3&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;修饰符名 类名 &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt; 参数列表&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+	初始化语句；
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据参数不同，构造器可以分为如下两类：&lt;br&gt;
+ 隐式无参构造器（系统默认提供）&lt;br&gt;
+ 显式定义一个或多个（无参、有参）&lt;/p&gt;
+&lt;h3 id=&#34;注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意&#34;&gt;#&lt;/a&gt; 注意：&lt;/h3&gt;
+&lt;p&gt;Java 语言中，每个类都至少有一个 构造器&lt;br&gt;
+ 默认构造器的修饰符与所属类的修饰符一致&lt;br&gt;
+ 一旦 显式定义了 构造器， 则系统 不再 提供默认 构造 器&lt;br&gt;
+ 一个类可以创建多个 重载 的构造器&lt;br&gt;
+ 父类的构造器不可被子类继承&lt;/p&gt;
+&lt;h2 id=&#34;属性赋值过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#属性赋值过程&#34;&gt;#&lt;/a&gt; 属性赋值过程&lt;/h2&gt;
+&lt;p&gt;赋值的位置：&lt;br&gt;
+① 默认初始化&lt;br&gt;
+② 显式初始化&lt;br&gt;
+③ 构造器中初始化&lt;br&gt;
+④ 通过 “对象。属性 “或 “对象。方法” 的方式赋值&lt;/p&gt;
+&lt;p&gt;赋值的先后顺序：① - ② - ③ - ④&lt;/p&gt;
+&lt;h2 id=&#34;javabean&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javabean&#34;&gt;#&lt;/a&gt; JavaBean&lt;/h2&gt;
+&lt;p&gt;JavaBean 是一种 Java 语言写成的可重用组件。&lt;/p&gt;
+&lt;p&gt;所谓 javaBean，是指符合如下标准的 Java 类：&lt;br&gt;
+类是公共的&lt;br&gt;
+有一个无参的公共的构造器&lt;br&gt;
+有属性，且有对应的 get、set 方法&lt;/p&gt;
+&lt;h2 id=&#34;this&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#this&#34;&gt;#&lt;/a&gt; this&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;this 关键字的使用：&lt;/li&gt;
+&lt;li&gt;1.this 可以用来修饰、调用：属性、方法、构造器&lt;/li&gt;
+&lt;li&gt;2.this 修饰属性和方法：
+&lt;ul&gt;
+&lt;li&gt;this 理解为：当前对象  或 当前正在创建的对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2.1  在类的方法中，我们可以使用 &#34;this. 属性&#34; 或 &#34;this. 方法&#34; 的方式，调用当前对象属性或方法。但是，通常情况下，我们都选择省略 &#34;this.&#34;。特殊情况下，如果方法的形参和类的属性同名时，我们必须显式的使用 &#34;this. 变量&#34; 的方式，表明此变量是属性，而非形参。&lt;/li&gt;
+&lt;li&gt;2.2 在类的构造器中，我们可以使用 &#34;this. 属性&#34; 或 &#34;this. 方法&#34; 的方式，调用当前正在创建的对象属性或方法。但是，通常情况下，我们都选择省略 &#34;this.&#34;。特殊情况下，如果构造器的形参和类的属性同名时，我们必须显式的使用 &#34;this. 变量&#34; 的方式，表明此变量是属性，而非形参。&lt;/li&gt;
+&lt;li&gt;2.3 使用 this 访问属性和方法时，如果在本类中未找到，会从父类中查找&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;this 调用构造器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;① 我们在类的构造器中，可以显式的使用 &#34;this (形参列表)&#34; 方式，调用本类中指定的其他构造器&lt;/li&gt;
+&lt;li&gt;② 构造器中不能通过 &#34;this (形参列表)&#34; 方式调用自己&lt;/li&gt;
+&lt;li&gt;③ 如果一个类中有 n 个构造器，则最多有 n - 1 构造器中使用了 &#34;this (形参列表)&#34;&lt;/li&gt;
+&lt;li&gt;④ 规定：&#34;this (形参列表)&#34; 必须声明在当前构造器的首行&lt;/li&gt;
+&lt;li&gt;⑤ 构造器内部，最多只能声明一个 &#34;this (形参列表)&#34;，用来调用其他的构造器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;import&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#import&#34;&gt;#&lt;/a&gt; import&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在源文件中使用 import 显式的导入指定包下的类或接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果已经导入 java.a 包下的类。那么如果需要使用 a 包的子包下的类的话，仍然需要导入。使用 &#34;xxx.*&#34; 方式表明可以调用 xxx 包下的所有结构。但是如果使用的是 xxx 子包下的结构，则仍需要显式导入&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;import static 组合的使用：调用指定类或接口下的静态的属性或方法&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;lang&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;*&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;hello&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="JavaSE" />
+        <updated>2021-01-18T07:02:37.000Z</updated>
+    </entry>
     <entry>
         <id>http://fsh010816.github.io/2021/01/13/3-shu-zu/</id>
         <title>3-数组</title>

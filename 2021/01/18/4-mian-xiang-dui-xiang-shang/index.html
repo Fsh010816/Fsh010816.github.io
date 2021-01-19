@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="3-数组, Fsh">
+    <meta name="keywords" content="4-面向对象(上), Fsh">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>3-数组 | Fsh</title>
+    <title>4-面向对象(上) | Fsh</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">3-数组</h1>
+                    <h1 class="description center-align post-title">4-面向对象(上)</h1>
                 </div>
             </div>
         </div>
@@ -415,7 +415,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-13
+                    2021-01-18
                 </div>
                 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2.2k
                 </div>
                 
 
@@ -444,113 +444,169 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数组"><a class="markdownIt-Anchor" href="#数组">#</a> 数组</h1>
-<h2 id="数组的概述"><a class="markdownIt-Anchor" href="#数组的概述">#</a> 数组的概述</h2>
-<p>1 &gt; 数组本身是引用数据类型，而数组中的元素可以是任何数据类型，包括基本数据类型和引用数据类型。<br>
-2 &gt; 创建数组对象会在内存中开辟一整块连续的空间，而数组名中引用的是这块连续空间的首地址。<br>
-3 &gt; 数组的长度一旦确定，就不能修改。</p>
-<h2 id="一维数组"><a class="markdownIt-Anchor" href="#一维数组">#</a> 一维数组</h2>
+                <h1 id="面向对象上"><a class="markdownIt-Anchor" href="#面向对象上">#</a> 面向对象 (上)</h1>
+<h2 id="类class和对象object"><a class="markdownIt-Anchor" href="#类class和对象object">#</a> 类 (Class) 和对象 (Object)</h2>
+<p>类是对一类事物的描述，是抽象的、概念上的定义<br>
+对象是实际存在的该类事物的每个个体，因而也称为实例 (instance)。</p>
+<h3 id="类的成员"><a class="markdownIt-Anchor" href="#类的成员">#</a> 类的成员</h3>
+<p>1 &gt; 属  性：对应类中的成员变量<br>
+ 2 &gt; 行  为：对应类中的成员方法</p>
+<p>Field =  属性 =  成员变量 = 域、字段，Method = (成员) 方法 =  函数</p>
+<p>创建类的对象 = 类的实例化 = 实例化类</p>
+<h3 id="类和对象的使用"><a class="markdownIt-Anchor" href="#类和对象的使用">#</a> 类和对象的使用</h3>
+<p>1. 创建类，设计类的成员</p>
+<p>2. 创建类的对象</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">类名 对象名 <span class="token operator">=</span> <span class="token keyword">new</span> 类名<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3. 通过 “对象。属性” 或 “对象。方法” 调用对象的结构</p>
+<h2 id="类"><a class="markdownIt-Anchor" href="#类">#</a> 类</h2>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">修饰符 <span class="token keyword">class</span>  类名 <span class="token punctuation">{</span>
+    属性声明<span class="token punctuation">;</span>
+    方法声明<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>类的正文要用 { } 括起来</p>
+<h2 id="内存解析"><a class="markdownIt-Anchor" href="#内存解析">#</a> 内存解析</h2>
+<p>编译完程序以后，生成一个或多个字节码文件，</p>
+<p>我们使用 JVM 中的类的加载器和解释器对生成的字节码文件进行解释运行，意味着，需要将字节码文件对应的类加载到内存中，涉及到内存解析。</p>
+<p>堆： 存放对象实例  对象的属性（非 static）new 出来的结构 对象（非 static 成员变量）数组</p>
+<p>栈： 存储局部变量</p>
+<p>方法区（Method Area）：用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。 常量池 静态域</p>
+<h2 id="对象的内存解析"><a class="markdownIt-Anchor" href="#对象的内存解析">#</a> 对象的内存解析</h2>
+<img src="https://img-blog.csdnimg.cn/20210118191251477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="未考虑常量池" style="zoom:50%;">
+<h2 id="匿名对象"><a class="markdownIt-Anchor" href="#匿名对象">#</a> 匿名对象</h2>
+<p>我们也可以不定义对象的句柄，而直接调用这个对象的方法。这样的对象叫做匿名对象。<br>
+如：new Person ().shout ();</p>
+<p>使用情况<br>
+ 1. 如果对一个对象只需要进行一次方法调用，那么就可以使用匿名对象。<br>
+2. 我们经常将匿名对象作为实参传递给一个方法调用。</p>
+<h2 id="属性成员变量-局部变量"><a class="markdownIt-Anchor" href="#属性成员变量-局部变量">#</a> 属性 (成员变量) 局部变量</h2>
+<img src="https://img-blog.csdnimg.cn/20210118191737642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center" style="zoom: 80%;">
+<h3 id="相同点"><a class="markdownIt-Anchor" href="#相同点">#</a> 相同点</h3>
+<p>1. 定义变量的格式：数据类型 变量名 = 变量值</p>
+<p>2. 先声明，后使用</p>
+<p>3. 变量都有其对应的作用域</p>
+<h3 id="不同点"><a class="markdownIt-Anchor" href="#不同点">#</a> 不同点</h3>
+<p>1. 在类中声明的位置不同</p>
+<p>成员变量：在方法体外，类体内声明的变量</p>
+<p>局部变量：声明在方法内、方法形参、代码块内、构造器形参、构造器内部的变量</p>
+<p>2. 关于权限修饰符的不同</p>
+<p>属性：可以在声明属性时，指明其权限，使用权限修饰符</p>
+<p>​			private、public、缺省、protected</p>
+<p>局部变量：不可使用权限修饰符</p>
+<p>3. 默认初始化值</p>
+<p>属性：根据其类型，都有默认初始化值</p>
+<p>局部变量：没有默认初始化值</p>
+<p>​					调用局部变量前，必须显示赋值</p>
+<p>​					特别地，形参在调用时，赋值即可</p>
+<p>4. 在内存中加载的位置</p>
+<p>属性：堆（非 static）</p>
+<p>局部变量：栈</p>
+<h2 id="方法"><a class="markdownIt-Anchor" href="#方法">#</a> 方法</h2>
+<p>Java 里的方法不能独立存在，所有的方法必须定义在类里。</p>
 <h3 id="声明"><a class="markdownIt-Anchor" href="#声明">#</a> 声明</h3>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">type <span class="token keyword">var</span><span class="token punctuation">[</span><span class="token punctuation">]</span> 或 type<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">var</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Java 语言中声明数组时不能指定其长度 (数组中元素的数)</p>
-<h3 id="初始化"><a class="markdownIt-Anchor" href="#初始化">#</a> 初始化</h3>
-<h4 id="静态初始化"><a class="markdownIt-Anchor" href="#静态初始化">#</a> 静态初始化</h4>
-<p>静态初始化 ：在定义数组的同时就为数组元素分配空间并赋值。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-或
-<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h4 id="动态初始化"><a class="markdownIt-Anchor" href="#动态初始化">#</a> 动态初始化</h4>
-<p>动态初始化 ：数组声明且为数组元素分配空间与赋值的操作分开进行</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
-arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="数组元素的引用"><a class="markdownIt-Anchor" href="#数组元素的引用">#</a> 数组元素的引用</h4>
-<p>数组元素下标可以是整型常量或整型表达式</p>
-<p>数组元素下标从 0 开始</p>
-<h4 id="数组元素的默认初始化值"><a class="markdownIt-Anchor" href="#数组元素的默认初始化值">#</a> 数组元素的默认初始化值</h4>
-<p>数组是引用类型，它的元素相当于类的成员变量，因此数组一经分配空间，其中的每个元素也被按照成员变量同样的方式被隐式初始化</p>
-<h4 id="内存解析"><a class="markdownIt-Anchor" href="#内存解析">#</a> 内存解析</h4>
-<img src="https://img-blog.csdnimg.cn/20210113225522456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" style="zoom:50%;">
-<img src="https://img-blog.csdnimg.cn/20210113225522474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" style="zoom:50%;">
-<img src="https://img-blog.csdnimg.cn/20210113225522534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" alt="未考虑String...常量池" style="zoom:50%;">
-<h2 id="多维数组"><a class="markdownIt-Anchor" href="#多维数组">#</a> 多维数组</h2>
-<h3 id="二维数组的声明和初始化"><a class="markdownIt-Anchor" href="#二维数组的声明和初始化">#</a> 二维数组的声明和初始化</h3>
-<p>静态初始化</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//3</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//2</span>
-<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment">//类型推断，只能一行时使用</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>注意特殊写法情况：int [] x,y []; x 是一维数组，y 是二维数组。</p>
-<p>动态初始化 1</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//一维数组地址</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>动态初始化 2</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//null</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//非法</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="二分法查找"><a class="markdownIt-Anchor" href="#二分法查找">#</a> 二分法查找</h2>
-<p>前提：所要查找的数组有序</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> arr1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token operator">-</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">77</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">55</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">34</span><span class="token punctuation">,</span><span class="token number">54</span><span class="token punctuation">,</span><span class="token number">66</span><span class="token punctuation">,</span><span class="token number">77</span><span class="token punctuation">,</span><span class="token number">88</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> dest <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> head <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//初始的索引</span>
-<span class="token keyword">int</span> end <span class="token operator">=</span> arr1<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//初始的末索引</span>
-<span class="token keyword">boolean</span> isFlag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span>head <span class="token operator">&lt;=</span> end<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> middle <span class="token operator">=</span> <span class="token punctuation">(</span>head<span class="token operator">+</span>end<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>dest <span class="token operator">==</span> arr1<span class="token punctuation">[</span>middle<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"找到了，位置:"</span><span class="token operator">+</span>middle<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        isFlag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>arr1<span class="token punctuation">[</span>middle<span class="token punctuation">]</span> <span class="token operator">&gt;</span> dest<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        end <span class="token operator">=</span> middle <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-        head <span class="token operator">=</span> middle <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span>isFlag<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"没找到"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="排序算法"><a class="markdownIt-Anchor" href="#排序算法">#</a> 排序算法</h2>
-<h3 id="衡量排序算法的优劣"><a class="markdownIt-Anchor" href="#衡量排序算法的优劣">#</a> 衡量排序算法的优劣</h3>
-<p>1. 时间复杂度</p>
-<p>2. 空间复杂度</p>
-<p>3. 稳定性：若两个记录 A 和 B 的关键字值相等，但排序后 A、B 的先后次序保持不变，则称这种排序算法是稳定的。</p>
-<h3 id="分类"><a class="markdownIt-Anchor" href="#分类">#</a> 分类</h3>
-<p>排序算法分类： 内部排序 和 外部排序 。<br>
-内部排序：整个排序过程不需要借助于外部存储器（如磁盘等），所有排序操作都在内存中完成。<br>
-外部排序：参与排序的数据非常多，数据量非常大，计算机无法把整个排序过程放在内存中完成，必须借助于外部存储器（如磁盘）。外部排序最常见的是多路归并排序。可以认为外部排序是由多次内部排序组成。</p>
-<h3 id="冒泡排序"><a class="markdownIt-Anchor" href="#冒泡排序">#</a> 冒泡排序</h3>
-<p>排序思想：</p>
-<ol>
-<li>比较相邻的元素。如果第一个比第二个大（升序），就交换他们两个。</li>
-<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
-<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
-<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较为止。</li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">权限修饰符  返回值类型  方法名 （参数类型 形参<span class="token number">1</span><span class="token punctuation">,</span>参数类型 形参<span class="token number">2</span><span class="token punctuation">,</span> …）｛
+    方法体程序代码
+    <span class="token keyword">return</span>  返回值<span class="token punctuation">;</span>
+｝<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>返回值类型：</p>
+<p>​	没有返回值：void。 如果使用 return, 只能 "return;"，表示结束此方法的意思</p>
+<p>​	有返回值，声明出返回值的类型。</p>
+<h3 id="tips"><a class="markdownIt-Anchor" href="#tips">#</a> tips</h3>
+<p>方法的使用中，可以调用当前类的属性或方法</p>
+<p>​	（例外：static 方法访问非 static，编译不通过 。）</p>
+<p>方法中，不可以定义方法</p>
+<h3 id="重载"><a class="markdownIt-Anchor" href="#重载">#</a> 重载</h3>
+<p>概念：在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或者参数类型不同即可。</p>
+<h3 id="可变个数的形参"><a class="markdownIt-Anchor" href="#可变个数的形参">#</a> 可变个数的形参</h3>
+<p>JavaSE 5.0 中提供了 Varargs (variable number of arguments) 机制，允许直接定义能和多个实参相匹配的形参。从而，可以用一种更简单的方式，来传递个数可变的实参。</p>
+<p>声明格式：方法名 (参数的类型名 … 参数名) 此参数名也有 length 属性</p>
+<p>可变参数：方法参数部分指定类型的参数个数是可变多个：0 个，1 个或多个</p>
+<p>可变参数方法的使用与方法参数部分使用数组是一致的</p>
+<h3 id="方法参数的值传递机制"><a class="markdownIt-Anchor" href="#方法参数的值传递机制">#</a> 方法参数的值传递机制</h3>
+<p>Java 里方法的参数传递方式只有一种：值传递。 即将实际参数值的副本（复制品）传入方法内，而参数本身不受影响。<br>
+形参是基本数据类型：将实参基本数据类型变量的 “数据值” 传递给形参<br>
+形参是引用数据类型：将实参引用数据类型变量的 “地址值” 传递给形参</p>
+<h2 id="封装和隐藏"><a class="markdownIt-Anchor" href="#封装和隐藏">#</a> 封装和隐藏</h2>
+<p>信息的封装和隐藏</p>
+<p>Java 中通过将数据声明为私有的 (private)，再提供公共的（public）方法:getXxx () 和 setXxx () 实现对该属性的操作，以实现下述目的：<br>
+隐藏一个类中不需要对外提供的实现细节；<br>
+使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；<br>
+便于修改，增强代码的可维护性</p>
+<h3 id="权限修饰符"><a class="markdownIt-Anchor" href="#权限修饰符">#</a> 权限修饰符</h3>
+<p>4 种权限修饰符都可以修饰类的内部结构：属性、方法、构造器、内部类</p>
+<p>修饰类，只能用：缺省和 public</p>
+<p><img src="https://img-blog.csdnimg.cn/20210119101911903.png#pic_center" alt=""></p>
+<h2 id="构造器"><a class="markdownIt-Anchor" href="#构造器">#</a> 构造器</h2>
+<h3 id="构造器的特征"><a class="markdownIt-Anchor" href="#构造器的特征">#</a> 构造器的特征</h3>
+<p>它具有与类相同的名称<br>
+它不声明返回值类型。（与声明为 void 不同）<br>
+不能被 static、final、synchronized、abstract、native 修饰，不能有 return 语句返回值</p>
+<h3 id="构造器的作用"><a class="markdownIt-Anchor" href="#构造器的作用">#</a> 构造器的作用</h3>
+<p>创建对象；给对象进行初始化</p>
+<p>如：Order o = new Order (); Person p = new Person (“Peter”,15);</p>
+<h3 id="语法格式"><a class="markdownIt-Anchor" href="#语法格式">#</a> 语法格式 ：</h3>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">修饰符名 类名 <span class="token punctuation">(</span> 参数列表<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	初始化语句；
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>根据参数不同，构造器可以分为如下两类：<br>
+ 隐式无参构造器（系统默认提供）<br>
+ 显式定义一个或多个（无参、有参）</p>
+<h3 id="注意"><a class="markdownIt-Anchor" href="#注意">#</a> 注意：</h3>
+<p>Java 语言中，每个类都至少有一个 构造器<br>
+ 默认构造器的修饰符与所属类的修饰符一致<br>
+ 一旦 显式定义了 构造器， 则系统 不再 提供默认 构造 器<br>
+ 一个类可以创建多个 重载 的构造器<br>
+ 父类的构造器不可被子类继承</p>
+<h2 id="属性赋值过程"><a class="markdownIt-Anchor" href="#属性赋值过程">#</a> 属性赋值过程</h2>
+<p>赋值的位置：<br>
+① 默认初始化<br>
+② 显式初始化<br>
+③ 构造器中初始化<br>
+④ 通过 “对象。属性 “或 “对象。方法” 的方式赋值</p>
+<p>赋值的先后顺序：① - ② - ③ - ④</p>
+<h2 id="javabean"><a class="markdownIt-Anchor" href="#javabean">#</a> JavaBean</h2>
+<p>JavaBean 是一种 Java 语言写成的可重用组件。</p>
+<p>所谓 javaBean，是指符合如下标准的 Java 类：<br>
+类是公共的<br>
+有一个无参的公共的构造器<br>
+有属性，且有对应的 get、set 方法</p>
+<h2 id="this"><a class="markdownIt-Anchor" href="#this">#</a> this</h2>
+<ul>
+<li>this 关键字的使用：</li>
+<li>1.this 可以用来修饰、调用：属性、方法、构造器</li>
+<li>2.this 修饰属性和方法：
+<ul>
+<li>this 理解为：当前对象  或 当前正在创建的对象</li>
+</ul>
+</li>
+<li>2.1  在类的方法中，我们可以使用 "this. 属性" 或 "this. 方法" 的方式，调用当前对象属性或方法。但是，通常情况下，我们都选择省略 "this."。特殊情况下，如果方法的形参和类的属性同名时，我们必须显式的使用 "this. 变量" 的方式，表明此变量是属性，而非形参。</li>
+<li>2.2 在类的构造器中，我们可以使用 "this. 属性" 或 "this. 方法" 的方式，调用当前正在创建的对象属性或方法。但是，通常情况下，我们都选择省略 "this."。特殊情况下，如果构造器的形参和类的属性同名时，我们必须显式的使用 "this. 变量" 的方式，表明此变量是属性，而非形参。</li>
+<li>2.3 使用 this 访问属性和方法时，如果在本类中未找到，会从父类中查找</li>
+<li>
+<ol start="3">
+<li>this 调用构造器</li>
 </ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">33</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">99</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">62</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment">//冒泡排序</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&gt;</span>arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="快速排序"><a class="markdownIt-Anchor" href="#快速排序">#</a> 快速排序</h3>
-<h2 id="arrays工具类的使用"><a class="markdownIt-Anchor" href="#arrays工具类的使用">#</a> Arrays 工具类的使用</h2>
-<p>java.util.Arrays</p>
-<p>1 boolean equals (int [] a,int [] b) 判断两个数组是否相等。<br>
-2 String toString (int [] a) 输出数组信息。<br>
-3 void fill (int [] a,int val) 将指定值填充到数组之中。<br>
-4 void sort (int [] a) 对数组进行排序。<br>
-5 int binarySearch (int [] a,int key) 对排序后的数组进行二分法检索指定的值。</p>
+</li>
+<li>① 我们在类的构造器中，可以显式的使用 "this (形参列表)" 方式，调用本类中指定的其他构造器</li>
+<li>② 构造器中不能通过 "this (形参列表)" 方式调用自己</li>
+<li>③ 如果一个类中有 n 个构造器，则最多有 n - 1 构造器中使用了 "this (形参列表)"</li>
+<li>④ 规定："this (形参列表)" 必须声明在当前构造器的首行</li>
+<li>⑤ 构造器内部，最多只能声明一个 "this (形参列表)"，用来调用其他的构造器</li>
+</ul>
+<h2 id="import"><a class="markdownIt-Anchor" href="#import">#</a> import</h2>
+<ol>
+<li>
+<p>在源文件中使用 import 显式的导入指定包下的类或接口</p>
+</li>
+<li>
+<p>如果已经导入 java.a 包下的类。那么如果需要使用 a 包的子包下的类的话，仍然需要导入。使用 "xxx.*" 方式表明可以调用 xxx 包下的所有结构。但是如果使用的是 xxx 子包下的结构，则仍需要显式导入</p>
+</li>
+<li>
+<p>import static 组合的使用：调用指定类或接口下的静态的属性或方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token keyword">static</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span></span><span class="token class-name">System</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
 
                 
             </div>
@@ -577,7 +633,7 @@ arr<span class="token punctuation">[</span><span class="token number">2</span><s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Fsh010816.github.io/2021/01/13/3-shu-zu/">http://Fsh010816.github.io/2021/01/13/3-shu-zu/</a>
+                    <a href="http://Fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/">http://Fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -786,9 +842,10 @@ arr<span class="token punctuation">[</span><span class="token number">2</span><s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/01/18/4-mian-xiang-dui-xiang-shang/">
                     <div class="card-image">
@@ -806,9 +863,9 @@ arr<span class="token punctuation">[</span><span class="token number">2</span><s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -821,6 +878,7 @@ arr<span class="token punctuation">[</span><span class="token number">2</span><s
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -839,13 +897,13 @@ arr<span class="token punctuation">[</span><span class="token number">2</span><s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/12/eclipse/">
+                <a href="/2021/01/13/3-shu-zu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Eclipse">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="3-数组">
                         
-                        <span class="card-title">Eclipse</span>
+                        <span class="card-title">3-数组</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -856,7 +914,7 @@ arr<span class="token punctuation">[</span><span class="token number">2</span><s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
                             </span>
                         <span class="publish-author">
                             
