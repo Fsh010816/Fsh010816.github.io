@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.3k
                 </div>
                 
 
@@ -531,6 +531,11 @@
 隐藏一个类中不需要对外提供的实现细节；<br>
 使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；<br>
 便于修改，增强代码的可维护性</p>
+<h3 id="体现"><a class="markdownIt-Anchor" href="#体现">#</a> 体现</h3>
+<p>1. 将类的属性私有化，同时，提供公共的方法来获取 (get) 和设置 (set) 此属性的值</p>
+<p>2. 不对外暴露的私有的方法</p>
+<p>3. 单例模式 (将构造器私有化)</p>
+<p>4. 如果不希望类在包外被调用，可以将类设置为私有的</p>
 <h3 id="权限修饰符"><a class="markdownIt-Anchor" href="#权限修饰符">#</a> 权限修饰符</h3>
 <p>4 种权限修饰符都可以修饰类的内部结构：属性、方法、构造器、内部类</p>
 <p>修饰类，只能用：缺省和 public</p>
@@ -842,18 +847,17 @@ out<span class="token punctuation">.</span><span class="token function">println<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/18/4-mian-xiang-dui-xiang-shang/">
+                <a href="/2021/01/19/5-mian-xiang-dui-xiang-zhong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="4-面向对象(上)">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="5-面向对象(中)">
                         
-                        <span class="card-title">4-面向对象(上)</span>
+                        <span class="card-title">5-面向对象(中)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -863,9 +867,9 @@ out<span class="token punctuation">.</span><span class="token function">println<
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -878,7 +882,6 @@ out<span class="token punctuation">.</span><span class="token function">println<
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

@@ -1,635 +1,196 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://Fsh010816.github.io</id>
-    <title>Fsh</title>
-    <link href="http://Fsh010816.github.io" />
-    <updated>2021-01-18T07:02:37.000Z</updated>
-    <category term="JavaSE" />
-    <entry>
-        <id>http://fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/</id>
-        <title>4-面向对象(上)</title>
-        <link rel="alternate" href="http://fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/"/>
-        <content type="html">&lt;h1 id=&#34;面向对象上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面向对象上&#34;&gt;#&lt;/a&gt; 面向对象 (上)&lt;/h1&gt;
-&lt;h2 id=&#34;类class和对象object&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类class和对象object&#34;&gt;#&lt;/a&gt; 类 (Class) 和对象 (Object)&lt;/h2&gt;
-&lt;p&gt;类是对一类事物的描述，是抽象的、概念上的定义&lt;br&gt;
-对象是实际存在的该类事物的每个个体，因而也称为实例 (instance)。&lt;/p&gt;
-&lt;h3 id=&#34;类的成员&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类的成员&#34;&gt;#&lt;/a&gt; 类的成员&lt;/h3&gt;
-&lt;p&gt;1 &amp;gt; 属  性：对应类中的成员变量&lt;br&gt;
- 2 &amp;gt; 行  为：对应类中的成员方法&lt;/p&gt;
-&lt;p&gt;Field =  属性 =  成员变量 = 域、字段，Method = (成员) 方法 =  函数&lt;/p&gt;
-&lt;p&gt;创建类的对象 = 类的实例化 = 实例化类&lt;/p&gt;
-&lt;h3 id=&#34;类和对象的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类和对象的使用&#34;&gt;#&lt;/a&gt; 类和对象的使用&lt;/h3&gt;
-&lt;p&gt;1. 创建类，设计类的成员&lt;/p&gt;
-&lt;p&gt;2. 创建类的对象&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;类名 对象名 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; 类名&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;3. 通过 “对象。属性” 或 “对象。方法” 调用对象的结构&lt;/p&gt;
-&lt;h2 id=&#34;类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类&#34;&gt;#&lt;/a&gt; 类&lt;/h2&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;修饰符 &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt;  类名 &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-    属性声明&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    方法声明&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;	&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;类的正文要用 { } 括起来&lt;/p&gt;
-&lt;h2 id=&#34;内存解析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内存解析&#34;&gt;#&lt;/a&gt; 内存解析&lt;/h2&gt;
-&lt;p&gt;编译完程序以后，生成一个或多个字节码文件，&lt;/p&gt;
-&lt;p&gt;我们使用 JVM 中的类的加载器和解释器对生成的字节码文件进行解释运行，意味着，需要将字节码文件对应的类加载到内存中，涉及到内存解析。&lt;/p&gt;
-&lt;p&gt;堆： 存放对象实例  对象的属性（非 static）new 出来的结构 对象（非 static 成员变量）数组&lt;/p&gt;
-&lt;p&gt;栈： 存储局部变量&lt;/p&gt;
-&lt;p&gt;方法区（Method Area）：用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。 常量池 静态域&lt;/p&gt;
-&lt;h2 id=&#34;对象的内存解析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对象的内存解析&#34;&gt;#&lt;/a&gt; 对象的内存解析&lt;/h2&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210118191251477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;未考虑常量池&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;h2 id=&#34;匿名对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#匿名对象&#34;&gt;#&lt;/a&gt; 匿名对象&lt;/h2&gt;
-&lt;p&gt;我们也可以不定义对象的句柄，而直接调用这个对象的方法。这样的对象叫做匿名对象。&lt;br&gt;
-如：new Person ().shout ();&lt;/p&gt;
-&lt;p&gt;使用情况&lt;br&gt;
- 1. 如果对一个对象只需要进行一次方法调用，那么就可以使用匿名对象。&lt;br&gt;
-2. 我们经常将匿名对象作为实参传递给一个方法调用。&lt;/p&gt;
-&lt;h2 id=&#34;属性成员变量-局部变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#属性成员变量-局部变量&#34;&gt;#&lt;/a&gt; 属性 (成员变量) 局部变量&lt;/h2&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210118191737642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; style=&#34;zoom: 80%;&#34;&gt;
-&lt;h3 id=&#34;相同点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#相同点&#34;&gt;#&lt;/a&gt; 相同点&lt;/h3&gt;
-&lt;p&gt;1. 定义变量的格式：数据类型 变量名 = 变量值&lt;/p&gt;
-&lt;p&gt;2. 先声明，后使用&lt;/p&gt;
-&lt;p&gt;3. 变量都有其对应的作用域&lt;/p&gt;
-&lt;h3 id=&#34;不同点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#不同点&#34;&gt;#&lt;/a&gt; 不同点&lt;/h3&gt;
-&lt;p&gt;1. 在类中声明的位置不同&lt;/p&gt;
-&lt;p&gt;成员变量：在方法体外，类体内声明的变量&lt;/p&gt;
-&lt;p&gt;局部变量：声明在方法内、方法形参、代码块内、构造器形参、构造器内部的变量&lt;/p&gt;
-&lt;p&gt;2. 关于权限修饰符的不同&lt;/p&gt;
-&lt;p&gt;属性：可以在声明属性时，指明其权限，使用权限修饰符&lt;/p&gt;
-&lt;p&gt;​			private、public、缺省、protected&lt;/p&gt;
-&lt;p&gt;局部变量：不可使用权限修饰符&lt;/p&gt;
-&lt;p&gt;3. 默认初始化值&lt;/p&gt;
-&lt;p&gt;属性：根据其类型，都有默认初始化值&lt;/p&gt;
-&lt;p&gt;局部变量：没有默认初始化值&lt;/p&gt;
-&lt;p&gt;​					调用局部变量前，必须显示赋值&lt;/p&gt;
-&lt;p&gt;​					特别地，形参在调用时，赋值即可&lt;/p&gt;
-&lt;p&gt;4. 在内存中加载的位置&lt;/p&gt;
-&lt;p&gt;属性：堆（非 static）&lt;/p&gt;
-&lt;p&gt;局部变量：栈&lt;/p&gt;
-&lt;h2 id=&#34;方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法&#34;&gt;#&lt;/a&gt; 方法&lt;/h2&gt;
-&lt;p&gt;Java 里的方法不能独立存在，所有的方法必须定义在类里。&lt;/p&gt;
-&lt;h3 id=&#34;声明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明&#34;&gt;#&lt;/a&gt; 声明&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;权限修饰符  返回值类型  方法名 （参数类型 形参&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;参数类型 形参&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; …）｛
-    方法体程序代码
-    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;  返回值&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-｝&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;返回值类型：&lt;/p&gt;
-&lt;p&gt;​	没有返回值：void。 如果使用 return, 只能 &#34;return;&#34;，表示结束此方法的意思&lt;/p&gt;
-&lt;p&gt;​	有返回值，声明出返回值的类型。&lt;/p&gt;
-&lt;h3 id=&#34;tips&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tips&#34;&gt;#&lt;/a&gt; tips&lt;/h3&gt;
-&lt;p&gt;方法的使用中，可以调用当前类的属性或方法&lt;/p&gt;
-&lt;p&gt;​	（例外：static 方法访问非 static，编译不通过 。）&lt;/p&gt;
-&lt;p&gt;方法中，不可以定义方法&lt;/p&gt;
-&lt;h3 id=&#34;重载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重载&#34;&gt;#&lt;/a&gt; 重载&lt;/h3&gt;
-&lt;p&gt;概念：在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或者参数类型不同即可。&lt;/p&gt;
-&lt;h3 id=&#34;可变个数的形参&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#可变个数的形参&#34;&gt;#&lt;/a&gt; 可变个数的形参&lt;/h3&gt;
-&lt;p&gt;JavaSE 5.0 中提供了 Varargs (variable number of arguments) 机制，允许直接定义能和多个实参相匹配的形参。从而，可以用一种更简单的方式，来传递个数可变的实参。&lt;/p&gt;
-&lt;p&gt;声明格式：方法名 (参数的类型名 … 参数名) 此参数名也有 length 属性&lt;/p&gt;
-&lt;p&gt;可变参数：方法参数部分指定类型的参数个数是可变多个：0 个，1 个或多个&lt;/p&gt;
-&lt;p&gt;可变参数方法的使用与方法参数部分使用数组是一致的&lt;/p&gt;
-&lt;h3 id=&#34;方法参数的值传递机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法参数的值传递机制&#34;&gt;#&lt;/a&gt; 方法参数的值传递机制&lt;/h3&gt;
-&lt;p&gt;Java 里方法的参数传递方式只有一种：值传递。 即将实际参数值的副本（复制品）传入方法内，而参数本身不受影响。&lt;br&gt;
-形参是基本数据类型：将实参基本数据类型变量的 “数据值” 传递给形参&lt;br&gt;
-形参是引用数据类型：将实参引用数据类型变量的 “地址值” 传递给形参&lt;/p&gt;
-&lt;h2 id=&#34;封装和隐藏&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#封装和隐藏&#34;&gt;#&lt;/a&gt; 封装和隐藏&lt;/h2&gt;
-&lt;p&gt;信息的封装和隐藏&lt;/p&gt;
-&lt;p&gt;Java 中通过将数据声明为私有的 (private)，再提供公共的（public）方法:getXxx () 和 setXxx () 实现对该属性的操作，以实现下述目的：&lt;br&gt;
-隐藏一个类中不需要对外提供的实现细节；&lt;br&gt;
-使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；&lt;br&gt;
-便于修改，增强代码的可维护性&lt;/p&gt;
-&lt;h3 id=&#34;权限修饰符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#权限修饰符&#34;&gt;#&lt;/a&gt; 权限修饰符&lt;/h3&gt;
-&lt;p&gt;4 种权限修饰符都可以修饰类的内部结构：属性、方法、构造器、内部类&lt;/p&gt;
-&lt;p&gt;修饰类，只能用：缺省和 public&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210119101911903.png#pic_center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;构造器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造器&#34;&gt;#&lt;/a&gt; 构造器&lt;/h2&gt;
-&lt;h3 id=&#34;构造器的特征&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造器的特征&#34;&gt;#&lt;/a&gt; 构造器的特征&lt;/h3&gt;
-&lt;p&gt;它具有与类相同的名称&lt;br&gt;
-它不声明返回值类型。（与声明为 void 不同）&lt;br&gt;
-不能被 static、final、synchronized、abstract、native 修饰，不能有 return 语句返回值&lt;/p&gt;
-&lt;h3 id=&#34;构造器的作用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造器的作用&#34;&gt;#&lt;/a&gt; 构造器的作用&lt;/h3&gt;
-&lt;p&gt;创建对象；给对象进行初始化&lt;/p&gt;
-&lt;p&gt;如：Order o = new Order (); Person p = new Person (“Peter”,15);&lt;/p&gt;
-&lt;h3 id=&#34;语法格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法格式&#34;&gt;#&lt;/a&gt; 语法格式 ：&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;修饰符名 类名 &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt; 参数列表&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-	初始化语句；
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;根据参数不同，构造器可以分为如下两类：&lt;br&gt;
- 隐式无参构造器（系统默认提供）&lt;br&gt;
- 显式定义一个或多个（无参、有参）&lt;/p&gt;
-&lt;h3 id=&#34;注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意&#34;&gt;#&lt;/a&gt; 注意：&lt;/h3&gt;
-&lt;p&gt;Java 语言中，每个类都至少有一个 构造器&lt;br&gt;
- 默认构造器的修饰符与所属类的修饰符一致&lt;br&gt;
- 一旦 显式定义了 构造器， 则系统 不再 提供默认 构造 器&lt;br&gt;
- 一个类可以创建多个 重载 的构造器&lt;br&gt;
- 父类的构造器不可被子类继承&lt;/p&gt;
-&lt;h2 id=&#34;属性赋值过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#属性赋值过程&#34;&gt;#&lt;/a&gt; 属性赋值过程&lt;/h2&gt;
-&lt;p&gt;赋值的位置：&lt;br&gt;
-① 默认初始化&lt;br&gt;
-② 显式初始化&lt;br&gt;
-③ 构造器中初始化&lt;br&gt;
-④ 通过 “对象。属性 “或 “对象。方法” 的方式赋值&lt;/p&gt;
-&lt;p&gt;赋值的先后顺序：① - ② - ③ - ④&lt;/p&gt;
-&lt;h2 id=&#34;javabean&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javabean&#34;&gt;#&lt;/a&gt; JavaBean&lt;/h2&gt;
-&lt;p&gt;JavaBean 是一种 Java 语言写成的可重用组件。&lt;/p&gt;
-&lt;p&gt;所谓 javaBean，是指符合如下标准的 Java 类：&lt;br&gt;
-类是公共的&lt;br&gt;
-有一个无参的公共的构造器&lt;br&gt;
-有属性，且有对应的 get、set 方法&lt;/p&gt;
-&lt;h2 id=&#34;this&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#this&#34;&gt;#&lt;/a&gt; this&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;this 关键字的使用：&lt;/li&gt;
-&lt;li&gt;1.this 可以用来修饰、调用：属性、方法、构造器&lt;/li&gt;
-&lt;li&gt;2.this 修饰属性和方法：
-&lt;ul&gt;
-&lt;li&gt;this 理解为：当前对象  或 当前正在创建的对象&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;2.1  在类的方法中，我们可以使用 &#34;this. 属性&#34; 或 &#34;this. 方法&#34; 的方式，调用当前对象属性或方法。但是，通常情况下，我们都选择省略 &#34;this.&#34;。特殊情况下，如果方法的形参和类的属性同名时，我们必须显式的使用 &#34;this. 变量&#34; 的方式，表明此变量是属性，而非形参。&lt;/li&gt;
-&lt;li&gt;2.2 在类的构造器中，我们可以使用 &#34;this. 属性&#34; 或 &#34;this. 方法&#34; 的方式，调用当前正在创建的对象属性或方法。但是，通常情况下，我们都选择省略 &#34;this.&#34;。特殊情况下，如果构造器的形参和类的属性同名时，我们必须显式的使用 &#34;this. 变量&#34; 的方式，表明此变量是属性，而非形参。&lt;/li&gt;
-&lt;li&gt;2.3 使用 this 访问属性和方法时，如果在本类中未找到，会从父类中查找&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;this 调用构造器&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;① 我们在类的构造器中，可以显式的使用 &#34;this (形参列表)&#34; 方式，调用本类中指定的其他构造器&lt;/li&gt;
-&lt;li&gt;② 构造器中不能通过 &#34;this (形参列表)&#34; 方式调用自己&lt;/li&gt;
-&lt;li&gt;③ 如果一个类中有 n 个构造器，则最多有 n - 1 构造器中使用了 &#34;this (形参列表)&#34;&lt;/li&gt;
-&lt;li&gt;④ 规定：&#34;this (形参列表)&#34; 必须声明在当前构造器的首行&lt;/li&gt;
-&lt;li&gt;⑤ 构造器内部，最多只能声明一个 &#34;this (形参列表)&#34;，用来调用其他的构造器&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;import&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#import&#34;&gt;#&lt;/a&gt; import&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;在源文件中使用 import 显式的导入指定包下的类或接口&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果已经导入 java.a 包下的类。那么如果需要使用 a 包的子包下的类的话，仍然需要导入。使用 &#34;xxx.*&#34; 方式表明可以调用 xxx 包下的所有结构。但是如果使用的是 xxx 子包下的结构，则仍需要显式导入&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;import static 组合的使用：调用指定类或接口下的静态的属性或方法&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;lang&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;*&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-
-out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;hello&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-        <category term="JavaSE" />
-        <updated>2021-01-18T07:02:37.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://fsh010816.github.io/2021/01/13/3-shu-zu/</id>
-        <title>3-数组</title>
-        <link rel="alternate" href="http://fsh010816.github.io/2021/01/13/3-shu-zu/"/>
-        <content type="html">&lt;h1 id=&#34;数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h1&gt;
-&lt;h2 id=&#34;数组的概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组的概述&#34;&gt;#&lt;/a&gt; 数组的概述&lt;/h2&gt;
-&lt;p&gt;1 &amp;gt; 数组本身是引用数据类型，而数组中的元素可以是任何数据类型，包括基本数据类型和引用数据类型。&lt;br&gt;
-2 &amp;gt; 创建数组对象会在内存中开辟一整块连续的空间，而数组名中引用的是这块连续空间的首地址。&lt;br&gt;
-3 &amp;gt; 数组的长度一旦确定，就不能修改。&lt;/p&gt;
-&lt;h2 id=&#34;一维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一维数组&#34;&gt;#&lt;/a&gt; 一维数组&lt;/h2&gt;
-&lt;h3 id=&#34;声明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明&#34;&gt;#&lt;/a&gt; 声明&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;type &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; 或 type&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Java 语言中声明数组时不能指定其长度 (数组中元素的数)&lt;/p&gt;
-&lt;h3 id=&#34;初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初始化&#34;&gt;#&lt;/a&gt; 初始化&lt;/h3&gt;
-&lt;h4 id=&#34;静态初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#静态初始化&#34;&gt;#&lt;/a&gt; 静态初始化&lt;/h4&gt;
-&lt;p&gt;静态初始化 ：在定义数组的同时就为数组元素分配空间并赋值。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-或
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;动态初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动态初始化&#34;&gt;#&lt;/a&gt; 动态初始化&lt;/h4&gt;
-&lt;p&gt;动态初始化 ：数组声明且为数组元素分配空间与赋值的操作分开进行&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;数组元素的引用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组元素的引用&#34;&gt;#&lt;/a&gt; 数组元素的引用&lt;/h4&gt;
-&lt;p&gt;数组元素下标可以是整型常量或整型表达式&lt;/p&gt;
-&lt;p&gt;数组元素下标从 0 开始&lt;/p&gt;
-&lt;h4 id=&#34;数组元素的默认初始化值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组元素的默认初始化值&#34;&gt;#&lt;/a&gt; 数组元素的默认初始化值&lt;/h4&gt;
-&lt;p&gt;数组是引用类型，它的元素相当于类的成员变量，因此数组一经分配空间，其中的每个元素也被按照成员变量同样的方式被隐式初始化&lt;/p&gt;
-&lt;h4 id=&#34;内存解析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内存解析&#34;&gt;#&lt;/a&gt; 内存解析&lt;/h4&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210113225522456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210113225522474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210113225522534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;未考虑String...常量池&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;h2 id=&#34;多维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多维数组&#34;&gt;#&lt;/a&gt; 多维数组&lt;/h2&gt;
-&lt;h3 id=&#34;二维数组的声明和初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二维数组的声明和初始化&#34;&gt;#&lt;/a&gt; 二维数组的声明和初始化&lt;/h3&gt;
-&lt;p&gt;静态初始化&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//3&lt;/span&gt;
-&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//2&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//类型推断，只能一行时使用&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;注意特殊写法情况：int [] x,y []; x 是一维数组，y 是二维数组。&lt;/p&gt;
-&lt;p&gt;动态初始化 1&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//一维数组地址&lt;/span&gt;
-&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//0&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;动态初始化 2&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//null&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//非法&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;二分法查找&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二分法查找&#34;&gt;#&lt;/a&gt; 二分法查找&lt;/h2&gt;
-&lt;p&gt;前提：所要查找的数组有序&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; arr1&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;98&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;77&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;55&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;22&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;54&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;66&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;77&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;88&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;99&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; dest &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; head &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//初始的索引&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; end &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; arr1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//初始的末索引&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;boolean&lt;/span&gt; isFlag &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;head &lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt; end&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; middle &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;head&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;end&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;dest &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; arr1&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;middle&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;找到了，位置:&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;middle&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        isFlag &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr1&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;middle&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;gt;&lt;/span&gt; dest&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-        end &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; middle &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-        head &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; middle &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;isFlag&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;没找到&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;排序算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#排序算法&#34;&gt;#&lt;/a&gt; 排序算法&lt;/h2&gt;
-&lt;h3 id=&#34;衡量排序算法的优劣&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#衡量排序算法的优劣&#34;&gt;#&lt;/a&gt; 衡量排序算法的优劣&lt;/h3&gt;
-&lt;p&gt;1. 时间复杂度&lt;/p&gt;
-&lt;p&gt;2. 空间复杂度&lt;/p&gt;
-&lt;p&gt;3. 稳定性：若两个记录 A 和 B 的关键字值相等，但排序后 A、B 的先后次序保持不变，则称这种排序算法是稳定的。&lt;/p&gt;
-&lt;h3 id=&#34;分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分类&#34;&gt;#&lt;/a&gt; 分类&lt;/h3&gt;
-&lt;p&gt;排序算法分类： 内部排序 和 外部排序 。&lt;br&gt;
-内部排序：整个排序过程不需要借助于外部存储器（如磁盘等），所有排序操作都在内存中完成。&lt;br&gt;
-外部排序：参与排序的数据非常多，数据量非常大，计算机无法把整个排序过程放在内存中完成，必须借助于外部存储器（如磁盘）。外部排序最常见的是多路归并排序。可以认为外部排序是由多次内部排序组成。&lt;/p&gt;
-&lt;h3 id=&#34;冒泡排序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冒泡排序&#34;&gt;#&lt;/a&gt; 冒泡排序&lt;/h3&gt;
-&lt;p&gt;排序思想：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;比较相邻的元素。如果第一个比第二个大（升序），就交换他们两个。&lt;/li&gt;
-&lt;li&gt;对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。&lt;/li&gt;
-&lt;li&gt;针对所有的元素重复以上的步骤，除了最后一个。&lt;/li&gt;
-&lt;li&gt;持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较为止。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;22&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;33&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;99&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;62&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;21&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token comment&#34;&gt;//冒泡排序&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; j &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;gt;&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-            &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; temp &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-            arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-            arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;temp&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;length&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34; &#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;快速排序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#快速排序&#34;&gt;#&lt;/a&gt; 快速排序&lt;/h3&gt;
-&lt;h2 id=&#34;arrays工具类的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#arrays工具类的使用&#34;&gt;#&lt;/a&gt; Arrays 工具类的使用&lt;/h2&gt;
-&lt;p&gt;java.util.Arrays&lt;/p&gt;
-&lt;p&gt;1 boolean equals (int [] a,int [] b) 判断两个数组是否相等。&lt;br&gt;
-2 String toString (int [] a) 输出数组信息。&lt;br&gt;
-3 void fill (int [] a,int val) 将指定值填充到数组之中。&lt;br&gt;
-4 void sort (int [] a) 对数组进行排序。&lt;br&gt;
-5 int binarySearch (int [] a,int key) 对排序后的数组进行二分法检索指定的值。&lt;/p&gt;
-</content>
-        <category term="JavaSE" />
-        <updated>2021-01-13T13:47:11.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://fsh010816.github.io/2021/01/12/eclipse/</id>
-        <title>Eclipse</title>
-        <link rel="alternate" href="http://fsh010816.github.io/2021/01/12/eclipse/"/>
-        <content type="html">&lt;h1 id=&#34;eclipse&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#eclipse&#34;&gt;#&lt;/a&gt; Eclipse&lt;/h1&gt;
-&lt;h2 id=&#34;结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结构&#34;&gt;#&lt;/a&gt; 结构&lt;/h2&gt;
-&lt;p&gt;左侧： 结构 1： Package Explorer&lt;/p&gt;
-&lt;p&gt;​			结构 2 ：Navigator&lt;/p&gt;
-&lt;p&gt;​			结构 3：Outline&lt;/p&gt;
-&lt;p&gt;下面：结构 :4: Console&lt;/p&gt;
-&lt;h2 id=&#34;配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置&#34;&gt;#&lt;/a&gt; 配置&lt;/h2&gt;
-&lt;h3 id=&#34;字符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符&#34;&gt;#&lt;/a&gt; 字符&lt;/h3&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210112231459944.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom: 50%;&#34;&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210112231500142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;h3 id=&#34;字体&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字体&#34;&gt;#&lt;/a&gt; 字体&lt;/h3&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/2021011223150090.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/2021011223151324.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;h3 id=&#34;修改new菜单&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改new菜单&#34;&gt;#&lt;/a&gt; 修改 new 菜单&lt;/h3&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210112231512964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/2021011223151355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/2021011223151330.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;保存&#34; style=&#34;zoom:50%;&#34;&gt;
-&lt;h2 id=&#34;helloworld&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#helloworld&#34;&gt;#&lt;/a&gt; helloworld&lt;/h2&gt;
-&lt;p&gt;先 new Java Project&lt;/p&gt;
-&lt;p&gt;在 src 下 new package&lt;/p&gt;
-&lt;p&gt;在包下 new class&lt;/p&gt;
-&lt;h2 id=&#34;导入工程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#导入工程&#34;&gt;#&lt;/a&gt; 导入工程&lt;/h2&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210112235144400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom: 50%;&#34;&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210112235144428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;</content>
-        <category term="JavaSE" />
-        <updated>2021-01-12T14:04:56.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://fsh010816.github.io/2021/01/09/2-java-ji-ben-yu-fa/</id>
-        <title>2_Java基本语法</title>
-        <link rel="alternate" href="http://fsh010816.github.io/2021/01/09/2-java-ji-ben-yu-fa/"/>
-        <content type="html">&lt;h1 id=&#34;java基本语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java基本语法&#34;&gt;#&lt;/a&gt; Java 基本语法&lt;/h1&gt;
-&lt;h2 id=&#34;关键字与保留字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键字与保留字&#34;&gt;#&lt;/a&gt; 关键字与保留字&lt;/h2&gt;
-&lt;h3 id=&#34;关键字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键字&#34;&gt;#&lt;/a&gt; 关键字&lt;/h3&gt;
-&lt;p&gt;定义：被 被 Java 语言赋予了特殊含义，用做专门用途的字符串（单词）&lt;br&gt;
-特点： 关键字中所有字母都为小写&lt;/p&gt;
-&lt;h3 id=&#34;保留字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#保留字&#34;&gt;#&lt;/a&gt; 保留字&lt;/h3&gt;
-&lt;p&gt;Java 保留字：现有 Java 版本尚未使用，但以后版本可能会作为关键字使&lt;br&gt;
-用。自己命名标识符时要避免使用这些保留字&lt;br&gt;
- goto 、const&lt;/p&gt;
-&lt;h2 id=&#34;标识符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标识符&#34;&gt;#&lt;/a&gt; 标识符&lt;/h2&gt;
-&lt;h3 id=&#34;标识符-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标识符-2&#34;&gt;#&lt;/a&gt; 标识符&lt;/h3&gt;
-&lt;p&gt;Java 对各种 变量、 方法和 类等要素命名时使用的字符序列称为标识符&lt;br&gt;
- 技巧：凡是自己可以起名字的地方都叫标识符&lt;/p&gt;
-&lt;h3 id=&#34;定义合法标识符规则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义合法标识符规则&#34;&gt;#&lt;/a&gt; 定义合法标识符规则：&lt;/h3&gt;
-&lt;p&gt;由 26 个英文字母大小写，0-9  ，_或 或 $  组成&lt;br&gt;
- 数字不可以开头。&lt;br&gt;
- 不可以使用关键字和保留字，但能包含关键字和保留字。&lt;br&gt;
-Java 中严格区分大小写，长度无限制。&lt;br&gt;
- 标识符不能包含空格&lt;/p&gt;
-&lt;h3 id=&#34;java中的名称命名规范&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java中的名称命名规范&#34;&gt;#&lt;/a&gt; Java 中的名称命名规范&lt;/h3&gt;
-&lt;p&gt; 包名：多单词组成时所有字母都小写：xxxyyyzzz&lt;br&gt;
- 类名、接口名：多单词组成时，所有单词的首字母大写：XxxYyyZzz&lt;br&gt;
- 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个&lt;br&gt;
-单词首字母大写：xxxYyyZzz&lt;br&gt;
- 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ&lt;/p&gt;
-&lt;h2 id=&#34;变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量&#34;&gt;#&lt;/a&gt; 变量&lt;/h2&gt;
-&lt;h3 id=&#34;变量-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量-2&#34;&gt;#&lt;/a&gt; 变量&lt;/h3&gt;
-&lt;p&gt;内存中的一个存储区域&lt;br&gt;
-该区域的数据可以在同一类型范围内不断变化&lt;br&gt;
-变量是程序中最基本的存储单元。包含变量类型、变量名和存储的值&lt;/p&gt;
-&lt;h3 id=&#34;注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意&#34;&gt;#&lt;/a&gt; 注意&lt;/h3&gt;
-&lt;p&gt;Java 中每个变量必须先声明，后使用&lt;br&gt;
-使用变量名来访问这块区域的数据&lt;br&gt;
-变量的作用域：其定义所在的一对 { } 内&lt;br&gt;
-变量只有在其作用域内才有效&lt;br&gt;
-同一个作用域内，不能定义重名的变量&lt;/p&gt;
-&lt;h3 id=&#34;声明-赋值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明-赋值&#34;&gt;#&lt;/a&gt; 声明 赋值&lt;/h3&gt;
-&lt;p&gt;声明变量&lt;br&gt;
- 语法：&amp;lt;数据类型&amp;gt; &amp;lt; 变量名称 &amp;gt;&lt;br&gt;
- 例如：int var;&lt;br&gt;
- 变量的赋值&lt;br&gt;
- 语法：&amp;lt;变量名称&amp;gt; = &amp;lt; 值 &amp;gt;&lt;br&gt;
- 例如：var = 10;&lt;br&gt;
- 声明和赋值变量&lt;br&gt;
- 语法： &amp;lt;数据类型&amp;gt; &amp;lt; 变量名 &amp;gt; = &amp;lt; 初始化值 &amp;gt;&lt;br&gt;
- 例如：int var = 10;&lt;/p&gt;
-&lt;h3 id=&#34;变量的分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量的分类&#34;&gt;#&lt;/a&gt; 变量的分类&lt;/h3&gt;
-&lt;h4 id=&#34;按数据类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#按数据类型&#34;&gt;#&lt;/a&gt; 按数据类型&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210109211327831.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;数据类型分类&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;按声明的位置的不同&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#按声明的位置的不同&#34;&gt;#&lt;/a&gt; 按声明的位置的不同&lt;/h4&gt;
-&lt;p&gt;  在方法体外，类体内声明的变量称为 成员变量 。&lt;br&gt;
-  在方法体内部声明的变量称为 局部变量 。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210109211850402.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;按声明的位置的不同&#34;&gt;&lt;/p&gt;
-&lt;p&gt;● 注意：二者在初始化值方面的异同:&lt;br&gt;
- 同：都有生命周期 异：局部变量除形参外，需显式初始化&lt;/p&gt;
-&lt;h2 id=&#34;整数类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#整数类型&#34;&gt;#&lt;/a&gt; 整数类型&lt;/h2&gt;
-&lt;p&gt;java 的整型常量默认为 int 型，声明 long 型常量须后加‘l’或‘L’&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210109212151917.png#pic_center&#34; alt=&#34;整数&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;浮点类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浮点类型&#34;&gt;#&lt;/a&gt; 浮点类型&lt;/h2&gt;
-&lt;p&gt;浮点型常量有两种表示形式：&lt;br&gt;
-十进制数形式：如：5.12 512.0f .512 (必须有小数点）&lt;br&gt;
-科学计数法形式：如：5.12e2 512E2 100E-2&lt;br&gt;
- float: 单精度，尾数可以精确到 7 位有效数字。很多情况下，精度很难满足需求。&lt;br&gt;
-double: 双精度，精度是 float 的两倍。通常采用此类型。&lt;br&gt;
- Java  的浮点型常量默认为 double 型 型，明 声明 float 型常量，须后加‘f’ 或‘F’ 。&lt;/p&gt;
-&lt;p&gt;float 表示数值的范围比 long 还大&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010352218.png&#34; alt=&#34;浮点类型&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;字符类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符类型&#34;&gt;#&lt;/a&gt; 字符类型&lt;/h2&gt;
-&lt;p&gt;char 型数据用来表示通常意义上 “字符”(2 字节)&lt;br&gt;
-Java 中的所有字符都使用 Unicode 编码，故一个字符可以存储一个字母，一个汉字，或其他书面语的一个字符。&lt;br&gt;
-char 类型是可以进行运算的。因为它都对应有 Unicode 码。&lt;/p&gt;
-&lt;h3 id=&#34;字符型变量的三种表现形式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符型变量的三种表现形式&#34;&gt;#&lt;/a&gt; 字符型变量的三种表现形式&lt;/h3&gt;
-&lt;p&gt;字符常量是用单引号 (‘ ’) 括起来的单个字符。例如：char c1 = ‘a’; char c2= ‘中’; char c3 = ‘9’;&lt;br&gt;
- Java 中还允许使用转义字符‘\’来将其后的字符转变为特殊字符型常量。例如：char c3 = ‘\n’; // &#39;\n’表示换行符&lt;br&gt;
-直接使用 Unicode 值来表示字符型常量：‘\uXXXX’。其中，XXXX 代表一个十六进制整数。如：\u000a 表示 \n。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010352220.png&#34; alt=&#34;转义字符&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;布尔类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#布尔类型&#34;&gt;#&lt;/a&gt; 布尔类型&lt;/h2&gt;
-&lt;p&gt;Java 虚拟机中没有任何供 boolean 值专用的字节码指令，Java 语言表达所操作的 boolean 值，在编译之后都使用 java 虚拟机中的 int 数据类型来代替：true 用 1 表示，false 用 0 表示。&lt;/p&gt;
-&lt;h2 id=&#34;基本数据类型转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本数据类型转换&#34;&gt;#&lt;/a&gt; 基本数据类型转换&lt;/h2&gt;
-&lt;h3 id=&#34;自动类型转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自动类型转换&#34;&gt;#&lt;/a&gt; 自动类型转换&lt;/h3&gt;
-&lt;p&gt;容量小的类型自动转换为容量大的数据类型。数据类型按容量大小排序为：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010619749.png#pic_center&#34; alt=&#34;自动类型转换&#34;&gt;&lt;/p&gt;
-&lt;p&gt;byte,short,char 之间不会相互转换，他们三者在计算时首先转换为 int 类型。&lt;br&gt;
-boolean 类型不能与其它数据类型运算。&lt;br&gt;
-当把任何基本数据类型的值和字符串 (String) 进行连接运算时 (+)，基本数据类型的值将自动转化为字符串 (String) 类型。&lt;/p&gt;
-&lt;h3 id=&#34;强制类型转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#强制类型转换&#34;&gt;#&lt;/a&gt; 强制类型转换&lt;/h3&gt;
-&lt;p&gt;通常，字符串不能直接转换为基本类型，但通过基本类型对应的包装类则可以实现把字符串转换成基本类型。&lt;/p&gt;
-&lt;p&gt;boolean 类型不可以转换为其它的数据类型。&lt;/p&gt;
-&lt;h2 id=&#34;字符串类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串类型&#34;&gt;#&lt;/a&gt; 字符串类型&lt;/h2&gt;
-&lt;p&gt; 使用方式与基本数据类型一致。例如：String str = “abcd”;&lt;br&gt;
- 一个字符串可以串接另一个字符串，也可以直接串接其他类型的数据。&lt;/p&gt;
-&lt;h2 id=&#34;进制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#进制&#34;&gt;#&lt;/a&gt; 进制&lt;/h2&gt;
-&lt;p&gt;二进制 (binary) ：0,1 ，满 2 进 1. 以 0b 或 0B 开头。&lt;br&gt;
-八进制 (octal) ：0-7 ，满 8 进 1. 以数字 0 开头表示。&lt;br&gt;
-十六进制 (hex) ：0-9 及 A-F，满 16 进 1. 以 0x 或 0X 开头表示&lt;/p&gt;
-&lt;h2 id=&#34;运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符&#34;&gt;#&lt;/a&gt; 运算符&lt;/h2&gt;
-&lt;p&gt;运算符是一种特殊的符号，用以表示数据的运算、赋值和比较等。&lt;/p&gt;
-&lt;p&gt;算术运算符&lt;br&gt;
-赋值运算符&lt;br&gt;
-比较运算符（关系运算符）&lt;br&gt;
-逻辑运算符&lt;br&gt;
-位运算符&lt;br&gt;
-三元运算符&lt;/p&gt;
-&lt;h3 id=&#34;算术运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#算术运算符&#34;&gt;#&lt;/a&gt; 算术运算符&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010352199.png&#34; alt=&#34;算术运算符&#34;&gt;&lt;/p&gt;
-&lt;p&gt;% 取余运算，结果的符号与被模数的符号相同&lt;/p&gt;
-&lt;p&gt;自增 1 不会改变本身变量的数据类型&lt;/p&gt;
-&lt;h3 id=&#34;赋值运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#赋值运算符&#34;&gt;#&lt;/a&gt; 赋值运算符&lt;/h3&gt;
-&lt;p&gt;符号：=  支持连续赋值。&lt;/p&gt;
-&lt;p&gt;+= 不会改变变量本身的数据类型&lt;/p&gt;
-&lt;h3 id=&#34;比较运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#比较运算符&#34;&gt;#&lt;/a&gt; 比较运算符&lt;/h3&gt;
-&lt;p&gt;比较运算符的结果都是 boolean 型，也就是要么是 true，要么是 false。&lt;/p&gt;
-&lt;p&gt;instanceof 检查是否是类的对象 “Hello” instanceof String true&lt;/p&gt;
-&lt;h3 id=&#34;逻辑运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#逻辑运算符&#34;&gt;#&lt;/a&gt; 逻辑运算符&lt;/h3&gt;
-&lt;p&gt;&amp;amp;— 逻辑与 | — 逻辑或 ！— 逻辑非  &amp;amp;&amp;amp; — 短路与 || — 短路或 ^ — 逻辑异或&lt;/p&gt;
-&lt;p&gt;逻辑运算符用于连接布尔型表达式&lt;/p&gt;
-&lt;p&gt;“&amp;amp;” 和 “&amp;amp;&amp;amp;” 的区别：&lt;br&gt;
-单 &amp;amp; 时，左边无论真假，右边都进行运算；&lt;br&gt;
-双 &amp;amp; 时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。&lt;/p&gt;
-&lt;h3 id=&#34;位运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#位运算符&#34;&gt;#&lt;/a&gt; 位运算符&lt;/h3&gt;
-&lt;p&gt;运算符 运算 范例&lt;br&gt;
- &amp;lt;&amp;lt;左移 3 &amp;lt;&amp;lt; 2 = 12 --&amp;gt; 3&lt;em&gt;2&lt;/em&gt;2=12&lt;/p&gt;
-&lt;p&gt;右移 3 &amp;gt;&amp;gt; 1 = 1 --&amp;gt; 3/2=1&lt;/p&gt;
-&lt;p&gt;无符号右移 3 &amp;gt;&amp;gt;&amp;gt; 1 = 1 --&amp;gt; 3/2=1&lt;br&gt;
-&amp;amp; 与运算 6 &amp;amp; 3 = 2&lt;br&gt;
-| 或运算 6 | 3 = 7&lt;br&gt;
-^ 异或运算 6 ^ 3 = 5&lt;br&gt;
-~ 取反运算～6 = -7&lt;/p&gt;
-&lt;p&gt;&amp;lt;&amp;lt; 空位补 0，被移除的高位丢弃，空缺位补 0。&lt;/p&gt;
-&lt;p&gt;//&amp;lt;&amp;lt; 被移位的二进制最高位是 0，右移后，空缺位补 0；最高位是 1，空缺位补 1。&lt;/p&gt;
-&lt;p&gt;// &amp;lt;&amp;lt;&amp;lt; 被移位二进制最高位无论是 0 或者是 1，空缺位都用 0 补&lt;/p&gt;
-&lt;h3 id=&#34;三元运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三元运算符&#34;&gt;#&lt;/a&gt; 三元运算符&lt;/h3&gt;
-&lt;p&gt;(条件表达式)? 表达式 1 ：表达式 2&lt;/p&gt;
-&lt;h2 id=&#34;运算符的优先级&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符的优先级&#34;&gt;#&lt;/a&gt; 运算符的优先级&lt;/h2&gt;
-&lt;p&gt;只有单目运算符、三元运算符、	赋值运算符是从右向左运算的。&lt;/p&gt;
-&lt;h2 id=&#34;程序流程控制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序流程控制&#34;&gt;#&lt;/a&gt; 程序流程控制&lt;/h2&gt;
-&lt;p&gt;顺序结构&lt;br&gt;
-分支结构&lt;br&gt;
-循环结构&lt;/p&gt;
-&lt;h3 id=&#34;scanner&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#scanner&#34;&gt;#&lt;/a&gt; Scanner&lt;/h3&gt;
-&lt;p&gt;1 &amp;gt; 导包&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;2&amp;gt;Scanner 的实例化&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt; scan &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;in&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;3 &amp;gt; 调用 Scanner 类的相关方法，来获取指定类型的变量&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; scan&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;nextInt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;对于 char 型的获取，Scanner 没有提供相应的方法&lt;/p&gt;
-&lt;h3 id=&#34;switch-case&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#switch-case&#34;&gt;#&lt;/a&gt; switch-case&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;switch&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;表达式&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;case&lt;/span&gt; 常量&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-        语句&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token comment&#34;&gt;// break;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;case&lt;/span&gt; 常量&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-        语句&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token comment&#34;&gt;// break;&lt;/span&gt;
-    … …
-    &lt;span class=&#34;token keyword&#34;&gt;case&lt;/span&gt; 常量&lt;span class=&#34;token class-name&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-        语句&lt;span class=&#34;token class-name&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token comment&#34;&gt;// break;&lt;/span&gt;
-    &lt;span class=&#34;token keyword&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;
-        语句&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;token comment&#34;&gt;// break;&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;1&amp;gt;break 语句用来在执行完一个 case 分支后使程序跳出 switch 语句块；如果没有 break，程序会顺序执行到 switch 结尾&lt;/p&gt;
-&lt;p&gt;2&amp;gt;switch (表达式) 中表达式的值 必须是下述几种类型之一：byte ，short,char ，int， 枚举 (jdk 5.0) ，String (jdk 7.0)；&lt;/p&gt;
-&lt;p&gt;3&amp;gt; default 子句是 可任选的 的。同时，位置也是灵活的。当没有匹配的 case 时，执行 default&lt;/p&gt;
-&lt;h3 id=&#34;循环结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环结构&#34;&gt;#&lt;/a&gt; 循环结构&lt;/h3&gt;
-&lt;p&gt;for 循环&lt;br&gt;
-while 循环&lt;br&gt;
-do-while 循环&lt;/p&gt;
-&lt;p&gt;循环语句的四个组成部分&lt;br&gt;
-①初始化部分 (init_statement)&lt;br&gt;
-②循环条件部分 (test_exp)&lt;br&gt;
-③循环体部分 (body_statement)&lt;br&gt;
-④迭代部分 (alter_statement)&lt;/p&gt;
-&lt;h4 id=&#34;for循环&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#for循环&#34;&gt;#&lt;/a&gt; for 循环&lt;/h4&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;① 初始化 部分&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; ② 循环条件部分&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; ④ 迭代部分&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;｛
-	③ 循环体部分&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-｝&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;①初始化部分可以声明多个变量，但必须是同一个类型，用逗号分隔&lt;br&gt;
-④可以有多个变量更新，用逗号分隔&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ForTest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; args&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; sum&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-		&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-			&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-				&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-				sum&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-			&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-				sum&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-			&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-		&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-		&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;sum&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-错误：可能尚未初始化变量sum&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;while循环&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#while循环&#34;&gt;#&lt;/a&gt; while 循环&lt;/h4&gt;
-&lt;p&gt;①初始化部分&lt;br&gt;
- while (②循环条件部分)｛ ｛&lt;br&gt;
-③循环体部分；&lt;br&gt;
-④迭代部分；&lt;br&gt;
-}&lt;/p&gt;
-&lt;h4 id=&#34;do-while&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#do-while&#34;&gt;#&lt;/a&gt; do-while&lt;/h4&gt;
-&lt;p&gt;①初始化部分；&lt;br&gt;
-do{&lt;br&gt;
-③ 循环体部分&lt;br&gt;
-④ 迭代部分&lt;br&gt;
-} while (②循环条件部分);&lt;/p&gt;
-&lt;p&gt;do-while 循环至少执行一次循环体&lt;/p&gt;
-&lt;h3 id=&#34;最简单-无限-循环&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最简单-无限-循环&#34;&gt;#&lt;/a&gt; 最简单 “无限” ”  循环&lt;/h3&gt;
-&lt;p&gt;最简单 “无限” ”  循环： 格式：while (true) , for (;😉, 无限循环存在的原因是并不知道循环多少次， 需要 根据循环体内部某些 条件，来 控制 循环的结束&lt;/p&gt;
-&lt;h3 id=&#34;currenttimemillis&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#currenttimemillis&#34;&gt;#&lt;/a&gt; currentTimeMillis()&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt; start&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;currentTimeMillis&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;break-continue&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#break-continue&#34;&gt;#&lt;/a&gt; break continue&lt;/h3&gt;
-&lt;p&gt;break 语句用于终止某个语句块的执行，结束当前循环&lt;/p&gt;
-&lt;p&gt;continue 语句用于跳过其所在循环语句块的一次执行，继续下一次循环，结束当次循环&lt;/p&gt;
-&lt;p&gt;两个关键字后面都不能声明执行语句，会报错&lt;/p&gt;
-&lt;h4 id=&#34;label&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#label&#34;&gt;#&lt;/a&gt; label&lt;/h4&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;LabelTest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; args&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-		label&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-			&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; j&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-				&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
-					&lt;span class=&#34;token keyword&#34;&gt;continue&lt;/span&gt; label&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-				&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-				&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-			&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-			&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
-		&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-	&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;return&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#return&#34;&gt;#&lt;/a&gt; return&lt;/h3&gt;
-&lt;p&gt;return：并非专门用于结束循环的，它的功能是结束一个方法。当一个方法执行到一个 return 语句时，这个方法将被结束。&lt;/p&gt;
-</content>
-        <category term="JavaSE" />
-        <updated>2021-01-09T02:11:52.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://fsh010816.github.io/2021/01/08/1-java-yu-yan-gai-shu/</id>
-        <title>1_Java语言概述</title>
-        <link rel="alternate" href="http://fsh010816.github.io/2021/01/08/1-java-yu-yan-gai-shu/"/>
-        <content type="html">&lt;h1 id=&#34;java语言概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java语言概述&#34;&gt;#&lt;/a&gt; Java 语言概述&lt;/h1&gt;
-&lt;h2 id=&#34;jdk-jre&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jdk-jre&#34;&gt;#&lt;/a&gt; JDK JRE&lt;/h2&gt;
-&lt;p&gt;・JDK = JRE + 开发工具集（例如 Javac 编译工具等）&lt;br&gt;
-・JRE = JVM + Java SE 标准类库&lt;/p&gt;
-&lt;h3 id=&#34;jdk&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jdk&#34;&gt;#&lt;/a&gt; JDK&lt;/h3&gt;
-&lt;p&gt;JDK (Java Development Kit Java 开发工具包)&lt;/p&gt;
-&lt;p&gt;JDK 是提供给 Java 开发人员使用的，其中包含了 java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用在单独安装 JRE 了。其中的开发工具：编译工具 (javac.exe)  打包工具 (jar.exe) 等&lt;/p&gt;
-&lt;h3 id=&#34;jre&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jre&#34;&gt;#&lt;/a&gt; JRE&lt;/h3&gt;
-&lt;p&gt;JRE (Java Runtime Environment Java 运行环境)&lt;/p&gt;
-&lt;p&gt;包括 Java 虚拟机 (JVM Java Virtual Machine) 和 Java 程序所需的核心类库等，如果想要运行一个开发好的 Java 程序，计算机中只需要安装 JRE 即可&lt;/p&gt;
-&lt;h2 id=&#34;jdk安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#jdk安装&#34;&gt;#&lt;/a&gt; JDK 安装&lt;/h2&gt;
-&lt;p&gt;安装时会跳出安装 jre。&lt;/p&gt;
-&lt;h3 id=&#34;环境变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境变量&#34;&gt;#&lt;/a&gt; 环境变量&lt;/h3&gt;
-&lt;p&gt;path：windows 系统执行命令时要搜寻的路径。&lt;/p&gt;
-&lt;p&gt;JAVA_HOME:bin 的上一层目录&lt;/p&gt;
-&lt;p&gt;path:%JAVA_HOME%/bin&lt;/p&gt;
-&lt;h2 id=&#34;第一个java程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一个java程序&#34;&gt;#&lt;/a&gt; 第一个 Java 程序&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210109001413925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;avatar&#34;&gt;&lt;/p&gt;
-&lt;p&gt;字节码文件名是类名&lt;/p&gt;
-&lt;h2 id=&#34;注释&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注释&#34;&gt;#&lt;/a&gt; 注释&lt;/h2&gt;
-&lt;p&gt;1.// 单行&lt;/p&gt;
-&lt;p&gt;2./*&lt;/p&gt;
-&lt;p&gt;多行&lt;/p&gt;
-&lt;p&gt;*/&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;/**&lt;/p&gt;
-&lt;p&gt;文档注释&lt;/p&gt;
-&lt;p&gt;*/&lt;/p&gt;
-&lt;p&gt;注释内容可以被 JDK 提供的工具 javadoc 所解析，生成一套以网页文件形式体现的该程序的说明文档。&lt;/p&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;javadoc &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;encoding UTF&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;charset UTF&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;d myHello &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;author &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;version &lt;span class=&#34;token class-name&#34;&gt;HelloJava&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;java&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;api&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#api&#34;&gt;#&lt;/a&gt; API&lt;/h2&gt;
-&lt;p&gt;API （Application Programming Interface, 应用程序编程接口）是 Java 提供的基本编程接口。&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h2&gt;
-&lt;p&gt;1. 在一个 Java 源文件中可以声明多个 class, 只能有一个声明为 public 的，而且声明为 public 的类的类命必须与源文件名相同。&lt;/p&gt;
-&lt;p&gt;2. 程序的入口是 main 方法&lt;/p&gt;
-&lt;p&gt;3. 编译后，会生成一个或多个字节码文件，字节码文件的文件名与 Java 源文件中的类名相同&lt;/p&gt;
-&lt;h2 id=&#34;ide&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ide&#34;&gt;#&lt;/a&gt; IDE&lt;/h2&gt;
-&lt;p&gt;Integrated Development Environment&lt;/p&gt;
-</content>
-        <category term="JavaSE" />
-        <updated>2021-01-08T11:52:47.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://fsh010816.github.io/2020/12/18/hello-world/</id>
-        <title>Hello World</title>
-        <link rel="alternate" href="http://fsh010816.github.io/2020/12/18/hello-world/"/>
-        <content type="html">&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
-&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hexo new &lt;span class=&#34;token string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/writing.html&#34;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hexo server&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/server.html&#34;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hexo generate&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/generating.html&#34;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hexo deploy&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;More info: &lt;a href=&#34;https://hexo.io/docs/one-command-deployment.html&#34;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-        <updated>2020-12-18T12:06:13.968Z</updated>
-    </entry>
+  <title>Fsh</title>
+  
+  <subtitle>Fsh</subtitle>
+  <link href="http://fsh010816.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://fsh010816.github.io/"/>
+  <updated>2021-01-21T08:06:44.824Z</updated>
+  <id>http://fsh010816.github.io/</id>
+  
+  <author>
+    <name>fsh</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>5-面向对象(中)</title>
+    <link href="http://fsh010816.github.io/2021/01/19/5-mian-xiang-dui-xiang-zhong/"/>
+    <id>http://fsh010816.github.io/2021/01/19/5-mian-xiang-dui-xiang-zhong/</id>
+    <published>2021-01-19T12:34:49.000Z</published>
+    <updated>2021-01-21T08:06:44.824Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;面向对象中&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#面向对象中&quot;&gt;#&lt;/a&gt; 面向对象 (中)&lt;/h1&gt;
+&lt;h2 id=&quot;继承性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#继承性&quot;&gt;#&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4-面向对象(上)</title>
+    <link href="http://fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/"/>
+    <id>http://fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/</id>
+    <published>2021-01-18T07:02:37.000Z</published>
+    <updated>2021-01-20T03:50:47.355Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;面向对象上&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#面向对象上&quot;&gt;#&lt;/a&gt; 面向对象 (上)&lt;/h1&gt;
+&lt;h2 id=&quot;类class和对象object&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3-数组</title>
+    <link href="http://fsh010816.github.io/2021/01/13/3-shu-zu/"/>
+    <id>http://fsh010816.github.io/2021/01/13/3-shu-zu/</id>
+    <published>2021-01-13T13:47:11.000Z</published>
+    <updated>2021-01-18T06:50:37.675Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数组&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数组&quot;&gt;#&lt;/a&gt; 数组&lt;/h1&gt;
+&lt;h2 id=&quot;数组的概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数组的概述&quot;&gt;#&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Eclipse</title>
+    <link href="http://fsh010816.github.io/2021/01/12/eclipse/"/>
+    <id>http://fsh010816.github.io/2021/01/12/eclipse/</id>
+    <published>2021-01-12T14:04:56.000Z</published>
+    <updated>2021-01-21T04:42:48.494Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;eclipse&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#eclipse&quot;&gt;#&lt;/a&gt; Eclipse&lt;/h1&gt;
+&lt;h2 id=&quot;结构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#结构&quot;&gt;#&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2_Java基本语法</title>
+    <link href="http://fsh010816.github.io/2021/01/09/2-java-ji-ben-yu-fa/"/>
+    <id>http://fsh010816.github.io/2021/01/09/2-java-ji-ben-yu-fa/</id>
+    <published>2021-01-09T02:11:52.000Z</published>
+    <updated>2021-01-12T13:59:26.998Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;java基本语法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#java基本语法&quot;&gt;#&lt;/a&gt; Java 基本语法&lt;/h1&gt;
+&lt;h2 id=&quot;关键字与保留字&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1_Java语言概述</title>
+    <link href="http://fsh010816.github.io/2021/01/08/1-java-yu-yan-gai-shu/"/>
+    <id>http://fsh010816.github.io/2021/01/08/1-java-yu-yan-gai-shu/</id>
+    <published>2021-01-08T11:52:47.000Z</published>
+    <updated>2021-01-08T16:15:12.744Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;java语言概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#java语言概述&quot;&gt;#&lt;/a&gt; Java 语言概述&lt;/h1&gt;
+&lt;h2 id=&quot;jdk-jre&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="JavaSE" scheme="http://fsh010816.github.io/tags/JavaSE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://fsh010816.github.io/2020/12/18/hello-world/"/>
+    <id>http://fsh010816.github.io/2020/12/18/hello-world/</id>
+    <published>2020-12-18T12:06:13.968Z</published>
+    <updated>2020-12-18T12:06:13.968Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
 </feed>

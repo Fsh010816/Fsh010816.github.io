@@ -5,9 +5,183 @@
         <link>http://Fsh010816.github.io</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 18 Jan 2021 15:02:37 +0800</pubDate>
-        <lastBuildDate>Mon, 18 Jan 2021 15:02:37 +0800</lastBuildDate>
+        <pubDate>Tue, 19 Jan 2021 20:34:49 +0800</pubDate>
+        <lastBuildDate>Tue, 19 Jan 2021 20:34:49 +0800</lastBuildDate>
         <category>JavaSE</category>
+        <item>
+            <guid isPermalink="true">http://fsh010816.github.io/2021/01/19/5-mian-xiang-dui-xiang-zhong/</guid>
+            <title>5-面向对象(中)</title>
+            <link>http://fsh010816.github.io/2021/01/19/5-mian-xiang-dui-xiang-zhong/</link>
+            <category>JavaSE</category>
+            <pubDate>Tue, 19 Jan 2021 20:34:49 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;面向对象中&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面向对象中&#34;&gt;#&lt;/a&gt; 面向对象 (中)&lt;/h1&gt;
+&lt;h2 id=&#34;继承性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#继承性&#34;&gt;#&lt;/a&gt; 继承性&lt;/h2&gt;
+&lt;h3 id=&#34;好处&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#好处&#34;&gt;#&lt;/a&gt; 好处&lt;/h3&gt;
+&lt;p&gt;1. 继承的出现减少了代码冗余，提高了代码的复用性。&lt;br&gt;
+2. 继承的出现，更有利于功能的扩展。&lt;br&gt;
+3. 继承的出现让类与类之间产生了关系，提供了多态的前提。&lt;/p&gt;
+&lt;h3 id=&#34;格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#格式&#34;&gt;#&lt;/a&gt; 格式&lt;/h3&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2.1 体现：一旦子类 A 继承父类 B 以后，子类 A 中就获取了父类 B 中声明的所有的属性和方法。特别的，父类中声明为 private 的属性或方法，子类继承父类以后，仍然认为获取了父类中私有的结构。只有因为封装性的影响，使得子类不能直接调用父类的结构而已。&lt;/p&gt;
+&lt;p&gt;2.2 子类继承父类以后，还可以声明自己特有的属性或方法：实现功能的拓展。子类和父类的关系，不同于子集和集合的关系。extends：延展、扩展&lt;/p&gt;
+&lt;p&gt;三、Java 中关于继承性的规定：&lt;/p&gt;
+&lt;p&gt;1. 一个类可以被多个子类继承。&lt;/p&gt;
+&lt;p&gt;2.Java 中类的单继承性：一个类只能有一个父类&lt;/p&gt;
+&lt;p&gt;3. 子父类是相对的概念。&lt;/p&gt;
+&lt;p&gt;4. 子类直接继承的父类，称为：直接父类。间接继承的父类称为：间接父类&lt;/p&gt;
+&lt;p&gt;5. 子类继承父类以后，就获取了直接父类以及所有间接父类中声明的属性和方法&lt;/p&gt;
+&lt;p&gt;四、&lt;/p&gt;
+&lt;p&gt;1. 如果我们没有显式的声明一个类的父类的话，则此类继承于 java.lang.Object 类&lt;/p&gt;
+&lt;p&gt;2. 所有的 java 类（除 java.lang.Object 类之外）都直接或间接的继承于 java.lang.Object 类&lt;/p&gt;
+&lt;p&gt;3. 意味着，所有的 java 类具有 java.lang.Object 类声明的功能。&lt;/p&gt;
+&lt;h2 id=&#34;重写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重写&#34;&gt;#&lt;/a&gt; 重写&lt;/h2&gt;
+&lt;h3 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h3&gt;
+&lt;p&gt;在子类中可以根据需要对从父类中继承来的方法进行改造，也称为方法的重置、覆盖。在程序执行时，子类的方法将覆盖父类的方法。&lt;/p&gt;
+&lt;h3 id=&#34;规定&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#规定&#34;&gt;#&lt;/a&gt; 规定&lt;/h3&gt;
+&lt;p&gt;方法的声明： 权限修饰符  返回值类型  方法名 (形参列表) throws 异常的类型 {&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;				  	//方法体
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​						}&lt;/p&gt;
+&lt;p&gt;约定俗称：子类中的叫重写的方法，父类中的叫被重写的方法&lt;/p&gt;
+&lt;p&gt;① 子类重写的方法的方法名和形参列表与父类被重写的方法的方法名和形参列表相同&lt;/p&gt;
+&lt;p&gt;② 子类重写的方法的权限修饰符不小于父类被重写的方法的权限修饰符&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;特殊情况：子类不能重写父类中声明为private权限的方法
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;③ 返回值类型：&lt;/p&gt;
+&lt;p&gt;父类被重写的方法的返回值类型是 void，则子类重写的方法的返回值类型只能是 void&lt;/p&gt;
+&lt;p&gt;父类被重写的方法的返回值类型是 A 类型，则子类重写的方法的返回值类型可以是 A 类或 A 类的子类&lt;/p&gt;
+&lt;p&gt;父类被重写的方法的返回值类型是基本数据类型 (比如：double)，则子类重写的方法的返回值类型必须是相同的基本数据类型 (必须也是 double)&lt;/p&gt;
+&lt;p&gt;④ 子类重写的方法抛出的异常类型不大于父类被重写的方法抛出的异常类型&lt;/p&gt;
+&lt;p&gt;子类和父类中的同名同参数的方法要么都声明为非 static 的（考虑重写），要么都声明为 static 的（不是重写）。&lt;/p&gt;
+&lt;h2 id=&#34;super&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#super&#34;&gt;#&lt;/a&gt; super&lt;/h2&gt;
+&lt;p&gt;super 关键字的使用&lt;/p&gt;
+&lt;p&gt;1.super 理解为：父类的&lt;/p&gt;
+&lt;p&gt;2.super 可以用来调用：属性、方法、构造器&lt;/p&gt;
+&lt;p&gt;3.super 的使用：调用属性和方法&lt;/p&gt;
+&lt;p&gt;3.1 我们可以在子类的方法或构造器中。通过使用 &#34;super. 属性&#34; 或 &#34;super. 方法&#34; 的方式，显式的调用父类中声明的属性或方法。但是，通常情况下，我们习惯省略 &#34;super.&#34;&lt;/p&gt;
+&lt;p&gt;3.2 特殊情况：当子类和父类中定义了同名的属性时，我们要想在子类中调用父类中声明的属性，则必须显式的&lt;/p&gt;
+&lt;p&gt;使用 &#34;super. 属性&#34; 的方式，表明调用的是父类中声明的属性。&lt;/p&gt;
+&lt;p&gt;3.3 特殊情况：当子类重写了父类中的方法以后，我们想在子类的方法中调用父类中被重写的方法时，则必须显式的使用 &#34;super. 方法&#34; 的方式，表明调用的是父类中被重写的方法。&lt;/p&gt;
+&lt;p&gt;4.super 调用构造器&lt;/p&gt;
+&lt;p&gt;4.1  我们可以在子类的构造器中显式的使用 &#34;super (形参列表)&#34; 的方式，调用父类中声明的指定的构造器&lt;/p&gt;
+&lt;p&gt;4.2 &#34;super (形参列表)&#34; 的使用，必须声明在子类构造器的首行！&lt;/p&gt;
+&lt;p&gt;4.3 我们在类的构造器中，针对于 &#34;this (形参列表)&#34; 或 &#34;super (形参列表)&#34; 只能二选一，不能同时出现&lt;/p&gt;
+&lt;p&gt;4.4 在构造器的首行，没有显式的声明 &#34;this (形参列表)“或&#34;super (形参列表)”，则默认调用的是父类中空参的构造器：super ()&lt;/p&gt;
+&lt;p&gt;4.5 在类的多个构造器中，至少有一个类的构造器中使用了 &#34;super (形参列表)&#34;，调用父类中的构造器&lt;/p&gt;
+&lt;h2 id=&#34;子类对象实例化的全过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子类对象实例化的全过程&#34;&gt;#&lt;/a&gt; 子类对象实例化的全过程&lt;/h2&gt;
+&lt;p&gt;1. 从结果上来看：（继承性）&lt;/p&gt;
+&lt;p&gt;子类继承父类以后，就获取了父类中声明的属性或方法。&lt;/p&gt;
+&lt;p&gt;创建子类的对象，在堆空间中，就会加载所有父类中声明的属性。&lt;/p&gt;
+&lt;p&gt;2. 从过程上来看：&lt;/p&gt;
+&lt;p&gt;当我们通过子类的构造器创建子类对象时，我们一定会直接或间接的调用其父类的构造器，进而调用父类的父类的构造器，… 直到调用了 java.lang.Object 类中空参的构造器为止。正因为加载过所有的父类的结构，所以才可以看到内存中有父类中的结构，子类对象才可以考虑进行调用。&lt;/p&gt;
+&lt;p&gt;明确：虽然创建子类对象时，调用了父类的构造器，但是自始至终就创建过一个对象，即为 new 的子类对象。&lt;/p&gt;
+&lt;h2 id=&#34;多态性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多态性&#34;&gt;#&lt;/a&gt; 多态性&lt;/h2&gt;
+&lt;p&gt;1. 何为多态性：&lt;/p&gt;
+&lt;p&gt;对象的多态性：父类的引用指向子类的对象（或子类的对象赋给父类的引用）&lt;/p&gt;
+&lt;p&gt;2. 多态的使用：虚拟方法调用&lt;/p&gt;
+&lt;p&gt;有了对象的多态性以后，我们在编译期，只能调用父类中声明的方法，但在运行期，我们实际执行的是子类重写父类的方法。&lt;/p&gt;
+&lt;p&gt;子类中定义了与父类同名同参数的方法，在多态情况下，将此时父类的方法称为虚拟方法，父类根据赋给它的不同子类对象，动态调用属于子类的该方法。这样的方法调用在编译期是无法确定的。&lt;/p&gt;
+&lt;p&gt;总结：编译，看左边；运行，看右边。&lt;/p&gt;
+&lt;p&gt;3. 多态性的使用前提：  ① 类的继承关系  ② 方法的重写&lt;/p&gt;
+&lt;p&gt;4. 对象的多态性，只适用于方法，不适用于属性（编译和运行都看左边）&lt;/p&gt;
+&lt;p&gt;5.Java 引用变量有两个类型： 编译时类型和 运行时类型。编译时类型由声明该变量时使用的类型决定，运行时类型由实际赋给该变量的对象决定。简称：编译时，看左边；运行时，看右边。&lt;/p&gt;
+&lt;p&gt;多态是运行时行为&lt;/p&gt;
+&lt;p&gt;6. 一个引用类型变量如果声明为父类的类型，但实际引用的是子类对象，那么该变量就 不能 再访问子类中添加的属性和方法&lt;/p&gt;
+&lt;p&gt;7. 若子类重写了父类方法，就意味着子类里定义的方法彻底覆盖了父类里的同名方法，系统将不可能把父类里的方法转移到子类中：编译看左边，运行看右边&lt;/p&gt;
+&lt;p&gt;对于实例变量则不存在这样的现象，即使子类里定义了与父类完全相同的实例变量，这个实例变量依然不可能覆盖父类中定义的实例变量：编译运行都看左边&lt;/p&gt;
+&lt;h2 id=&#34;方法的重载与重写&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法的重载与重写&#34;&gt;#&lt;/a&gt; 方法的重载与重写&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;二者的定义细节：略&lt;/li&gt;
+&lt;li&gt;从编译和运行的角度看：&lt;br&gt;
+重载，是指允许存在多个同名方法，而这些方法的参数不同。编译器根据方法不同的参数表，对同名方法的名称做修饰。对于编译器而言，这些同名方法就成了不同的方法。它们的调用地址在编译期就绑定了。Java 的重载是可以包括父类和子类的，即子类可以重载父类的同名不同参数的方法。&lt;br&gt;
+所以：对于重载而言，在方法调用之前，编译器就已经确定了所要调用的方法，这称为 “早绑定” 或 “静态绑定”；而对于多态，只有等到方法调用的那一刻，解释运行器才会确定所要调用的具体方法，这称为 “晚绑定” 或 “动态绑定”。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; ==&lt;/h2&gt;
+&lt;p&gt;==：对于引用数据类型来讲，比较的是两个引用数据类型变量的地址值是否相同&lt;/p&gt;
+&lt;h2 id=&#34;instanceof&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#instanceof&#34;&gt;#&lt;/a&gt; instanceof&lt;/h2&gt;
+&lt;p&gt;a instanceof A: 判断对象 a 是否是类 A 的实例。如果是，返回 true；如果不是，返回 false。&lt;/p&gt;
+&lt;p&gt;使用情境：为了避免在向下转型时出现 ClassCastException 的异常，我们在向下转型之前，先进行 instanceof 的判断，一旦返回 true，就进行向下转型。如果返回 false，不进行向下转型。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210120211434690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;javalangobject类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javalangobject类&#34;&gt;#&lt;/a&gt; java.lang.Object 类&lt;/h2&gt;
+&lt;p&gt;1.Object 类是所有 Java 类的根父类&lt;/p&gt;
+&lt;p&gt;2. 如果在类的声明中未使用 extends 关键字指明其父类，则默认父类为 java.lang.Object 类&lt;/p&gt;
+&lt;p&gt;3.Object 类中的功能 (属性、方法) 就具有通用性。&lt;/p&gt;
+&lt;p&gt;属性：无&lt;/p&gt;
+&lt;p&gt;方法：equals () /toString () /getClass () /hashCode () /clone () /finalize ()、wait () 、 notify ()、notifyAll ()&lt;/p&gt;
+&lt;p&gt;4.Object 类只声明了一个空参的构造器&lt;/p&gt;
+&lt;h2 id=&#34;equals&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#equals&#34;&gt;#&lt;/a&gt; == equals()&lt;/h2&gt;
+&lt;h3 id=&#34;-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#-2&#34;&gt;#&lt;/a&gt; ==&lt;/h3&gt;
+&lt;p&gt;== ：运算符&lt;/p&gt;
+&lt;p&gt;1. 可以使用在基本数据类型变量和引用数据类型变量中&lt;/p&gt;
+&lt;p&gt;2. 如果比较的是基本数据类型变量：比较两个变量保存的数据是否相等。（不一定类型要相同）&lt;/p&gt;
+&lt;p&gt;如果比较的是引用数据类型变量：比较两个对象的地址值是否相同。即两个引用是否指向同一个对象实体&lt;/p&gt;
+&lt;p&gt;补充： == 符号使用时，必须保证符号左右两边的变量类型一致。&lt;/p&gt;
+&lt;h3 id=&#34;equals方法的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#equals方法的使用&#34;&gt;#&lt;/a&gt; equals () 方法的使用&lt;/h3&gt;
+&lt;p&gt;1. 是一个方法，而非运算符&lt;/p&gt;
+&lt;p&gt;2. 只能适用于引用数据类型&lt;/p&gt;
+&lt;p&gt;3.Object 类中 equals () 的定义：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;boolean&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;equals&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Object&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; obj&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;说明：Object 类中定义的 equals () 和 == 的作用是相同的：比较两个对象的地址值是否相同。即两个引用是否指向同一个对象实体&lt;/p&gt;
+&lt;p&gt;4. 像 String、Date、File、包装类等都重写了 Object 类中的 equals () 方法。重写以后，比较的不是两个引用的地址是否相同，而是比较两个对象的 &#34;实体内容&#34; 是否相同。&lt;/p&gt;
+&lt;p&gt;5. 通常情况下，我们自定义的类如果使用 equals () 的话，也通常是比较两个对象的 &#34;实体内容&#34; 是否相同。那么，我们就需要对 Object 类中的 equals () 进行重写.&lt;/p&gt;
+&lt;p&gt;重写的原则：比较两个对象的实体内容是否相同.&lt;/p&gt;
+&lt;h2 id=&#34;tostring&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tostring&#34;&gt;#&lt;/a&gt; toString()&lt;/h2&gt;
+&lt;p&gt;1. 当我们输出一个对象的引用时，实际上就是调用当前对象的 toString ()&lt;/p&gt;
+&lt;p&gt;2.Object 类中 toString () 的定义：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;getClass&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getName&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;@&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toHexString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;hashCode&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3. 像 String、Date、File、包装类等都重写了 Object 类中的 toString () 方法。使得在调用对象的 toString () 时，返回 &#34;实体内容&#34; 信息&lt;/p&gt;
+&lt;p&gt;4. 自定义类也可以重写 toString () 方法，当调用此方法时，返回对象的 &#34;实体内容&#34;&lt;/p&gt;
+&lt;p&gt;toString () 方法在 Object 类中定义 ，其返回值是 String 类型 ， 返回类名和它的引用地址 。&lt;br&gt;
+在进行 String 与其它类型数据的连接操作时 ，调用了自动调用 toString () 方法&lt;/p&gt;
+&lt;p&gt;基本类型数据转换为 String 类型时 ，调用了对应包装类的 toString () 方法&lt;/p&gt;
+&lt;h2 id=&#34;包装类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#包装类&#34;&gt;#&lt;/a&gt; 包装类&lt;/h2&gt;
+&lt;p&gt;java 提供了 8 种基本数据类型对应的包装类，使得基本数据类型的变量具有类的特征&lt;/p&gt;
+&lt;p&gt;String 类型 —&amp;gt; 基本数据类型、包装类：调用包装类的 parseXxx (String s)&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; str1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;123&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;parseInt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;str1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;基本数据类型、包装类 —&amp;gt;String 类型：调用 String 重载的 valueOf (Xxx xxx)&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//方式1：连接运算&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; str1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; num1 &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//方式2：调用String的valueOf(Xxx xxx)&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; f1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;12.3f&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; str2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;valueOf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;f1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//&#34;12.3&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;基本数据类型 —&amp;gt; 包装类：调用包装类的构造器&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; in1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;num1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;in1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; in2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;123&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//通过字符串参数构造包装类对象&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;in2&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token class-name&#34;&gt;Boolean&lt;/span&gt; b3 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Boolean&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;true123&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;b3&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//false&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;自动装箱：基本数据类型 —&amp;gt; 包装类&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; in1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; num2&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//自动装箱&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num3 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; in1&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//自动拆箱&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;包装类 —&amp;gt; 基本数据类型：调用包装类 Xxx 的 xxxValue ()&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; in1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; in1&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;intValue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;自动拆箱：包装类 —&amp;gt; 基本数据类型&lt;/p&gt;
+&lt;p&gt;面试题&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//Integer内部定义了IntegerCache结构，IntegerCache中定义了Integer[],&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//保存了从-128~127范围的整数。如果我们使用自动装箱的方式，给Integer赋值的范围在&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//-128~127范围内时，可以直接使用数组中的元素，不用再去new了。目的：提高效率&lt;/span&gt;
+
+&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; m &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;m &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; n&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//true&lt;/span&gt;
+
+&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; x &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;128&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//相当于new了一个Integer对象&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt; y &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;128&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//相当于new了一个Integer对象&lt;/span&gt;
+&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;x &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; y&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//false&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://fsh010816.github.io/2021/01/18/4-mian-xiang-dui-xiang-shang/</guid>
             <title>4-面向对象(上)</title>
@@ -101,6 +275,11 @@
 隐藏一个类中不需要对外提供的实现细节；&lt;br&gt;
 使用者只能通过事先定制好的方法来访问数据，可以方便地加入控制逻辑，限制对属性的不合理操作；&lt;br&gt;
 便于修改，增强代码的可维护性&lt;/p&gt;
+&lt;h3 id=&#34;体现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#体现&#34;&gt;#&lt;/a&gt; 体现&lt;/h3&gt;
+&lt;p&gt;1. 将类的属性私有化，同时，提供公共的方法来获取 (get) 和设置 (set) 此属性的值&lt;/p&gt;
+&lt;p&gt;2. 不对外暴露的私有的方法&lt;/p&gt;
+&lt;p&gt;3. 单例模式 (将构造器私有化)&lt;/p&gt;
+&lt;p&gt;4. 如果不希望类在包外被调用，可以将类设置为私有的&lt;/p&gt;
 &lt;h3 id=&#34;权限修饰符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#权限修饰符&#34;&gt;#&lt;/a&gt; 权限修饰符&lt;/h3&gt;
 &lt;p&gt;4 种权限修饰符都可以修饰类的内部结构：属性、方法、构造器、内部类&lt;/p&gt;
 &lt;p&gt;修饰类，只能用：缺省和 public&lt;/p&gt;
@@ -323,7 +502,71 @@ arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#
 &lt;p&gt;在包下 new class&lt;/p&gt;
 &lt;h2 id=&#34;导入工程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#导入工程&#34;&gt;#&lt;/a&gt; 导入工程&lt;/h2&gt;
 &lt;img src=&#34;https://img-blog.csdnimg.cn/20210112235144400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom: 50%;&#34;&gt;
-&lt;img src=&#34;https://img-blog.csdnimg.cn/20210112235144428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt; ]]></description>
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210112235144428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
+&lt;h2 id=&#34;提示功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#提示功能&#34;&gt;#&lt;/a&gt; 提示功能&lt;/h2&gt;
+&lt;p&gt;windows preferences&lt;/p&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210120121905464.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; style=&#34;zoom:50%;&#34;&gt;
+&lt;p&gt;. 改成 a-z.&lt;/p&gt;
+&lt;h2 id=&#34;快捷键设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#快捷键设置&#34;&gt;#&lt;/a&gt; 快捷键设置&lt;/h2&gt;
+&lt;p&gt;windows preferences 搜索 keys&lt;/p&gt;
+&lt;h2 id=&#34;快捷键&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#快捷键&#34;&gt;#&lt;/a&gt; 快捷键&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;/*
+ * Eclipse中的快捷键：
+ * 1.补全代码的声明：alt + /
+ * 2.快速修复: ctrl + 1  
+ * 3.批量导包：ctrl + shift + o
+ * 4.使用单行注释：ctrl + /
+ * 5.使用多行注释： ctrl + shift + /   
+ * 6.取消多行注释：ctrl + shift + \
+ * 7.复制指定行的代码：ctrl + alt + down 或 ctrl + alt + up
+ * 8.删除指定行的代码：ctrl + d
+ * 9.上下移动代码：alt + up  或 alt + down
+ * 10.切换到下一行代码空位：shift + enter
+ * 11.切换到上一行代码空位：ctrl + shift + enter
+ * 12.如何查看源码：ctrl + 选中指定的结构   或  ctrl + shift + t
+ * 13.退回到前一个编辑的页面：alt + left 
+ * 14.进入到下一个编辑的页面(针对于上面那条来说的)：alt + right
+ * 15.光标选中指定的类，查看继承树结构：ctrl + t
+ * 16.复制代码： ctrl + c
+ * 17.撤销： ctrl + z
+ * 18.反撤销： ctrl + y
+ * 19.剪切：ctrl + x 
+ * 20.粘贴：ctrl + v
+ * 21.保存： ctrl + s
+ * 22.全选：ctrl + a
+ * 23.格式化代码： ctrl + shift + f
+ * 24.选中数行，整体往后移动：tab
+ * 25.选中数行，整体往前移动：shift + tab
+ * 26.在当前类中，显示类结构，并支持搜索指定的方法、属性等：ctrl + o
+ * 27.批量修改指定的变量名、方法名、类名等：alt + shift + r
+ * 28.选中的结构的大小写的切换：变成大写： ctrl + shift + x
+ * 29.选中的结构的大小写的切换：变成小写：ctrl + shift + y
+ * 30.调出生成getter/setter/构造器等结构： alt + shift + s
+ * 31.显示当前选择资源(工程 or 文件)的属性：alt + enter
+ * 32.快速查找：参照选中的Word快速定位到下一个 ：ctrl + k
+ * 
+ * 33.关闭当前窗口：ctrl + w
+ * 34.关闭所有的窗口：ctrl + shift + w
+ * 35.查看指定的结构使用过的地方：ctrl + alt + g
+ * 36.查找与替换：ctrl + f
+ * 37.最大化当前的View：ctrl + m
+ * 38.直接定位到当前行的首位：home
+ * 39.直接定位到当前行的末位：end
+ */&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;java中的junit单元测试&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java中的junit单元测试&#34;&gt;#&lt;/a&gt; Java 中的 JUnit 单元测试&lt;/h2&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;p&gt;1. 选中当前工程 - 右键选择：build path - add libraries - JUnit 4 - 下一步&lt;/p&gt;
+&lt;p&gt;2. 创建 Java 类，进行单元测试。&lt;/p&gt;
+&lt;p&gt;此时的 Java 类要求：① 此类是 public 的  ②此类提供公共的无参的构造器&lt;/p&gt;
+&lt;p&gt;3. 此类中声明单元测试方法。&lt;/p&gt;
+&lt;p&gt;此时的单元测试方法：方法的权限是 public, 没有返回值，没有形参&lt;/p&gt;
+&lt;p&gt;4. 此单元测试方法上需要声明注解：@Test, 并在单元测试类中导入：import org.junit.Test;&lt;/p&gt;
+&lt;p&gt;5. 声明好单元测试方法以后，就可以在方法体内测试相关的代码。&lt;/p&gt;
+&lt;p&gt;6. 写完代码以后，左键双击单元测试方法名，右键：run as - JUnit Test&lt;/p&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;1. 如果执行结果没有任何异常：绿条&lt;/p&gt;
+&lt;p&gt;2. 如果执行结果出现异常：红条&lt;/p&gt;
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://fsh010816.github.io/2021/01/09/2-java-ji-ben-yu-fa/</guid>
