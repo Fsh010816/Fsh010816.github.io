@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    3.5k
                 </div>
                 
 
@@ -530,6 +530,7 @@
 <p>==：对于引用数据类型来讲，比较的是两个引用数据类型变量的地址值是否相同</p>
 <h2 id="instanceof"><a class="markdownIt-Anchor" href="#instanceof">#</a> instanceof</h2>
 <p>a instanceof A: 判断对象 a 是否是类 A 的实例。如果是，返回 true；如果不是，返回 false。</p>
+<p>要求 x 所属的类与类 A 必须是子类和父类的关系，否则编译错误</p>
 <p>使用情境：为了避免在向下转型时出现 ClassCastException 的异常，我们在向下转型之前，先进行 instanceof 的判断，一旦返回 true，就进行向下转型。如果返回 false，不进行向下转型。</p>
 <p><img src="https://img-blog.csdnimg.cn/20210120211434690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
 <h2 id="javalangobject类"><a class="markdownIt-Anchor" href="#javalangobject类">#</a> java.lang.Object 类</h2>
@@ -539,6 +540,7 @@
 <p>属性：无</p>
 <p>方法：equals () /toString () /getClass () /hashCode () /clone () /finalize ()、wait () 、 notify ()、notifyAll ()</p>
 <p>4.Object 类只声明了一个空参的构造器</p>
+<p>数组的父类是 Object</p>
 <h2 id="equals"><a class="markdownIt-Anchor" href="#equals">#</a> == equals()</h2>
 <h3 id="-2"><a class="markdownIt-Anchor" href="#-2">#</a> ==</h3>
 <p>== ：运算符</p>
@@ -559,6 +561,10 @@
 <p>重写的原则：比较两个对象的实体内容是否相同.</p>
 <h2 id="tostring"><a class="markdownIt-Anchor" href="#tostring">#</a> toString()</h2>
 <p>1. 当我们输出一个对象的引用时，实际上就是调用当前对象的 toString ()</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">"abc"</span><span class="token punctuation">;</span>
+s <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//null</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//空指针异常</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2.Object 类中 toString () 的定义：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"@"</span> <span class="token operator">+</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -570,6 +576,7 @@
 <p>基本类型数据转换为 String 类型时 ，调用了对应包装类的 toString () 方法</p>
 <h2 id="包装类"><a class="markdownIt-Anchor" href="#包装类">#</a> 包装类</h2>
 <p>java 提供了 8 种基本数据类型对应的包装类，使得基本数据类型的变量具有类的特征</p>
+<img src="https://img-blog.csdnimg.cn/20210121161225569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" style="zoom:50%;">
 <p>String 类型 —&gt; 基本数据类型、包装类：调用包装类的 parseXxx (String s)</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> num2 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -610,6 +617,7 @@
 <span class="token class-name">Integer</span> x <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span><span class="token comment">//相当于new了一个Integer对象</span>
 <span class="token class-name">Integer</span> y <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span><span class="token comment">//相当于new了一个Integer对象</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x <span class="token operator">==</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20210121161225670.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 
                 
             </div>
@@ -845,18 +853,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/19/5-mian-xiang-dui-xiang-zhong/">
+                <a href="/2021/01/21/6-mian-xiang-dui-xiang-xia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="5-面向对象(中)">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="6-面向对象(下)">
                         
-                        <span class="card-title">5-面向对象(中)</span>
+                        <span class="card-title">6-面向对象(下)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -866,9 +873,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-19
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -881,7 +888,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
