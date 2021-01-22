@@ -556,83 +556,23 @@
 <p><img src="https://img-blog.csdnimg.cn/20210122150639663.png#pic_center" alt=""></p>
 <h2 id="代码块"><a class="markdownIt-Anchor" href="#代码块">#</a> 代码块</h2>
 <p>代码块（或初始化块）</p>
-<ul>
-<li>
-<ol>
-<li>代码块的作用：用来初始化类、对象</li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>代码块如果有修饰的话，只能使用 static.</li>
-</ol>
-</li>
-<li>
-<ol start="3">
-<li>分类：静态代码块  vs 非静态代码块</li>
-</ol>
-</li>
-<li></li>
-<li>
-<ol start="4">
-<li>静态代码块</li>
-</ol>
-</li>
-<li>
-<pre><code>&gt;内部可以有输出语句
-</code></pre>
-</li>
-<li>
-<pre><code>&gt;随着类的加载而执行,而且只执行一次
-</code></pre>
-</li>
-<li>
-<pre><code>&gt;作用：初始化类的信息
-</code></pre>
-</li>
-<li>
-<pre><code>&gt;如果一个类中定义了多个静态代码块，则按照声明的先后顺序执行
-</code></pre>
-</li>
-<li>
-<pre><code>&gt;静态代码块的执行要优先于非静态代码块的执行
-</code></pre>
-</li>
-<li>
-<pre><code>&gt;静态代码块内只能调用静态的属性、静态的方法，不能调用非静态的结构
-</code></pre>
-</li>
-<li></li>
-<li>
-<ol start="5">
-<li>非静态代码块</li>
-</ol>
-</li>
-<li>
-<pre><code> &gt;内部可以有输出语句
-</code></pre>
-</li>
-<li>
-<pre><code> &gt;随着对象的创建而执行
-</code></pre>
-</li>
-<li>
-<pre><code> &gt;每创建一个对象，就执行一次非静态代码块
-</code></pre>
-</li>
-<li>
-<pre><code> &gt;作用：可以在创建对象时，对对象的属性等进行初始化
-</code></pre>
-</li>
-<li>
-<pre><code> &gt;如果一个类中定义了多个非静态代码块，则按照声明的先后顺序执行
-</code></pre>
-</li>
-<li>
-<pre><code> &gt;非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法
-</code></pre>
-</li>
-</ul>
+<p>1. 代码块的作用：用来初始化类、对象</p>
+<p>2. 代码块如果有修饰的话，只能使用 static.</p>
+<p>3. 分类：静态代码块  vs 非静态代码块</p>
+<p>4. 静态代码块</p>
+<p>内部可以有输出语句</p>
+<p>随着类的加载而执行，而且只执行一次</p>
+<p>作用：初始化类的信息</p>
+<p>如果一个类中定义了多个静态代码块，则按照声明的先后顺序执行</p>
+<p>静态代码块的执行要优先于非静态代码块的执行</p>
+<p>静态代码块内只能调用静态的属性、静态的方法，不能调用非静态的结构</p>
+<p>5. 非静态代码块</p>
+<p>内部可以有输出语句</p>
+<p>随着对象的创建而执行</p>
+<p>每创建一个对象，就执行一次非静态代码块</p>
+<p>作用：可以在创建对象时，对对象的属性等进行初始化</p>
+<p>如果一个类中定义了多个非静态代码块，则按照声明的先后顺序执行</p>
+<p>非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法</p>
 <h2 id="对属性可以赋值的位置"><a class="markdownIt-Anchor" href="#对属性可以赋值的位置">#</a> 对属性可以赋值的位置：</h2>
 <ul>
 <li>①默认初始化</li>
@@ -643,100 +583,30 @@
 <li>执行的先后顺序：① - ② / ⑤ - ③ - ④</li>
 </ul>
 <h2 id="final"><a class="markdownIt-Anchor" href="#final">#</a> final</h2>
-<ul>
-<li>
-<ol>
-<li>final 可以用来修饰的结构：类、方法、变量</li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>final 用来修饰一个类：此类不能被其他类所继承。</li>
-</ol>
-</li>
-<li>
-<pre><code>     比如：String类、System类、StringBuffer类
-</code></pre>
-</li>
-<li>
-<ol start="3">
-<li>final 用来修饰方法：表明此方法不可以被重写</li>
-</ol>
-</li>
-<li>
-<pre><code> 	比如：Object类中getClass();
-</code></pre>
-</li>
-<li>
-<ol start="4">
-<li>final 用来修饰变量：此时的 "变量" 就称为是一个常量</li>
-</ol>
-</li>
-<li>
-<pre><code> 4.1 final修饰属性：可以考虑赋值的位置有：显式初始化、代码块中初始化、构造器中初始化
-</code></pre>
-</li>
-<li>
-<pre><code> 4.2 final修饰局部变量：
-</code></pre>
-</li>
-<li>
-<pre><code>      尤其是使用final修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值
-</code></pre>
-</li>
-<li>
-<pre><code>      以后，就只能在方法体内使用此形参，但不能进行重新赋值。
-</code></pre>
-</li>
-<li></li>
-<li>static final 用来修饰属性：全局常量</li>
-</ul>
+<p>1.final 可以用来修饰的结构：类、方法、变量</p>
+<p>2.final 用来修饰一个类：此类不能被其他类所继承。</p>
+<p>比如：String 类、System 类、StringBuffer 类</p>
+<p>3.final 用来修饰方法：表明此方法不可以被重写</p>
+<p>比如：Object 类中 getClass ();</p>
+<p>4.final 用来修饰变量：此时的 "变量" 就称为是一个常量</p>
+<p>4.1 final 修饰属性：可以考虑赋值的位置有：显式初始化、代码块中初始化、构造器中初始化</p>
+<p>4.2 final 修饰局部变量：</p>
+<p>尤其是使用 final 修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值</p>
+<p>以后，就只能在方法体内使用此形参，但不能进行重新赋值。</p>
+<p>static final 用来修饰属性：全局常量</p>
 <h2 id="abstract关键字的使用"><a class="markdownIt-Anchor" href="#abstract关键字的使用">#</a> abstract 关键字的使用</h2>
-<ul>
-<li>
 <p>1.abstract: 抽象的</p>
-</li>
-<li>
 <p>2.abstract 可以用来修饰的结构：类、方法</p>
-</li>
-<li></li>
-<li>
-<ol start="3">
-<li>abstract 修饰类：抽象类</li>
-</ol>
-</li>
-<li>
+<p>3.abstract 修饰类：抽象类</p>
 <p>此类不能实例化</p>
-</li>
-<li>
 <p>抽象类中一定有构造器，便于子类实例化时调用（涉及：子类对象实例化的全过程）</p>
-</li>
-<li>
 <p>开发中，都会提供抽象类的子类，让子类对象实例化，完成相关的操作</p>
-</li>
-<li></li>
-<li>
-<ol start="4">
-<li>
-<p>abstract 修饰方法：抽象方法</p>
+<p>4.abstract 修饰方法：抽象方法</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-</ol>
-</li>
-<li>
 <p>抽象方法只有方法的声明，没有方法体</p>
-</li>
-<li>
 <p>包含抽象方法的类，一定是一个抽象类。反之，抽象类中可以没有抽象方法的。</p>
-</li>
-<li>
 <p>若子类重写了父类中的所有的抽象方法后，此子类方可实例化</p>
-</li>
-<li>
-<pre><code>    若子类没有重写父类中的所有的抽象方法，则此子类也是一个抽象类，需要使用abstract修饰
-</code></pre>
-</li>
-</ul>
+<p>若子类没有重写父类中的所有的抽象方法，则此子类也是一个抽象类，需要使用 abstract 修饰</p>
 <p>abstract 使用上的注意点：</p>
 <p>1.abstract 不能用来修饰：属性、构造器等结构</p>
 <p>2.abstract 不能用来修饰私有方法、静态方法、final 的方法、final 的类</p>
@@ -826,42 +696,22 @@
 	
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="接口"><a class="markdownIt-Anchor" href="#接口">#</a> 接口</h2>
-<ul>
-<li>1. 接口使用 interface 来定义</li>
-<li>2.Java 中，接口和类是并列的两个结构</li>
-<li>3. 如何定义接口：定义接口中的成员</li>
-<li></li>
-<li>
-<pre><code> 3.1 JDK7及以前：只能定义全局常量和抽象方法
-</code></pre>
-</li>
-<li>
-<pre><code> 	全局常量：public static final的.但是书写时，可以省略不写
-</code></pre>
-</li>
-<li>
-<pre><code> 	抽象方法：public abstract的
-</code></pre>
-</li>
-<li></li>
-<li>
-<pre><code> 3.2 JDK8：除了定义全局常量和抽象方法之外，还可以定义静态方法、默认方法（略）
-</code></pre>
-</li>
-<li></li>
-<li>4. 接口中不能定义构造器的！意味着接口不可以实例化</li>
-<li></li>
-<li>5.Java 开发中，接口通过让类去实现 (implements) 的方式来使用.</li>
-<li>如果实现类覆盖了接口中的所有抽象方法，则此实现类就可以实例化</li>
-<li>如果实现类没有覆盖接口中所有的抽象方法，则此实现类仍为一个抽象类</li>
-<li></li>
-<li>7.Java 类可以实现多个接口   —&gt; 弥补了 Java 单继承性的局限性</li>
-<li>格式：class AA extends BB implements CC,DD,EE</li>
-<li></li>
-<li>7. 接口与接口之间可以继承，而且可以多继承</li>
-<li>8. 接口的具体使用，体现多态性</li>
-<li>9. 接口，实际上可以看做是一种规范</li>
-</ul>
+<p>1. 接口使用 interface 来定义</p>
+<p>2.Java 中，接口和类是并列的两个结构</p>
+<p>3. 如何定义接口：定义接口中的成员</p>
+<p>3.1 JDK7 及以前：只能定义全局常量和抽象方法</p>
+<p>全局常量：public static final 的。但是书写时，可以省略不写</p>
+<p>抽象方法：public abstract 的</p>
+<p>3.2 JDK8：除了定义全局常量和抽象方法之外，还可以定义静态方法、默认方法（略）</p>
+<p>4. 接口中不能定义构造器的！意味着接口不可以实例化</p>
+<p>5.Java 开发中，接口通过让类去实现 (implements) 的方式来使用.</p>
+<p>如果实现类覆盖了接口中的所有抽象方法，则此实现类就可以实例化</p>
+<p>如果实现类没有覆盖接口中所有的抽象方法，则此实现类仍为一个抽象类</p>
+<p>6.Java 类可以实现多个接口   —&gt; 弥补了 Java 单继承性的局限性</p>
+<p>格式：class AA extends BB implements CC,DD,EE</p>
+<p>7. 接口与接口之间可以继承，而且可以多继承</p>
+<p>8. 接口的具体使用，体现多态性</p>
+<p>9. 接口，实际上可以看做是一种规范</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
  * 接口的应用：代理模式
  * 

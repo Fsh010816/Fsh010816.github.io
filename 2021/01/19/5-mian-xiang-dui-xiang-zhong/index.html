@@ -468,15 +468,14 @@
 <h3 id="定义"><a class="markdownIt-Anchor" href="#定义">#</a> 定义</h3>
 <p>在子类中可以根据需要对从父类中继承来的方法进行改造，也称为方法的重置、覆盖。在程序执行时，子类的方法将覆盖父类的方法。</p>
 <h3 id="规定"><a class="markdownIt-Anchor" href="#规定">#</a> 规定</h3>
-<p>方法的声明： 权限修饰符  返回值类型  方法名 (形参列表) throws 异常的类型 {</p>
-<pre><code>				  	//方法体
-</code></pre>
-<p>​						}</p>
+<p>方法的声明：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">权限修饰符  返回值类型  方法名<span class="token punctuation">(</span>形参列表<span class="token punctuation">)</span> <span class="token keyword">throws</span> 异常的类型<span class="token punctuation">{</span>
+    <span class="token comment">//方法体</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>约定俗称：子类中的叫重写的方法，父类中的叫被重写的方法</p>
 <p>① 子类重写的方法的方法名和形参列表与父类被重写的方法的方法名和形参列表相同</p>
 <p>② 子类重写的方法的权限修饰符不小于父类被重写的方法的权限修饰符</p>
-<pre><code>特殊情况：子类不能重写父类中声明为private权限的方法
-</code></pre>
+<p>特殊情况：子类不能重写父类中声明为 private 权限的方法</p>
 <p>③ 返回值类型：</p>
 <p>父类被重写的方法的返回值类型是 void，则子类重写的方法的返回值类型只能是 void</p>
 <p>父类被重写的方法的返回值类型是 A 类型，则子类重写的方法的返回值类型可以是 A 类或 A 类的子类</p>

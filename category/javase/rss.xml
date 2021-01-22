@@ -126,83 +126,23 @@
 &lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210122150639663.png#pic_center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;代码块&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码块&#34;&gt;#&lt;/a&gt; 代码块&lt;/h2&gt;
 &lt;p&gt;代码块（或初始化块）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ol&gt;
-&lt;li&gt;代码块的作用：用来初始化类、对象&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;代码块如果有修饰的话，只能使用 static.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;分类：静态代码块  vs 非静态代码块&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;静态代码块&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;内部可以有输出语句
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;随着类的加载而执行,而且只执行一次
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;作用：初始化类的信息
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;如果一个类中定义了多个静态代码块，则按照声明的先后顺序执行
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;静态代码块的执行要优先于非静态代码块的执行
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;静态代码块内只能调用静态的属性、静态的方法，不能调用非静态的结构
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;非静态代码块&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; &amp;gt;内部可以有输出语句
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; &amp;gt;随着对象的创建而执行
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; &amp;gt;每创建一个对象，就执行一次非静态代码块
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; &amp;gt;作用：可以在创建对象时，对对象的属性等进行初始化
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; &amp;gt;如果一个类中定义了多个非静态代码块，则按照声明的先后顺序执行
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; &amp;gt;非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;1. 代码块的作用：用来初始化类、对象&lt;/p&gt;
+&lt;p&gt;2. 代码块如果有修饰的话，只能使用 static.&lt;/p&gt;
+&lt;p&gt;3. 分类：静态代码块  vs 非静态代码块&lt;/p&gt;
+&lt;p&gt;4. 静态代码块&lt;/p&gt;
+&lt;p&gt;内部可以有输出语句&lt;/p&gt;
+&lt;p&gt;随着类的加载而执行，而且只执行一次&lt;/p&gt;
+&lt;p&gt;作用：初始化类的信息&lt;/p&gt;
+&lt;p&gt;如果一个类中定义了多个静态代码块，则按照声明的先后顺序执行&lt;/p&gt;
+&lt;p&gt;静态代码块的执行要优先于非静态代码块的执行&lt;/p&gt;
+&lt;p&gt;静态代码块内只能调用静态的属性、静态的方法，不能调用非静态的结构&lt;/p&gt;
+&lt;p&gt;5. 非静态代码块&lt;/p&gt;
+&lt;p&gt;内部可以有输出语句&lt;/p&gt;
+&lt;p&gt;随着对象的创建而执行&lt;/p&gt;
+&lt;p&gt;每创建一个对象，就执行一次非静态代码块&lt;/p&gt;
+&lt;p&gt;作用：可以在创建对象时，对对象的属性等进行初始化&lt;/p&gt;
+&lt;p&gt;如果一个类中定义了多个非静态代码块，则按照声明的先后顺序执行&lt;/p&gt;
+&lt;p&gt;非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法&lt;/p&gt;
 &lt;h2 id=&#34;对属性可以赋值的位置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对属性可以赋值的位置&#34;&gt;#&lt;/a&gt; 对属性可以赋值的位置：&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;①默认初始化&lt;/li&gt;
@@ -213,100 +153,30 @@
 &lt;li&gt;执行的先后顺序：① - ② / ⑤ - ③ - ④&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;final&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#final&#34;&gt;#&lt;/a&gt; final&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ol&gt;
-&lt;li&gt;final 可以用来修饰的结构：类、方法、变量&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;final 用来修饰一个类：此类不能被其他类所继承。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;     比如：String类、System类、StringBuffer类
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;final 用来修饰方法：表明此方法不可以被重写&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; 	比如：Object类中getClass();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;final 用来修饰变量：此时的 &#34;变量&#34; 就称为是一个常量&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; 4.1 final修饰属性：可以考虑赋值的位置有：显式初始化、代码块中初始化、构造器中初始化
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; 4.2 final修饰局部变量：
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;      尤其是使用final修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;      以后，就只能在方法体内使用此形参，但不能进行重新赋值。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;static final 用来修饰属性：全局常量&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;1.final 可以用来修饰的结构：类、方法、变量&lt;/p&gt;
+&lt;p&gt;2.final 用来修饰一个类：此类不能被其他类所继承。&lt;/p&gt;
+&lt;p&gt;比如：String 类、System 类、StringBuffer 类&lt;/p&gt;
+&lt;p&gt;3.final 用来修饰方法：表明此方法不可以被重写&lt;/p&gt;
+&lt;p&gt;比如：Object 类中 getClass ();&lt;/p&gt;
+&lt;p&gt;4.final 用来修饰变量：此时的 &#34;变量&#34; 就称为是一个常量&lt;/p&gt;
+&lt;p&gt;4.1 final 修饰属性：可以考虑赋值的位置有：显式初始化、代码块中初始化、构造器中初始化&lt;/p&gt;
+&lt;p&gt;4.2 final 修饰局部变量：&lt;/p&gt;
+&lt;p&gt;尤其是使用 final 修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值&lt;/p&gt;
+&lt;p&gt;以后，就只能在方法体内使用此形参，但不能进行重新赋值。&lt;/p&gt;
+&lt;p&gt;static final 用来修饰属性：全局常量&lt;/p&gt;
 &lt;h2 id=&#34;abstract关键字的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#abstract关键字的使用&#34;&gt;#&lt;/a&gt; abstract 关键字的使用&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
 &lt;p&gt;1.abstract: 抽象的&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;2.abstract 可以用来修饰的结构：类、方法&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;abstract 修饰类：抽象类&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
+&lt;p&gt;3.abstract 修饰类：抽象类&lt;/p&gt;
 &lt;p&gt;此类不能实例化&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;抽象类中一定有构造器，便于子类实例化时调用（涉及：子类对象实例化的全过程）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;开发中，都会提供抽象类的子类，让子类对象实例化，完成相关的操作&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;abstract 修饰方法：抽象方法&lt;/p&gt;
+&lt;p&gt;4.abstract 修饰方法：抽象方法&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;abstract&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;eat&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;抽象方法只有方法的声明，没有方法体&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;包含抽象方法的类，一定是一个抽象类。反之，抽象类中可以没有抽象方法的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;若子类重写了父类中的所有的抽象方法后，此子类方可实例化&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;    若子类没有重写父类中的所有的抽象方法，则此子类也是一个抽象类，需要使用abstract修饰
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;若子类没有重写父类中的所有的抽象方法，则此子类也是一个抽象类，需要使用 abstract 修饰&lt;/p&gt;
 &lt;p&gt;abstract 使用上的注意点：&lt;/p&gt;
 &lt;p&gt;1.abstract 不能用来修饰：属性、构造器等结构&lt;/p&gt;
 &lt;p&gt;2.abstract 不能用来修饰私有方法、静态方法、final 的方法、final 的类&lt;/p&gt;
@@ -396,42 +266,22 @@
 	
 &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;接口&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#接口&#34;&gt;#&lt;/a&gt; 接口&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;1. 接口使用 interface 来定义&lt;/li&gt;
-&lt;li&gt;2.Java 中，接口和类是并列的两个结构&lt;/li&gt;
-&lt;li&gt;3. 如何定义接口：定义接口中的成员&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; 3.1 JDK7及以前：只能定义全局常量和抽象方法
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; 	全局常量：public static final的.但是书写时，可以省略不写
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; 	抽象方法：public abstract的
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt; 3.2 JDK8：除了定义全局常量和抽象方法之外，还可以定义静态方法、默认方法（略）
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;4. 接口中不能定义构造器的！意味着接口不可以实例化&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;5.Java 开发中，接口通过让类去实现 (implements) 的方式来使用.&lt;/li&gt;
-&lt;li&gt;如果实现类覆盖了接口中的所有抽象方法，则此实现类就可以实例化&lt;/li&gt;
-&lt;li&gt;如果实现类没有覆盖接口中所有的抽象方法，则此实现类仍为一个抽象类&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;7.Java 类可以实现多个接口   —&amp;gt; 弥补了 Java 单继承性的局限性&lt;/li&gt;
-&lt;li&gt;格式：class AA extends BB implements CC,DD,EE&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;li&gt;7. 接口与接口之间可以继承，而且可以多继承&lt;/li&gt;
-&lt;li&gt;8. 接口的具体使用，体现多态性&lt;/li&gt;
-&lt;li&gt;9. 接口，实际上可以看做是一种规范&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;1. 接口使用 interface 来定义&lt;/p&gt;
+&lt;p&gt;2.Java 中，接口和类是并列的两个结构&lt;/p&gt;
+&lt;p&gt;3. 如何定义接口：定义接口中的成员&lt;/p&gt;
+&lt;p&gt;3.1 JDK7 及以前：只能定义全局常量和抽象方法&lt;/p&gt;
+&lt;p&gt;全局常量：public static final 的。但是书写时，可以省略不写&lt;/p&gt;
+&lt;p&gt;抽象方法：public abstract 的&lt;/p&gt;
+&lt;p&gt;3.2 JDK8：除了定义全局常量和抽象方法之外，还可以定义静态方法、默认方法（略）&lt;/p&gt;
+&lt;p&gt;4. 接口中不能定义构造器的！意味着接口不可以实例化&lt;/p&gt;
+&lt;p&gt;5.Java 开发中，接口通过让类去实现 (implements) 的方式来使用.&lt;/p&gt;
+&lt;p&gt;如果实现类覆盖了接口中的所有抽象方法，则此实现类就可以实例化&lt;/p&gt;
+&lt;p&gt;如果实现类没有覆盖接口中所有的抽象方法，则此实现类仍为一个抽象类&lt;/p&gt;
+&lt;p&gt;6.Java 类可以实现多个接口   —&amp;gt; 弥补了 Java 单继承性的局限性&lt;/p&gt;
+&lt;p&gt;格式：class AA extends BB implements CC,DD,EE&lt;/p&gt;
+&lt;p&gt;7. 接口与接口之间可以继承，而且可以多继承&lt;/p&gt;
+&lt;p&gt;8. 接口的具体使用，体现多态性&lt;/p&gt;
+&lt;p&gt;9. 接口，实际上可以看做是一种规范&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;/*
  * 接口的应用：代理模式
  * 
@@ -842,15 +692,14 @@
 &lt;h3 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h3&gt;
 &lt;p&gt;在子类中可以根据需要对从父类中继承来的方法进行改造，也称为方法的重置、覆盖。在程序执行时，子类的方法将覆盖父类的方法。&lt;/p&gt;
 &lt;h3 id=&#34;规定&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#规定&#34;&gt;#&lt;/a&gt; 规定&lt;/h3&gt;
-&lt;p&gt;方法的声明： 权限修饰符  返回值类型  方法名 (形参列表) throws 异常的类型 {&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;				  	//方法体
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;​						}&lt;/p&gt;
+&lt;p&gt;方法的声明：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;权限修饰符  返回值类型  方法名&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;形参列表&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;throws&lt;/span&gt; 异常的类型&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;//方法体&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;约定俗称：子类中的叫重写的方法，父类中的叫被重写的方法&lt;/p&gt;
 &lt;p&gt;① 子类重写的方法的方法名和形参列表与父类被重写的方法的方法名和形参列表相同&lt;/p&gt;
 &lt;p&gt;② 子类重写的方法的权限修饰符不小于父类被重写的方法的权限修饰符&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;特殊情况：子类不能重写父类中声明为private权限的方法
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;特殊情况：子类不能重写父类中声明为 private 权限的方法&lt;/p&gt;
 &lt;p&gt;③ 返回值类型：&lt;/p&gt;
 &lt;p&gt;父类被重写的方法的返回值类型是 void，则子类重写的方法的返回值类型只能是 void&lt;/p&gt;
 &lt;p&gt;父类被重写的方法的返回值类型是 A 类型，则子类重写的方法的返回值类型可以是 A 类或 A 类的子类&lt;/p&gt;
