@@ -5,9 +5,118 @@
         <link>http://Fsh010816.github.io</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Thu, 21 Jan 2021 16:15:45 +0800</pubDate>
-        <lastBuildDate>Thu, 21 Jan 2021 16:15:45 +0800</lastBuildDate>
+        <pubDate>Sat, 23 Jan 2021 16:40:04 +0800</pubDate>
+        <lastBuildDate>Sat, 23 Jan 2021 16:40:04 +0800</lastBuildDate>
         <category>JavaSE</category>
+        <item>
+            <guid isPermalink="true">http://fsh010816.github.io/2021/01/23/7-yi-chang-chu-li/</guid>
+            <title>7-异常处理</title>
+            <link>http://fsh010816.github.io/2021/01/23/7-yi-chang-chu-li/</link>
+            <category>JavaSE</category>
+            <pubDate>Sat, 23 Jan 2021 16:40:04 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;异常处理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#异常处理&#34;&gt;#&lt;/a&gt; 异常处理&lt;/h1&gt;
+&lt;h2 id=&#34;异常体系结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#异常体系结构&#34;&gt;#&lt;/a&gt; 异常体系结构&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;/*
+ * 一、异常体系结构
+ * 
+ * java.lang.Throwable
+ * 		|-----java.lang.Error:一般不编写针对性的代码进行处理。
+ * 		|-----java.lang.Exception:可以进行异常的处理
+ * 			|------编译时异常(checked)
+ * 					|-----IOException
+ * 						|-----FileNotFoundException
+ * 					|-----ClassNotFoundException
+ * 			|------运行时异常(unchecked,RuntimeException)
+ * 					|-----NullPointerException
+ * 					|-----ArrayIndexOutOfBoundsException
+ * 					|-----ClassCastException
+ * 					|-----NumberFormatException
+ * 					|-----InputMismatchException
+ * 					|-----ArithmeticException
+ * 
+ */&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;异常的处理抓抛模型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#异常的处理抓抛模型&#34;&gt;#&lt;/a&gt; 异常的处理：抓抛模型&lt;/h2&gt;
+&lt;p&gt;一、异常的处理：抓抛模型&lt;/p&gt;
+&lt;p&gt;过程一：“抛”：程序在正常执行的过程中，一旦出现异常，就会在异常代码处生成一个对应异常类的对象。并将此对象抛出。一旦抛出对象以后，其后的代码就不再执行。&lt;/p&gt;
+&lt;p&gt;关于异常对象的产生：① 系统自动生成的异常对象② 手动的生成一个异常对象，并抛出（throw）&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;throw&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;RuntimeException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;您输入的数据非法！&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;过程二：“抓”：可以理解为异常的处理方式：① try-catch-finally  ② throws&lt;/p&gt;
+&lt;p&gt;二、try-catch-finally 的使用&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;try&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//可能出现异常的代码&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;catch&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;异常类型&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; 变量名&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//处理异常的方式1&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;catch&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;异常类型&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt; 变量名&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//处理异常的方式2&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;catch&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;异常类型&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt; 变量名&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//处理异常的方式3&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;finally&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;//一定会执行的代码&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;1.finally 是可选的。&lt;/p&gt;
+&lt;p&gt;2. 使用 try 将可能出现异常代码包装起来，在执行过程中，一旦出现异常，就会生成一个对应异常类的对象，根据此对象的类型，去 catch 中进行匹配&lt;/p&gt;
+&lt;p&gt;3. 一旦 try 中的异常对象匹配到某一个 catch 时，就进入 catch 中进行异常的处理。一旦处理完成，就跳出当前的 try-catch 结构（在没有写 finally 的情况）。继续执行其后的代码&lt;/p&gt;
+&lt;p&gt;4.catch 中的异常类型如果没有子父类关系，则谁声明在上，谁声明在下无所谓。catch 中的异常类型如果满足子父类关系，则要求子类一定声明在父类的上面。否则，报错&lt;/p&gt;
+&lt;p&gt;5. 常用的异常对象处理的方式： ① String  getMessage ()    ② printStackTrace ()&lt;/p&gt;
+&lt;p&gt;6. 在 try 结构中声明的变量，再出了 try 结构以后，就不能再被调用&lt;/p&gt;
+&lt;p&gt;7.try-catch-finally 结构可以嵌套&lt;/p&gt;
+&lt;p&gt;体会 1：使用 try-catch-finally 处理编译时异常，是得程序在编译时就不再报错，但是运行时仍可能报错。&lt;/p&gt;
+&lt;p&gt;相当于我们使用 try-catch-finally 将一个编译时可能出现的异常，延迟到运行时出现。&lt;/p&gt;
+&lt;p&gt;体会 2：开发中，由于运行时异常比较常见，所以我们通常就不针对运行时异常编写 try-catch-finally 了。&lt;/p&gt;
+&lt;p&gt;针对于编译时异常，我们说一定要考虑异常的处理。&lt;/p&gt;
+&lt;h2 id=&#34;异常处理的方式二throws-异常类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#异常处理的方式二throws-异常类型&#34;&gt;#&lt;/a&gt; 异常处理的方式二：throws + 异常类型&lt;/h2&gt;
+&lt;p&gt;1.&#34;throws + 异常类型&#34; 写在方法的声明处。指明此方法执行时，可能会抛出的异常类型。&lt;/p&gt;
+&lt;p&gt;一旦当方法体执行时，出现异常，仍会在异常代码处生成一个异常类的对象，此对象满足 throws 后异常&lt;/p&gt;
+&lt;p&gt;类型时，就会被抛出。异常代码后续的代码，就不再执行！&lt;/p&gt;
+&lt;p&gt;2. 体会：try-catch-finally: 真正的将异常给处理掉了。&lt;/p&gt;
+&lt;p&gt;throws 的方式只是将异常抛给了方法的调用者。  并没有真正将异常处理掉。&lt;/p&gt;
+&lt;p&gt;3. 开发中如何选择使用 try-catch-finally 还是使用 throws？&lt;/p&gt;
+&lt;p&gt;3.1 如果父类中被重写的方法没有 throws 方式处理异常，则子类重写的方法也不能使用 throws，意味着如果&lt;/p&gt;
+&lt;p&gt;子类重写的方法中有异常，必须使用 try-catch-finally 方式处理。&lt;/p&gt;
+&lt;p&gt;3.2 执行的方法 a 中，先后又调用了另外的几个方法，这几个方法是递进关系执行的。我们建议这几个方法使用 throws 的方式进行处理。而执行的方法 a 可以考虑使用 try-catch-finally 方式进行处理。&lt;/p&gt;
+&lt;h2 id=&#34;try-catch-finally中finally的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#try-catch-finally中finally的使用&#34;&gt;#&lt;/a&gt; try-catch-finally 中 finally 的使用：&lt;/h2&gt;
+&lt;p&gt;1.finally 是可选的&lt;/p&gt;
+&lt;p&gt;2.finally 中声明的是一定会被执行的代码。即使 catch 中又出现异常了，try 中有 return 语句，catch 中有 return 语句等情况。&lt;/p&gt;
+&lt;p&gt;3. 像数据库连接、输入输出流、网络编程 Socket 等资源，JVM 是不能自动的回收的，我们需要自己手动的进行资源的释放。此时的资源释放，就需要声明在 finally 中。&lt;/p&gt;
+&lt;h2 id=&#34;方法重写的规则之一&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法重写的规则之一&#34;&gt;#&lt;/a&gt; 方法重写的规则之一：&lt;/h2&gt;
+&lt;p&gt;子类重写的方法抛出的异常类型不大于父类被重写的方法抛出的异常类型&lt;/p&gt;
+&lt;h2 id=&#34;如何自定义异常类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何自定义异常类&#34;&gt;#&lt;/a&gt; 如何自定义异常类？&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;/*
+ * 如何自定义异常类？
+ * 1. 继承于现有的异常结构：RuntimeException 、Exception
+ * 2. 提供全局常量：serialVersionUID
+ * 3. 提供重载的构造器
+ * 
+ */&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MyException&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Exception&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+	
+	&lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;final&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt; serialVersionUID &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7034897193246939L&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+	
+	&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MyException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+		
+	&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+	
+	&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;MyException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; msg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;msg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://fsh010816.github.io/2021/01/21/6-mian-xiang-dui-xiang-xia/</guid>
             <title>6-面向对象(下)</title>
@@ -195,7 +304,8 @@
 			&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
 			
 		&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//创建匿名子类的匿名对象&lt;/span&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; args&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//创建匿名子类的匿名对象&lt;/span&gt;
 		&lt;span class=&#34;token function&#34;&gt;method1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
 			&lt;span class=&#34;token annotation punctuation&#34;&gt;@Override&lt;/span&gt;
 			&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;eat&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
@@ -206,7 +316,12 @@
 			&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;breath&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
 				&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;好好呼吸新鲜空气&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 			&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
-		&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+		&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;method1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt; p&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+		p&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;eat&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+		p&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;breath&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;模板方法设计模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模板方法设计模式&#34;&gt;#&lt;/a&gt; 模板方法设计模式&lt;/h2&gt;
 &lt;p&gt;当功能内部一部分实现是确定的，一部分实现是不确定的。这时可以把不确定的部分暴露出去，让子类去实现。&lt;/p&gt;
 &lt;p&gt;换句话说，在软件开发中实现一个算法时，整体步骤很固定、通用，这些步骤已经在父类中写好了。但是某些部分易变，易变部分可以抽象出来，供不同子类实现。这就是一种模板模式。&lt;/p&gt;
@@ -660,6 +775,12 @@
 	&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
 	
 &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;成员内部类和局部内部类在编译以后，都会生成字节码文件&lt;/p&gt;
+&lt;p&gt;成员内部类：外部类 $ 内部类名.class&lt;/p&gt;
+&lt;p&gt;局部内部类：外部类名 $ 数字内部类名.class&lt;/p&gt;
+&lt;p&gt;在局部内部类的方法中（比如：show）如果调用局部内部类所声明的方法 (比如：method) 中的局部变量 (比如：num) 的话，要求此局部变量声明为 final 的。&lt;/p&gt;
+&lt;p&gt;jdk 7 及之前版本：要求此局部变量显式的声明为 final 的&lt;/p&gt;
+&lt;p&gt;jdk 8 及之后的版本：可以省略 final 的声明&lt;/p&gt;
  ]]></description>
         </item>
         <item>
