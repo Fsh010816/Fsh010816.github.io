@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    2.6k
                 </div>
                 
 
@@ -447,18 +447,17 @@
                 <h1 id="java基本语法"><a class="markdownIt-Anchor" href="#java基本语法">#</a> Java 基本语法</h1>
 <h2 id="关键字与保留字"><a class="markdownIt-Anchor" href="#关键字与保留字">#</a> 关键字与保留字</h2>
 <h3 id="关键字"><a class="markdownIt-Anchor" href="#关键字">#</a> 关键字</h3>
-<p>定义：被 被 Java 语言赋予了特殊含义，用做专门用途的字符串（单词）<br>
-特点： 关键字中所有字母都为小写</p>
+<p>定义：被 Java 语言赋予了特殊含义，用做专门用途的字符串（单词）<br>
+特点：关键字中所有字母都为小写</p>
 <h3 id="保留字"><a class="markdownIt-Anchor" href="#保留字">#</a> 保留字</h3>
-<p>Java 保留字：现有 Java 版本尚未使用，但以后版本可能会作为关键字使<br>
-用。自己命名标识符时要避免使用这些保留字<br>
+<p>Java 保留字：现有 Java 版本尚未使用，但以后版本可能会作为关键字使用。自己命名标识符时要避免使用这些保留字<br>
  goto 、const</p>
 <h2 id="标识符"><a class="markdownIt-Anchor" href="#标识符">#</a> 标识符</h2>
 <h3 id="标识符-2"><a class="markdownIt-Anchor" href="#标识符-2">#</a> 标识符</h3>
 <p>Java 对各种 变量、 方法和 类等要素命名时使用的字符序列称为标识符<br>
  技巧：凡是自己可以起名字的地方都叫标识符</p>
 <h3 id="定义合法标识符规则"><a class="markdownIt-Anchor" href="#定义合法标识符规则">#</a> 定义合法标识符规则：</h3>
-<p>由 26 个英文字母大小写，0-9  ，_或 或 $  组成<br>
+<p>由 26 个英文字母大小写，0-9  ，_或 $ 组成<br>
  数字不可以开头。<br>
  不可以使用关键字和保留字，但能包含关键字和保留字。<br>
 Java 中严格区分大小写，长度无限制。<br>
@@ -466,14 +465,14 @@
 <h3 id="java中的名称命名规范"><a class="markdownIt-Anchor" href="#java中的名称命名规范">#</a> Java 中的名称命名规范</h3>
 <p> 包名：多单词组成时所有字母都小写：xxxyyyzzz<br>
  类名、接口名：多单词组成时，所有单词的首字母大写：XxxYyyZzz<br>
- 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个<br>
-单词首字母大写：xxxYyyZzz<br>
+ 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz<br>
  常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ</p>
 <h2 id="变量"><a class="markdownIt-Anchor" href="#变量">#</a> 变量</h2>
 <h3 id="变量-2"><a class="markdownIt-Anchor" href="#变量-2">#</a> 变量</h3>
 <p>内存中的一个存储区域<br>
 该区域的数据可以在同一类型范围内不断变化<br>
 变量是程序中最基本的存储单元。包含变量类型、变量名和存储的值</p>
+<p>作用：用于在内存中保存数据</p>
 <h3 id="注意"><a class="markdownIt-Anchor" href="#注意">#</a> 注意</h3>
 <p>Java 中每个变量必须先声明，后使用<br>
 使用变量名来访问这块区域的数据<br>
@@ -508,7 +507,7 @@
 科学计数法形式：如：5.12e2 512E2 100E-2<br>
  float: 单精度，尾数可以精确到 7 位有效数字。很多情况下，精度很难满足需求。<br>
 double: 双精度，精度是 float 的两倍。通常采用此类型。<br>
- Java  的浮点型常量默认为 double 型 型，明 声明 float 型常量，须后加‘f’ 或‘F’ 。</p>
+ Java  的浮点型常量默认为 double 型，声明 float 型常量，须后加‘f’ 或‘F’ 。</p>
 <p>float 表示数值的范围比 long 还大</p>
 <p><img src="https://img-blog.csdnimg.cn/20210110010352218.png" alt="浮点类型"></p>
 <h2 id="字符类型"><a class="markdownIt-Anchor" href="#字符类型">#</a> 字符类型</h2>
@@ -556,7 +555,7 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。<br>
 <p>+= 不会改变变量本身的数据类型</p>
 <h3 id="比较运算符"><a class="markdownIt-Anchor" href="#比较运算符">#</a> 比较运算符</h3>
 <p>比较运算符的结果都是 boolean 型，也就是要么是 true，要么是 false。</p>
-<p>instanceof 检查是否是类的对象 “Hello” instanceof String true</p>
+<p>instanceof 检查是否是类的对象 “Hello” instanceof String //true</p>
 <h3 id="逻辑运算符"><a class="markdownIt-Anchor" href="#逻辑运算符">#</a> 逻辑运算符</h3>
 <p>&amp;— 逻辑与 | — 逻辑或 ！— 逻辑非  &amp;&amp; — 短路与 || — 短路或 ^ — 逻辑异或</p>
 <p>逻辑运算符用于连接布尔型表达式</p>
@@ -564,8 +563,9 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。<br>
 单 &amp; 时，左边无论真假，右边都进行运算；<br>
 双 &amp; 时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。</p>
 <h3 id="位运算符"><a class="markdownIt-Anchor" href="#位运算符">#</a> 位运算符</h3>
+<p>位运算是直接对整数的二进制进行的运算</p>
 <p>运算符 运算 范例<br>
- &lt;&lt;左移 3 &lt;&lt; 2 = 12 --&gt; 3<em>2</em>2=12</p>
+ &lt;&lt;左移 3 &lt;&lt; 2 = 12 --&gt; 3×2×2=12</p>
 <p>右移 3 &gt;&gt; 1 = 1 --&gt; 3/2=1</p>
 <p>无符号右移 3 &gt;&gt;&gt; 1 = 1 --&gt; 3/2=1<br>
 &amp; 与运算 6 &amp; 3 = 2<br>
@@ -573,10 +573,11 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。<br>
 ^ 异或运算 6 ^ 3 = 5<br>
 ~ 取反运算～6 = -7</p>
 <p>&lt;&lt; 空位补 0，被移除的高位丢弃，空缺位补 0。</p>
-<p>//&lt;&lt; 被移位的二进制最高位是 0，右移后，空缺位补 0；最高位是 1，空缺位补 1。</p>
-<p>// &lt;&lt;&lt; 被移位二进制最高位无论是 0 或者是 1，空缺位都用 0 补</p>
+<p>//&gt;&gt; 被移位的二进制最高位是 0，右移后，空缺位补 0；最高位是 1，空缺位补 1。</p>
+<p>// &gt;&gt;&gt; 被移位二进制最高位无论是 0 或者是 1，空缺位都用 0 补</p>
 <h3 id="三元运算符"><a class="markdownIt-Anchor" href="#三元运算符">#</a> 三元运算符</h3>
 <p>(条件表达式)? 表达式 1 ：表达式 2</p>
+<p>表达式 1 和表达式 2 为同种类型</p>
 <h2 id="运算符的优先级"><a class="markdownIt-Anchor" href="#运算符的优先级">#</a> 运算符的优先级</h2>
 <p>只有单目运算符、三元运算符、	赋值运算符是从右向左运算的。</p>
 <h2 id="程序流程控制"><a class="markdownIt-Anchor" href="#程序流程控制">#</a> 程序流程控制</h2>
@@ -642,7 +643,7 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。<br>
 错误：可能尚未初始化变量sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="while循环"><a class="markdownIt-Anchor" href="#while循环">#</a> while 循环</h4>
 <p>①初始化部分<br>
- while (②循环条件部分)｛ ｛<br>
+ while (②循环条件部分)｛<br>
 ③循环体部分；<br>
 ④迭代部分；<br>
 }</p>
@@ -653,14 +654,23 @@ do{<br>
 ④ 迭代部分<br>
 } while (②循环条件部分);</p>
 <p>do-while 循环至少执行一次循环体</p>
-<h3 id="最简单-无限-循环"><a class="markdownIt-Anchor" href="#最简单-无限-循环">#</a> 最简单 “无限” ”  循环</h3>
-<p>最简单 “无限” ”  循环： 格式：while (true) , for (;😉, 无限循环存在的原因是并不知道循环多少次， 需要 根据循环体内部某些 条件，来 控制 循环的结束</p>
+<h3 id="最简单无限循环"><a class="markdownIt-Anchor" href="#最简单无限循环">#</a> 最简单 “无限” 循环</h3>
+<p>最简单 “无限” ”  循环： 格式：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>无限循环存在的原因是并不知道循环多少次， 需要 根据循环体内部某些 条件，来 控制 循环的结束</p>
 <h3 id="currenttimemillis"><a class="markdownIt-Anchor" href="#currenttimemillis">#</a> currentTimeMillis()</h3>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">long</span> start<span class="token operator">=</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="break-continue"><a class="markdownIt-Anchor" href="#break-continue">#</a> break continue</h3>
 <p>break 语句用于终止某个语句块的执行，结束当前循环</p>
+<p>{   ……<br>
+break;<br>
+……<br>
+}</p>
 <p>continue 语句用于跳过其所在循环语句块的一次执行，继续下一次循环，结束当次循环</p>
 <p>两个关键字后面都不能声明执行语句，会报错</p>
+<p>break 只能用于 switch 语句和 循环语句中。<br>
+continue 只能用于 循环语句中。</p>
 <h4 id="label"><a class="markdownIt-Anchor" href="#label">#</a> label</h4>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">LabelTest</span><span class="token punctuation">{</span>
 	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>

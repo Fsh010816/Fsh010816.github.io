@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -451,10 +451,8 @@
 <p>2.static 可以用来修饰：属性、方法、代码块、内部类</p>
 <p>3. 使用 static 修饰属性：静态变量（或类变量）</p>
 <p>3.1 属性，按是否使用 static 修饰，又分为：静态属性  vs 非静态属性 (实例变量)</p>
-<p>实例变量：我们创建了类的多个对象，每个对象都独立的拥有一套类中的非静态属性。当修改其中一个对象中的</p>
-<p>非静态属性时，不会导致其他对象中同样的属性值的修改。</p>
-<p>静态变量：我们创建了类的多个对象，多个对象共享同一个静态变量。当通过某一个对象修改静态变量时，会导致</p>
-<p>其他对象调用此静态变量时，是修改过了的。</p>
+<p>实例变量：我们创建了类的多个对象，每个对象都独立的拥有一套类中的非静态属性。当修改其中一个对象中的非静态属性时，不会导致其他对象中同样的属性值的修改。</p>
+<p>静态变量：我们创建了类的多个对象，多个对象共享同一个静态变量。当通过某一个对象修改静态变量时，会导致其他对象调用此静态变量时，是修改过了的。</p>
 <p>3.2 static 修饰属性的其他说明：</p>
 <p>① 静态变量随着类的加载而加载。可以通过 "类。静态变量" 的方式进行调用</p>
 <p>② 静态变量的加载要早于对象的创建。</p>
@@ -462,6 +460,7 @@
 <p>④		类变量	实例变量</p>
 <p>类		yes		no</p>
 <p>对象		yes		yes</p>
+<p>类不能直接调用实例变量</p>
 <p>3.3 静态属性举例：System.out; Math.PI;</p>
 <p>4. 使用 static 修饰方法：静态方法</p>
 <p>① 随着类的加载而加载，可以通过 "类。静态方法" 的方式进行调用</p>
@@ -591,8 +590,7 @@
 <p>4.final 用来修饰变量：此时的 "变量" 就称为是一个常量</p>
 <p>4.1 final 修饰属性：可以考虑赋值的位置有：显式初始化、代码块中初始化、构造器中初始化</p>
 <p>4.2 final 修饰局部变量：</p>
-<p>尤其是使用 final 修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值</p>
-<p>以后，就只能在方法体内使用此形参，但不能进行重新赋值。</p>
+<p>尤其是使用 final 修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值以后，就只能在方法体内使用此形参，但不能进行重新赋值。</p>
 <p>static final 用来修饰属性：全局常量</p>
 <h2 id="abstract关键字的使用"><a class="markdownIt-Anchor" href="#abstract关键字的使用">#</a> abstract 关键字的使用</h2>
 <p>1.abstract: 抽象的</p>

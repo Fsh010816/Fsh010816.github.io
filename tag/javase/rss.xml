@@ -5,9 +5,60 @@
         <link>http://Fsh010816.github.io</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 23 Jan 2021 16:40:04 +0800</pubDate>
-        <lastBuildDate>Sat, 23 Jan 2021 16:40:04 +0800</lastBuildDate>
+        <pubDate>Wed, 27 Jan 2021 21:11:28 +0800</pubDate>
+        <lastBuildDate>Wed, 27 Jan 2021 21:11:28 +0800</lastBuildDate>
         <category>JavaSE</category>
+        <item>
+            <guid isPermalink="true">http://fsh010816.github.io/2021/01/27/idea/</guid>
+            <title>IDEA</title>
+            <link>http://fsh010816.github.io/2021/01/27/idea/</link>
+            <category>JavaSE</category>
+            <pubDate>Wed, 27 Jan 2021 21:11:28 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;idea&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#idea&#34;&gt;#&lt;/a&gt; IDEA&lt;/h1&gt;
+&lt;h2 id=&#34;project-module&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#project-module&#34;&gt;#&lt;/a&gt; Project Module&lt;/h2&gt;
+&lt;p&gt;在 project 下新建 Module&lt;/p&gt;
+&lt;h3 id=&#34;删除模块&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#删除模块&#34;&gt;#&lt;/a&gt; 删除模块&lt;/h3&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127212417894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127212417903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; style=&#34;zoom:50%;&#34;&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127212417871.png&#34; style=&#34;zoom:50%;&#34;&gt;
+&lt;p&gt;再右键项目名删除&lt;/p&gt;
+&lt;h2 id=&#34;配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置&#34;&gt;#&lt;/a&gt; 配置&lt;/h2&gt;
+&lt;h3 id=&#34;主题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主题&#34;&gt;#&lt;/a&gt; 主题&lt;/h3&gt;
+&lt;h3 id=&#34;鼠标滚轮控制字体大小&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#鼠标滚轮控制字体大小&#34;&gt;#&lt;/a&gt; 鼠标滚轮控制字体大小&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221328448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;鼠标悬浮提示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#鼠标悬浮提示&#34;&gt;#&lt;/a&gt; 鼠标悬浮提示&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221328444.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;自动导包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自动导包&#34;&gt;#&lt;/a&gt; 自动导包&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221802761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;行号-方法间的分隔符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#行号-方法间的分隔符&#34;&gt;#&lt;/a&gt; 行号 方法间的分隔符&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221328486.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;忽略大小写提示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#忽略大小写提示&#34;&gt;#&lt;/a&gt; 忽略大小写提示&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221328466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;取消单行显示tabs&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#取消单行显示tabs&#34;&gt;#&lt;/a&gt; 取消单行显示 tabs&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221328497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;字体&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字体&#34;&gt;#&lt;/a&gt; 字体&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221328516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;类头的文档注释信息&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类头的文档注释信息&#34;&gt;#&lt;/a&gt; 类头的文档注释信息&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221328494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;编码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#编码&#34;&gt;#&lt;/a&gt; 编码&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221247412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;自动编译&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自动编译&#34;&gt;#&lt;/a&gt; 自动编译&lt;/h3&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221204747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34;&gt;
+&lt;h2 id=&#34;模板&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模板&#34;&gt;#&lt;/a&gt; 模板&lt;/h2&gt;
+&lt;p&gt;自定义模板&lt;/p&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20210127221027655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34;&gt;
+&lt;p&gt;先加一个 group, 在新加的 group 下添加模板&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://fsh010816.github.io/2021/01/27/8-duo-xian-cheng/</guid>
+            <title>8-多线程</title>
+            <link>http://fsh010816.github.io/2021/01/27/8-duo-xian-cheng/</link>
+            <category>JavaSE</category>
+            <pubDate>Wed, 27 Jan 2021 18:19:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;多线程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多线程&#34;&gt;#&lt;/a&gt; 多线程&lt;/h1&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://fsh010816.github.io/2021/01/23/7-yi-chang-chu-li/</guid>
             <title>7-异常处理</title>
@@ -130,10 +181,8 @@
 &lt;p&gt;2.static 可以用来修饰：属性、方法、代码块、内部类&lt;/p&gt;
 &lt;p&gt;3. 使用 static 修饰属性：静态变量（或类变量）&lt;/p&gt;
 &lt;p&gt;3.1 属性，按是否使用 static 修饰，又分为：静态属性  vs 非静态属性 (实例变量)&lt;/p&gt;
-&lt;p&gt;实例变量：我们创建了类的多个对象，每个对象都独立的拥有一套类中的非静态属性。当修改其中一个对象中的&lt;/p&gt;
-&lt;p&gt;非静态属性时，不会导致其他对象中同样的属性值的修改。&lt;/p&gt;
-&lt;p&gt;静态变量：我们创建了类的多个对象，多个对象共享同一个静态变量。当通过某一个对象修改静态变量时，会导致&lt;/p&gt;
-&lt;p&gt;其他对象调用此静态变量时，是修改过了的。&lt;/p&gt;
+&lt;p&gt;实例变量：我们创建了类的多个对象，每个对象都独立的拥有一套类中的非静态属性。当修改其中一个对象中的非静态属性时，不会导致其他对象中同样的属性值的修改。&lt;/p&gt;
+&lt;p&gt;静态变量：我们创建了类的多个对象，多个对象共享同一个静态变量。当通过某一个对象修改静态变量时，会导致其他对象调用此静态变量时，是修改过了的。&lt;/p&gt;
 &lt;p&gt;3.2 static 修饰属性的其他说明：&lt;/p&gt;
 &lt;p&gt;① 静态变量随着类的加载而加载。可以通过 &#34;类。静态变量&#34; 的方式进行调用&lt;/p&gt;
 &lt;p&gt;② 静态变量的加载要早于对象的创建。&lt;/p&gt;
@@ -141,6 +190,7 @@
 &lt;p&gt;④		类变量	实例变量&lt;/p&gt;
 &lt;p&gt;类		yes		no&lt;/p&gt;
 &lt;p&gt;对象		yes		yes&lt;/p&gt;
+&lt;p&gt;类不能直接调用实例变量&lt;/p&gt;
 &lt;p&gt;3.3 静态属性举例：System.out; Math.PI;&lt;/p&gt;
 &lt;p&gt;4. 使用 static 修饰方法：静态方法&lt;/p&gt;
 &lt;p&gt;① 随着类的加载而加载，可以通过 &#34;类。静态方法&#34; 的方式进行调用&lt;/p&gt;
@@ -270,8 +320,7 @@
 &lt;p&gt;4.final 用来修饰变量：此时的 &#34;变量&#34; 就称为是一个常量&lt;/p&gt;
 &lt;p&gt;4.1 final 修饰属性：可以考虑赋值的位置有：显式初始化、代码块中初始化、构造器中初始化&lt;/p&gt;
 &lt;p&gt;4.2 final 修饰局部变量：&lt;/p&gt;
-&lt;p&gt;尤其是使用 final 修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值&lt;/p&gt;
-&lt;p&gt;以后，就只能在方法体内使用此形参，但不能进行重新赋值。&lt;/p&gt;
+&lt;p&gt;尤其是使用 final 修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值以后，就只能在方法体内使用此形参，但不能进行重新赋值。&lt;/p&gt;
 &lt;p&gt;static final 用来修饰属性：全局常量&lt;/p&gt;
 &lt;h2 id=&#34;abstract关键字的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#abstract关键字的使用&#34;&gt;#&lt;/a&gt; abstract 关键字的使用&lt;/h2&gt;
 &lt;p&gt;1.abstract: 抽象的&lt;/p&gt;
@@ -833,8 +882,7 @@
 &lt;p&gt;2.super 可以用来调用：属性、方法、构造器&lt;/p&gt;
 &lt;p&gt;3.super 的使用：调用属性和方法&lt;/p&gt;
 &lt;p&gt;3.1 我们可以在子类的方法或构造器中。通过使用 &#34;super. 属性&#34; 或 &#34;super. 方法&#34; 的方式，显式的调用父类中声明的属性或方法。但是，通常情况下，我们习惯省略 &#34;super.&#34;&lt;/p&gt;
-&lt;p&gt;3.2 特殊情况：当子类和父类中定义了同名的属性时，我们要想在子类中调用父类中声明的属性，则必须显式的&lt;/p&gt;
-&lt;p&gt;使用 &#34;super. 属性&#34; 的方式，表明调用的是父类中声明的属性。&lt;/p&gt;
+&lt;p&gt;3.2 特殊情况：当子类和父类中定义了同名的属性时，我们要想在子类中调用父类中声明的属性，则必须显式的使用 &#34;super. 属性&#34; 的方式，表明调用的是父类中声明的属性。&lt;/p&gt;
 &lt;p&gt;3.3 特殊情况：当子类重写了父类中的方法以后，我们想在子类的方法中调用父类中被重写的方法时，则必须显式的使用 &#34;super. 方法&#34; 的方式，表明调用的是父类中被重写的方法。&lt;/p&gt;
 &lt;p&gt;4.super 调用构造器&lt;/p&gt;
 &lt;p&gt;4.1  我们可以在子类的构造器中显式的使用 &#34;super (形参列表)&#34; 的方式，调用父类中声明的指定的构造器&lt;/p&gt;
@@ -842,6 +890,7 @@
 &lt;p&gt;4.3 我们在类的构造器中，针对于 &#34;this (形参列表)&#34; 或 &#34;super (形参列表)&#34; 只能二选一，不能同时出现&lt;/p&gt;
 &lt;p&gt;4.4 在构造器的首行，没有显式的声明 &#34;this (形参列表)“或&#34;super (形参列表)”，则默认调用的是父类中空参的构造器：super ()&lt;/p&gt;
 &lt;p&gt;4.5 在类的多个构造器中，至少有一个类的构造器中使用了 &#34;super (形参列表)&#34;，调用父类中的构造器&lt;/p&gt;
+&lt;p&gt;如果子类构造器中既未显式调用父类或本类的构造器，且父类中又没有无参的构造器，则编译出错&lt;/p&gt;
 &lt;h2 id=&#34;子类对象实例化的全过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子类对象实例化的全过程&#34;&gt;#&lt;/a&gt; 子类对象实例化的全过程&lt;/h2&gt;
 &lt;p&gt;1. 从结果上来看：（继承性）&lt;/p&gt;
 &lt;p&gt;子类继承父类以后，就获取了父类中声明的属性或方法。&lt;/p&gt;
@@ -859,6 +908,7 @@
 &lt;p&gt;3. 多态性的使用前提：  ① 类的继承关系  ② 方法的重写&lt;/p&gt;
 &lt;p&gt;4. 对象的多态性，只适用于方法，不适用于属性（编译和运行都看左边）&lt;/p&gt;
 &lt;p&gt;5.Java 引用变量有两个类型： 编译时类型和 运行时类型。编译时类型由声明该变量时使用的类型决定，运行时类型由实际赋给该变量的对象决定。简称：编译时，看左边；运行时，看右边。&lt;/p&gt;
+&lt;p&gt;若编译时类型和运行时类型不一致 ， 就出现了对象的多态性&lt;/p&gt;
 &lt;p&gt;多态是运行时行为&lt;/p&gt;
 &lt;p&gt;6. 一个引用类型变量如果声明为父类的类型，但实际引用的是子类对象，那么该变量就 不能 再访问子类中添加的属性和方法&lt;/p&gt;
 &lt;p&gt;7. 若子类重写了父类方法，就意味着子类里定义的方法彻底覆盖了父类里的同名方法，系统将不可能把父类里的方法转移到子类中：编译看左边，运行看右边&lt;/p&gt;
@@ -874,7 +924,8 @@
 &lt;p&gt;==：对于引用数据类型来讲，比较的是两个引用数据类型变量的地址值是否相同&lt;/p&gt;
 &lt;h2 id=&#34;instanceof&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#instanceof&#34;&gt;#&lt;/a&gt; instanceof&lt;/h2&gt;
 &lt;p&gt;a instanceof A: 判断对象 a 是否是类 A 的实例。如果是，返回 true；如果不是，返回 false。&lt;/p&gt;
-&lt;p&gt;要求 x 所属的类与类 A 必须是子类和父类的关系，否则编译错误&lt;/p&gt;
+&lt;p&gt;要求 a 所属的类与类 A 必须是子类和父类的关系，否则编译错误&lt;/p&gt;
+&lt;p&gt;如果 a 属于类 A 的子类 B，a instanceof A 值也为 true&lt;/p&gt;
 &lt;p&gt;使用情境：为了避免在向下转型时出现 ClassCastException 的异常，我们在向下转型之前，先进行 instanceof 的判断，一旦返回 true，就进行向下转型。如果返回 false，不进行向下转型。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210120211434690.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;javalangobject类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javalangobject类&#34;&gt;#&lt;/a&gt; java.lang.Object 类&lt;/h2&gt;
@@ -924,6 +975,8 @@ s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;
 &lt;p&gt;String 类型 —&amp;gt; 基本数据类型、包装类：调用包装类的 parseXxx (String s)&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; str1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;123&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;parseInt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;str1&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通过包装类的构造器实现:&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;“&lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;”&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;基本数据类型、包装类 —&amp;gt;String 类型：调用 String 重载的 valueOf (Xxx xxx)&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; num1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;token comment&#34;&gt;//方式1：连接运算&lt;/span&gt;
@@ -984,6 +1037,9 @@ s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;
 &lt;p&gt;2. 创建类的对象&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;类名 对象名 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; 类名&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;3. 通过 “对象。属性” 或 “对象。方法” 调用对象的结构&lt;/p&gt;
+&lt;p&gt;类的访问机制:&lt;/p&gt;
+&lt;p&gt;在一个类中的访问机制：类中的方法可以直接访问类中的成员变量 。&lt;/p&gt;
+&lt;p&gt; 在不同类中的访问机制：先创建要访问类的对象 ， 再用对象访问类中定义的成员 。&lt;/p&gt;
 &lt;h2 id=&#34;类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类&#34;&gt;#&lt;/a&gt; 类&lt;/h2&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;修饰符 &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt;  类名 &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
     属性声明&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
@@ -998,6 +1054,7 @@ s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;
 &lt;p&gt;方法区（Method Area）：用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。 常量池 静态域&lt;/p&gt;
 &lt;h2 id=&#34;对象的内存解析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对象的内存解析&#34;&gt;#&lt;/a&gt; 对象的内存解析&lt;/h2&gt;
 &lt;img src=&#34;https://img-blog.csdnimg.cn/20210118191251477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;未考虑常量池&#34; style=&#34;zoom:50%;&#34;&gt;
+&lt;p&gt;引用类型的变量，只可能存储两类值：null  或  地址值（含变量的类型）&lt;/p&gt;
 &lt;h2 id=&#34;匿名对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#匿名对象&#34;&gt;#&lt;/a&gt; 匿名对象&lt;/h2&gt;
 &lt;p&gt;我们也可以不定义对象的句柄，而直接调用这个对象的方法。这样的对象叫做匿名对象。&lt;br&gt;
 如：new Person ().shout ();&lt;/p&gt;
@@ -1005,7 +1062,10 @@ s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;
  1. 如果对一个对象只需要进行一次方法调用，那么就可以使用匿名对象。&lt;br&gt;
 2. 我们经常将匿名对象作为实参传递给一个方法调用。&lt;/p&gt;
 &lt;h2 id=&#34;属性成员变量-局部变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#属性成员变量-局部变量&#34;&gt;#&lt;/a&gt; 属性 (成员变量) 局部变量&lt;/h2&gt;
+&lt;p&gt;属性语法格式:&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;修饰符 数据类型 属性名 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; 初始化值&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;https://img-blog.csdnimg.cn/20210118191737642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center&#34; style=&#34;zoom: 80%;&#34;&gt;
+&lt;p&gt;对象属性的默认初始化赋值：当一个对象被创建时，会对其中各种类型的成员变量自动进行初始化赋值。&lt;/p&gt;
 &lt;h3 id=&#34;相同点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#相同点&#34;&gt;#&lt;/a&gt; 相同点&lt;/h3&gt;
 &lt;p&gt;1. 定义变量的格式：数据类型 变量名 = 变量值&lt;/p&gt;
 &lt;p&gt;2. 先声明，后使用&lt;/p&gt;
@@ -1029,7 +1089,7 @@ s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;
 &lt;h2 id=&#34;方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法&#34;&gt;#&lt;/a&gt; 方法&lt;/h2&gt;
 &lt;p&gt;Java 里的方法不能独立存在，所有的方法必须定义在类里。&lt;/p&gt;
 &lt;h3 id=&#34;声明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明&#34;&gt;#&lt;/a&gt; 声明&lt;/h3&gt;
-&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;权限修饰符  返回值类型  方法名 （参数类型 形参&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;参数类型 形参&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; …）｛
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;修饰符  返回值类型  方法名 （参数类型 形参&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;参数类型 形参&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; …）｛
     方法体程序代码
     &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt;  返回值&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 ｝&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -1040,15 +1100,20 @@ s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;
 &lt;p&gt;方法的使用中，可以调用当前类的属性或方法&lt;/p&gt;
 &lt;p&gt;​	（例外：static 方法访问非 static，编译不通过 。）&lt;/p&gt;
 &lt;p&gt;方法中，不可以定义方法&lt;/p&gt;
+&lt;p&gt;定义方法时，方法的结果应该返回给调用者，交由调用者处理。&lt;/p&gt;
 &lt;h3 id=&#34;重载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重载&#34;&gt;#&lt;/a&gt; 重载&lt;/h3&gt;
 &lt;p&gt;概念：在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或者参数类型不同即可。&lt;/p&gt;
 &lt;h3 id=&#34;可变个数的形参&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#可变个数的形参&#34;&gt;#&lt;/a&gt; 可变个数的形参&lt;/h3&gt;
 &lt;p&gt;JavaSE 5.0 中提供了 Varargs (variable number of arguments) 机制，允许直接定义能和多个实参相匹配的形参。从而，可以用一种更简单的方式，来传递个数可变的实参。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; a &lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;…books&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;声明格式：方法名 (参数的类型名 … 参数名) 此参数名也有 length 属性&lt;/p&gt;
 &lt;p&gt;可变参数：方法参数部分指定类型的参数个数是可变多个：0 个，1 个或多个&lt;/p&gt;
 &lt;p&gt;可变参数方法的使用与方法参数部分使用数组是一致的&lt;/p&gt;
+&lt;p&gt;可变个数形参的方法与同名的方法之间，彼此构成重载&lt;/p&gt;
+&lt;p&gt;方法的参数部分有可变形参，需要放在形参声明的最后&lt;/p&gt;
+&lt;p&gt;可变个数形参的方法与本类中方法名相同，形参类型也相同的数组之间不构成重载。换句话说，二者不能共存。&lt;/p&gt;
 &lt;h3 id=&#34;方法参数的值传递机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法参数的值传递机制&#34;&gt;#&lt;/a&gt; 方法参数的值传递机制&lt;/h3&gt;
-&lt;p&gt;Java 里方法的参数传递方式只有一种：值传递。 即将实际参数值的副本（复制品）传入方法内，而参数本身不受影响。&lt;br&gt;
+&lt;p&gt;Java 里方法的参数传递方式只有一种：值传递。 即将实际参数值的副本（复制品）传入方法内，而参数本身不受影响。	&lt;br&gt;
 形参是基本数据类型：将实参基本数据类型变量的 “数据值” 传递给形参&lt;br&gt;
 形参是引用数据类型：将实参引用数据类型变量的 “地址值” 传递给形参&lt;/p&gt;
 &lt;h2 id=&#34;封装和隐藏&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#封装和隐藏&#34;&gt;#&lt;/a&gt; 封装和隐藏&lt;/h2&gt;
@@ -1123,6 +1188,10 @@ s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;
 &lt;li&gt;④ 规定：&#34;this (形参列表)&#34; 必须声明在当前构造器的首行&lt;/li&gt;
 &lt;li&gt;⑤ 构造器内部，最多只能声明一个 &#34;this (形参列表)&#34;，用来调用其他的构造器&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;package&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#package&#34;&gt;#&lt;/a&gt; package&lt;/h2&gt;
+&lt;p&gt;package 语句作为 Java 源文件的第一条语句，指明该文件中定义的类所在的包。(若缺省该语句，则指定为无名包)。它的格式为：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;package&lt;/span&gt;  顶层包名&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;子包名&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同一个包下，不能命名同名的接口、类。&lt;/p&gt;
 &lt;h2 id=&#34;import&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#import&#34;&gt;#&lt;/a&gt; import&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1133,6 +1202,15 @@ s &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;import static 组合的使用：调用指定类或接口下的静态的属性或方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果在源文件中，使用了不同包下的同名的类，则必须至少有一个类需要以全类名的方式显示。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果使用的类或接口是 java.lang 包下定义的，则可以省略 import 结构&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果使用的类或接口是本包下定义的，则可以省略 import 结构&lt;/li&gt;
+&lt;/ol&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;lang&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;*&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 
 out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;hello&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -1168,6 +1246,7 @@ arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#
 arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;数组元素的引用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组元素的引用&#34;&gt;#&lt;/a&gt; 数组元素的引用&lt;/h4&gt;
+&lt;p&gt;定义并用运算符 new 为之分配空间后，才可以引用数组中的每个元素&lt;/p&gt;
 &lt;p&gt;数组元素下标可以是整型常量或整型表达式&lt;/p&gt;
 &lt;p&gt;数组元素下标从 0 开始&lt;/p&gt;
 &lt;h4 id=&#34;数组元素的默认初始化值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组元素的默认初始化值&#34;&gt;#&lt;/a&gt; 数组元素的默认初始化值&lt;/h4&gt;
@@ -1192,6 +1271,15 @@ arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//null&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//非法&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;数组元素的默认初始化值-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组元素的默认初始化值-2&#34;&gt;#&lt;/a&gt; 数组元素的默认初始化值&lt;/h3&gt;
+&lt;p&gt;针对于初始化方式一：比如：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;外层元素的初始化值为：地址值&lt;/p&gt;
+&lt;p&gt;内层元素的初始化值为：与一维数组初始化情况相同&lt;/p&gt;
+&lt;p&gt;针对于初始化方式二：比如：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; arr &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;外层元素的初始化值为：null&lt;/p&gt;
+&lt;p&gt;内层元素的初始化值为：不能调用，否则报错。&lt;/p&gt;
 &lt;h2 id=&#34;二分法查找&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二分法查找&#34;&gt;#&lt;/a&gt; 二分法查找&lt;/h2&gt;
 &lt;p&gt;前提：所要查找的数组有序&lt;/p&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; arr1&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;98&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;77&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;55&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;22&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;54&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;66&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;77&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;88&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;99&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
@@ -1359,18 +1447,17 @@ arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#
             <description><![CDATA[ &lt;h1 id=&#34;java基本语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java基本语法&#34;&gt;#&lt;/a&gt; Java 基本语法&lt;/h1&gt;
 &lt;h2 id=&#34;关键字与保留字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键字与保留字&#34;&gt;#&lt;/a&gt; 关键字与保留字&lt;/h2&gt;
 &lt;h3 id=&#34;关键字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键字&#34;&gt;#&lt;/a&gt; 关键字&lt;/h3&gt;
-&lt;p&gt;定义：被 被 Java 语言赋予了特殊含义，用做专门用途的字符串（单词）&lt;br&gt;
-特点： 关键字中所有字母都为小写&lt;/p&gt;
+&lt;p&gt;定义：被 Java 语言赋予了特殊含义，用做专门用途的字符串（单词）&lt;br&gt;
+特点：关键字中所有字母都为小写&lt;/p&gt;
 &lt;h3 id=&#34;保留字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#保留字&#34;&gt;#&lt;/a&gt; 保留字&lt;/h3&gt;
-&lt;p&gt;Java 保留字：现有 Java 版本尚未使用，但以后版本可能会作为关键字使&lt;br&gt;
-用。自己命名标识符时要避免使用这些保留字&lt;br&gt;
+&lt;p&gt;Java 保留字：现有 Java 版本尚未使用，但以后版本可能会作为关键字使用。自己命名标识符时要避免使用这些保留字&lt;br&gt;
  goto 、const&lt;/p&gt;
 &lt;h2 id=&#34;标识符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标识符&#34;&gt;#&lt;/a&gt; 标识符&lt;/h2&gt;
 &lt;h3 id=&#34;标识符-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标识符-2&#34;&gt;#&lt;/a&gt; 标识符&lt;/h3&gt;
 &lt;p&gt;Java 对各种 变量、 方法和 类等要素命名时使用的字符序列称为标识符&lt;br&gt;
  技巧：凡是自己可以起名字的地方都叫标识符&lt;/p&gt;
 &lt;h3 id=&#34;定义合法标识符规则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义合法标识符规则&#34;&gt;#&lt;/a&gt; 定义合法标识符规则：&lt;/h3&gt;
-&lt;p&gt;由 26 个英文字母大小写，0-9  ，_或 或 $  组成&lt;br&gt;
+&lt;p&gt;由 26 个英文字母大小写，0-9  ，_或 $ 组成&lt;br&gt;
  数字不可以开头。&lt;br&gt;
  不可以使用关键字和保留字，但能包含关键字和保留字。&lt;br&gt;
 Java 中严格区分大小写，长度无限制。&lt;br&gt;
@@ -1378,14 +1465,14 @@ arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#
 &lt;h3 id=&#34;java中的名称命名规范&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java中的名称命名规范&#34;&gt;#&lt;/a&gt; Java 中的名称命名规范&lt;/h3&gt;
 &lt;p&gt; 包名：多单词组成时所有字母都小写：xxxyyyzzz&lt;br&gt;
  类名、接口名：多单词组成时，所有单词的首字母大写：XxxYyyZzz&lt;br&gt;
- 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个&lt;br&gt;
-单词首字母大写：xxxYyyZzz&lt;br&gt;
+ 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz&lt;br&gt;
  常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ&lt;/p&gt;
 &lt;h2 id=&#34;变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量&#34;&gt;#&lt;/a&gt; 变量&lt;/h2&gt;
 &lt;h3 id=&#34;变量-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量-2&#34;&gt;#&lt;/a&gt; 变量&lt;/h3&gt;
 &lt;p&gt;内存中的一个存储区域&lt;br&gt;
 该区域的数据可以在同一类型范围内不断变化&lt;br&gt;
 变量是程序中最基本的存储单元。包含变量类型、变量名和存储的值&lt;/p&gt;
+&lt;p&gt;作用：用于在内存中保存数据&lt;/p&gt;
 &lt;h3 id=&#34;注意&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意&#34;&gt;#&lt;/a&gt; 注意&lt;/h3&gt;
 &lt;p&gt;Java 中每个变量必须先声明，后使用&lt;br&gt;
 使用变量名来访问这块区域的数据&lt;br&gt;
@@ -1420,7 +1507,7 @@ arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#
 科学计数法形式：如：5.12e2 512E2 100E-2&lt;br&gt;
  float: 单精度，尾数可以精确到 7 位有效数字。很多情况下，精度很难满足需求。&lt;br&gt;
 double: 双精度，精度是 float 的两倍。通常采用此类型。&lt;br&gt;
- Java  的浮点型常量默认为 double 型 型，明 声明 float 型常量，须后加‘f’ 或‘F’ 。&lt;/p&gt;
+ Java  的浮点型常量默认为 double 型，声明 float 型常量，须后加‘f’ 或‘F’ 。&lt;/p&gt;
 &lt;p&gt;float 表示数值的范围比 long 还大&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20210110010352218.png&#34; alt=&#34;浮点类型&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;字符类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符类型&#34;&gt;#&lt;/a&gt; 字符类型&lt;/h2&gt;
@@ -1468,7 +1555,7 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。&lt;br&g
 &lt;p&gt;+= 不会改变变量本身的数据类型&lt;/p&gt;
 &lt;h3 id=&#34;比较运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#比较运算符&#34;&gt;#&lt;/a&gt; 比较运算符&lt;/h3&gt;
 &lt;p&gt;比较运算符的结果都是 boolean 型，也就是要么是 true，要么是 false。&lt;/p&gt;
-&lt;p&gt;instanceof 检查是否是类的对象 “Hello” instanceof String true&lt;/p&gt;
+&lt;p&gt;instanceof 检查是否是类的对象 “Hello” instanceof String //true&lt;/p&gt;
 &lt;h3 id=&#34;逻辑运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#逻辑运算符&#34;&gt;#&lt;/a&gt; 逻辑运算符&lt;/h3&gt;
 &lt;p&gt;&amp;amp;— 逻辑与 | — 逻辑或 ！— 逻辑非  &amp;amp;&amp;amp; — 短路与 || — 短路或 ^ — 逻辑异或&lt;/p&gt;
 &lt;p&gt;逻辑运算符用于连接布尔型表达式&lt;/p&gt;
@@ -1476,8 +1563,9 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。&lt;br&g
 单 &amp;amp; 时，左边无论真假，右边都进行运算；&lt;br&gt;
 双 &amp;amp; 时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。&lt;/p&gt;
 &lt;h3 id=&#34;位运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#位运算符&#34;&gt;#&lt;/a&gt; 位运算符&lt;/h3&gt;
+&lt;p&gt;位运算是直接对整数的二进制进行的运算&lt;/p&gt;
 &lt;p&gt;运算符 运算 范例&lt;br&gt;
- &amp;lt;&amp;lt;左移 3 &amp;lt;&amp;lt; 2 = 12 --&amp;gt; 3&lt;em&gt;2&lt;/em&gt;2=12&lt;/p&gt;
+ &amp;lt;&amp;lt;左移 3 &amp;lt;&amp;lt; 2 = 12 --&amp;gt; 3×2×2=12&lt;/p&gt;
 &lt;p&gt;右移 3 &amp;gt;&amp;gt; 1 = 1 --&amp;gt; 3/2=1&lt;/p&gt;
 &lt;p&gt;无符号右移 3 &amp;gt;&amp;gt;&amp;gt; 1 = 1 --&amp;gt; 3/2=1&lt;br&gt;
 &amp;amp; 与运算 6 &amp;amp; 3 = 2&lt;br&gt;
@@ -1485,10 +1573,11 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。&lt;br&g
 ^ 异或运算 6 ^ 3 = 5&lt;br&gt;
 ~ 取反运算～6 = -7&lt;/p&gt;
 &lt;p&gt;&amp;lt;&amp;lt; 空位补 0，被移除的高位丢弃，空缺位补 0。&lt;/p&gt;
-&lt;p&gt;//&amp;lt;&amp;lt; 被移位的二进制最高位是 0，右移后，空缺位补 0；最高位是 1，空缺位补 1。&lt;/p&gt;
-&lt;p&gt;// &amp;lt;&amp;lt;&amp;lt; 被移位二进制最高位无论是 0 或者是 1，空缺位都用 0 补&lt;/p&gt;
+&lt;p&gt;//&amp;gt;&amp;gt; 被移位的二进制最高位是 0，右移后，空缺位补 0；最高位是 1，空缺位补 1。&lt;/p&gt;
+&lt;p&gt;// &amp;gt;&amp;gt;&amp;gt; 被移位二进制最高位无论是 0 或者是 1，空缺位都用 0 补&lt;/p&gt;
 &lt;h3 id=&#34;三元运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三元运算符&#34;&gt;#&lt;/a&gt; 三元运算符&lt;/h3&gt;
 &lt;p&gt;(条件表达式)? 表达式 1 ：表达式 2&lt;/p&gt;
+&lt;p&gt;表达式 1 和表达式 2 为同种类型&lt;/p&gt;
 &lt;h2 id=&#34;运算符的优先级&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运算符的优先级&#34;&gt;#&lt;/a&gt; 运算符的优先级&lt;/h2&gt;
 &lt;p&gt;只有单目运算符、三元运算符、	赋值运算符是从右向左运算的。&lt;/p&gt;
 &lt;h2 id=&#34;程序流程控制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序流程控制&#34;&gt;#&lt;/a&gt; 程序流程控制&lt;/h2&gt;
@@ -1554,7 +1643,7 @@ double: 双精度，精度是 float 的两倍。通常采用此类型。&lt;br&g
 错误：可能尚未初始化变量sum&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;while循环&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#while循环&#34;&gt;#&lt;/a&gt; while 循环&lt;/h4&gt;
 &lt;p&gt;①初始化部分&lt;br&gt;
- while (②循环条件部分)｛ ｛&lt;br&gt;
+ while (②循环条件部分)｛&lt;br&gt;
 ③循环体部分；&lt;br&gt;
 ④迭代部分；&lt;br&gt;
 }&lt;/p&gt;
@@ -1565,14 +1654,23 @@ do{&lt;br&gt;
 ④ 迭代部分&lt;br&gt;
 } while (②循环条件部分);&lt;/p&gt;
 &lt;p&gt;do-while 循环至少执行一次循环体&lt;/p&gt;
-&lt;h3 id=&#34;最简单-无限-循环&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最简单-无限-循环&#34;&gt;#&lt;/a&gt; 最简单 “无限” ”  循环&lt;/h3&gt;
-&lt;p&gt;最简单 “无限” ”  循环： 格式：while (true) , for (;😉, 无限循环存在的原因是并不知道循环多少次， 需要 根据循环体内部某些 条件，来 控制 循环的结束&lt;/p&gt;
+&lt;h3 id=&#34;最简单无限循环&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最简单无限循环&#34;&gt;#&lt;/a&gt; 最简单 “无限” 循环&lt;/h3&gt;
+&lt;p&gt;最简单 “无限” ”  循环： 格式：&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-javascript&#34; data-language=&#34;javascript&#34;&gt;&lt;code class=&#34;language-javascript&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;无限循环存在的原因是并不知道循环多少次， 需要 根据循环体内部某些 条件，来 控制 循环的结束&lt;/p&gt;
 &lt;h3 id=&#34;currenttimemillis&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#currenttimemillis&#34;&gt;#&lt;/a&gt; currentTimeMillis()&lt;/h3&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt; start&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;currentTimeMillis&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;break-continue&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#break-continue&#34;&gt;#&lt;/a&gt; break continue&lt;/h3&gt;
 &lt;p&gt;break 语句用于终止某个语句块的执行，结束当前循环&lt;/p&gt;
+&lt;p&gt;{   ……&lt;br&gt;
+break;&lt;br&gt;
+……&lt;br&gt;
+}&lt;/p&gt;
 &lt;p&gt;continue 语句用于跳过其所在循环语句块的一次执行，继续下一次循环，结束当次循环&lt;/p&gt;
 &lt;p&gt;两个关键字后面都不能声明执行语句，会报错&lt;/p&gt;
+&lt;p&gt;break 只能用于 switch 语句和 循环语句中。&lt;br&gt;
+continue 只能用于 循环语句中。&lt;/p&gt;
 &lt;h4 id=&#34;label&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#label&#34;&gt;#&lt;/a&gt; label&lt;/h4&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;LabelTest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
 	&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; args&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
