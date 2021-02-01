@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Fsh">
+    <meta name="keywords" content="10-枚举类与注解, Fsh">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Fsh</title>
+    <title>10-枚举类与注解 | Fsh</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">10-枚举类与注解</h1>
                 </div>
             </div>
         </div>
@@ -388,12 +388,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaSE/">
+                                <span class="chip bg-color">JavaSE</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaSE/" class="post-category">
+                                JavaSE
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -402,7 +415,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-18
+                    2021-01-31
                 </div>
                 
 
@@ -411,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    74
+                    1.7k
                 </div>
                 
 
@@ -431,20 +444,239 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start">#</a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post">#</a> Create a new post</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server">#</a> Run server</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files">#</a> Generate static files</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites">#</a> Deploy to remote sites</h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="枚举类与注解"><a class="markdownIt-Anchor" href="#枚举类与注解">#</a> 枚举类与注解</h1>
+<h2 id="枚举类"><a class="markdownIt-Anchor" href="#枚举类">#</a> 枚举类</h2>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+ * 一、枚举类的使用
+ * 1.枚举类的理解：类的对象只有有限个，确定的。我们称此类为枚举类
+ * 2.当需要定义一组常量时，强烈建议使用枚举类
+ * 3.如果枚举类中只有一个对象，则可以作为单例模式的实现方式。
+ *
+ * 二、如何定义枚举类
+ * 方式一：jdk5.0之前，自定义枚举类
+ * 方式二：jdk5.0，可以使用enum关键字定义枚举类
+ *
+ * 三、Enum类中的常用方法：
+ *    values()方法：返回枚举类型的对象数组。该方法可以很方便地遍历所有的枚举值。
+ *    valueOf(String str)：可以把一个字符串转为对应的枚举类对象。要求字符串必须是枚举类对象的“名字”。如不是，会有运行时异常：IllegalArgumentException。
+ *    toString()：返回当前枚举类对象常量的名称
+ *
+ * 四、使用enum关键字定义的枚举类实现接口的情况
+ *   情况一：实现接口，在enum类中实现抽象方法
+ *   情况二：让枚举类的对象分别实现接口中的抽象方法
+ *
+ * @author shkstart
+ * @create 2019 上午 10:17
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SeasonTest</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Season</span> spring <span class="token operator">=</span> <span class="token class-name">Season</span><span class="token punctuation">.</span>SPRING<span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>spring<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+<span class="token comment">//自定义枚举类</span>
+<span class="token keyword">class</span> <span class="token class-name">Season</span><span class="token punctuation">{</span>
+    <span class="token comment">//1.声明Season对象的属性:private final修饰</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> seasonName<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> seasonDesc<span class="token punctuation">;</span>
+
+    <span class="token comment">//2.私有化类的构造器,并给对象属性赋值</span>
+    <span class="token keyword">private</span> <span class="token class-name">Season</span><span class="token punctuation">(</span><span class="token class-name">String</span> seasonName<span class="token punctuation">,</span><span class="token class-name">String</span> seasonDesc<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>seasonName <span class="token operator">=</span> seasonName<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>seasonDesc <span class="token operator">=</span> seasonDesc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//3.提供当前枚举类的多个对象：public static final的</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Season</span> SPRING <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Season</span><span class="token punctuation">(</span><span class="token string">"春天"</span><span class="token punctuation">,</span><span class="token string">"春暖花开"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Season</span> SUMMER <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Season</span><span class="token punctuation">(</span><span class="token string">"夏天"</span><span class="token punctuation">,</span><span class="token string">"夏日炎炎"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Season</span> AUTUMN <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Season</span><span class="token punctuation">(</span><span class="token string">"秋天"</span><span class="token punctuation">,</span><span class="token string">"秋高气爽"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Season</span> WINTER <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Season</span><span class="token punctuation">(</span><span class="token string">"冬天"</span><span class="token punctuation">,</span><span class="token string">"冰天雪地"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//4.其他诉求1：获取枚举类对象的属性</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getSeasonName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> seasonName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getSeasonDesc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> seasonDesc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//4.其他诉求1：提供toString()</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Season{"</span> <span class="token operator">+</span>
+                <span class="token string">"seasonName='"</span> <span class="token operator">+</span> seasonName <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", seasonDesc='"</span> <span class="token operator">+</span> seasonDesc <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+ * 使用enum关键字定义枚举类
+ * 说明：定义的枚举类默认继承于java.lang.Enum类，因此不能再继承其他类
+ *JDK 1.5 中可以在 switch 表达式中使用Enum定义的枚举类的对象作为表达式, case 子句可
+ *以直接使用枚举值的名字, 无需添加枚举类作为限定。
+ * @author shkstart
+ * @create 2019 上午 10:35
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SeasonTest1</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Season1</span> summer <span class="token operator">=</span> <span class="token class-name">Season1</span><span class="token punctuation">.</span>SUMMER<span class="token punctuation">;</span>
+        <span class="token comment">//toString():返回枚举类对象的名称</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>summer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//        System.out.println(Season1.class.getSuperclass());</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"****************"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//values():返回所有的枚举类对象构成的数组</span>
+        <span class="token class-name">Season1</span><span class="token punctuation">[</span><span class="token punctuation">]</span> values <span class="token operator">=</span> <span class="token class-name">Season1</span><span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> values<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>values<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            values<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"****************"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token class-name">State</span><span class="token punctuation">[</span><span class="token punctuation">]</span> values1 <span class="token operator">=</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token class-name">State</span><span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> values1<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>values1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">//valueOf(String objName):返回枚举类中对象名是objName的对象。</span>
+        <span class="token class-name">Season1</span> winter <span class="token operator">=</span> <span class="token class-name">Season1</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"WINTER"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//如果没有objName的枚举类对象，则抛异常：IllegalArgumentException</span>
+<span class="token comment">//        Season1 winter = Season1.valueOf("WINTER1");</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>winter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        winter<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Info</span><span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//使用enum关键字枚举类</span>
+<span class="token keyword">enum</span> <span class="token class-name">Season1</span> <span class="token keyword">implements</span> <span class="token class-name">Info</span><span class="token punctuation">{</span>
+    <span class="token comment">//1.提供当前枚举类的对象，多个对象之间用","隔开，末尾对象";"结束</span>
+    <span class="token function">SPRING</span><span class="token punctuation">(</span><span class="token string">"春天"</span><span class="token punctuation">,</span><span class="token string">"春暖花开"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"春天在哪里？"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">SUMMER</span><span class="token punctuation">(</span><span class="token string">"夏天"</span><span class="token punctuation">,</span><span class="token string">"夏日炎炎"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"宁夏"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">AUTUMN</span><span class="token punctuation">(</span><span class="token string">"秋天"</span><span class="token punctuation">,</span><span class="token string">"秋高气爽"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"秋天不回来"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">WINTER</span><span class="token punctuation">(</span><span class="token string">"冬天"</span><span class="token punctuation">,</span><span class="token string">"冰天雪地"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"大约在冬季"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//2.声明Season对象的属性:private final修饰</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> seasonName<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">String</span> seasonDesc<span class="token punctuation">;</span>
+
+    <span class="token comment">//2.私有化类的构造器,并给对象属性赋值</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Season1</span><span class="token punctuation">(</span><span class="token class-name">String</span> seasonName<span class="token punctuation">,</span><span class="token class-name">String</span> seasonDesc<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>seasonName <span class="token operator">=</span> seasonName<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>seasonDesc <span class="token operator">=</span> seasonDesc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//4.其他诉求1：获取枚举类对象的属性</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getSeasonName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> seasonName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getSeasonDesc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> seasonDesc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token comment">//    //4.其他诉求1：提供toString()</span>
+<span class="token comment">//</span>
+<span class="token comment">//    @Override</span>
+<span class="token comment">//    public String toString() {</span>
+<span class="token comment">//        return "Season1{" +</span>
+<span class="token comment">//                "seasonName='" + seasonName + '\'' +</span>
+<span class="token comment">//                ", seasonDesc='" + seasonDesc + '\'' +</span>
+<span class="token comment">//                '}';</span>
+<span class="token comment">//    }</span>
+
+
+<span class="token comment">//    @Override</span>
+<span class="token comment">//    public void show() {</span>
+<span class="token comment">//        System.out.println("这是一个季节");</span>
+<span class="token comment">//    }</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="注解"><a class="markdownIt-Anchor" href="#注解">#</a> 注解</h2>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+ * 注解的使用
+ *
+ * 1. 理解Annotation:
+ * ① jdk 5.0 新增的功能
+ *
+ * ② Annotation 其实就是代码里的特殊标记, 这些标记可以在编译, 类加载, 运行时被读取, 并执行相应的处理。通过使用 Annotation,
+ * 程序员可以在不改变原有逻辑的情况下, 在源文件中嵌入一些补充信息。
+ *
+ * ③在JavaSE中，注解的使用目的比较简单，例如标记过时的功能，忽略警告等。在JavaEE/Android
+ * 中注解占据了更重要的角色，例如用来配置应用程序的任何切面，代替JavaEE旧版中所遗留的繁冗
+ * 代码和XML配置等。
+ *
+ * 2. Annocation的使用示例
+ * 示例一：生成文档相关的注解
+ * 示例二：在编译时进行格式检查(JDK内置的三个基本注解)
+     @Override: 限定重写父类方法, 该注解只能用于方法
+     @Deprecated: 用于表示所修饰的元素(类, 方法等)已过时。通常是因为所修饰的结构危险或存在更好的选择
+     @SuppressWarnings: 抑制编译器警告
+
+  * 示例三：跟踪代码依赖性，实现替代配置文件功能
+  *
+  * 3. 如何自定义注解：参照@SuppressWarnings定义
+      * ① 注解声明为：@interface
+      * ② 内部定义成员，通常使用value表示
+      * ③ 可以指定成员的默认值，使用default定义
+      * ④ 如果自定义注解没有成员，表明是一个标识作用。
+	  * ⑤Annotation 的成员变量在 Annotation 定义中以无参数方法的形式来声明。其
+	  方法名和返回值定义了该成员的名字和类型。我们称为配置参数。类型只能
+      是八种基本数据类型、String 类型 、Class 类型 、enum 类型 、Annotation 类型 、
+      以上所有类型的数组。
+
+     如果注解有成员，在使用注解时，需要指明成员的值。
+     自定义注解必须配上注解的信息处理流程(使用反射)才有意义。
+     自定义注解通过都会指明两个元注解：Retention、Target
+
+     4. jdk 提供的4种元注解
+       元注解：对现有的注解进行解释说明的注解
+     Retention：指定所修饰的 Annotation 的生命周期：SOURCE\CLASS（默认行为）\RUNTIME
+            只有声明为RUNTIME生命周期的注解，才能通过反射获取。
+     Target:用于指定被修饰的 Annotation 能用于修饰哪些程序元素
+     *******出现的频率较低*******
+     Documented:表示所修饰的注解在被javadoc解析时，保留下来。定义为Documented的注解必须设置Retention值为RUNTIME
+     Inherited:被它修饰的 Annotation 将具有继承性。
+
+     5.通过反射获取注解信息 ---到反射内容时系统讲解
+
+     6. jdk 8 中注解的新特性：可重复注解、类型注解
+
+     6.1 可重复注解：① 在MyAnnotation上声明@Repeatable，成员值为MyAnnotations.class
+                    ② MyAnnotation的Target和Retention等元注解与MyAnnotations相同。
+
+     6.2 类型注解：
+     ElementType.TYPE_PARAMETER 表示该注解能写在类型变量的声明语句中（如：泛型声明）。
+     ElementType.TYPE_USE 表示该注解能写在使用类型的任何语句中。
+
+      *
+ * @author shkstart
+ * @create 2019 上午 11:37
+ */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -471,7 +703,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Fsh010816.github.io/2020/12/18/hello-world/">http://Fsh010816.github.io/2020/12/18/hello-world/</a>
+                    <a href="http://Fsh010816.github.io/2021/01/31/10-mei-ju-lei-yu-zhu-jie/">http://Fsh010816.github.io/2021/01/31/10-mei-ju-lei-yu-zhu-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -508,7 +740,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/JavaSE/">
+                                    <span class="chip bg-color">JavaSE</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -676,17 +912,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/08/1-java-yu-yan-gai-shu/">
+                <a href="/2021/01/31/10-mei-ju-lei-yu-zhu-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="1_Java语言概述">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="10-枚举类与注解">
                         
-                        <span class="card-title">1_Java语言概述</span>
+                        <span class="card-title">10-枚举类与注解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -696,9 +933,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-08
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaSE/" class="post-category">
+                                    JavaSE
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaSE/">
+                        <span class="chip bg-color">JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/01/30/9-java-chang-yong-lei/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="9-Java常用类">
+                        
+                        <span class="card-title">9-Java常用类</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -719,44 +1006,6 @@
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/12/18/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-18
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            fsh
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
