@@ -3,8 +3,44 @@
     <id>http://Fsh010816.github.io</id>
     <title>Fsh • Posts by &#34;javase&#34; category</title>
     <link href="http://Fsh010816.github.io" />
-    <updated>2021-01-31T10:48:35.000Z</updated>
+    <updated>2021-02-01T08:09:08.000Z</updated>
     <category term="JavaSE" />
+    <entry>
+        <id>http://fsh010816.github.io/2021/02/01/11-java-ji-he/</id>
+        <title>11-Java集合</title>
+        <link rel="alternate" href="http://fsh010816.github.io/2021/02/01/11-java-ji-he/"/>
+        <content type="html">&lt;h1 id=&#34;java集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java集合&#34;&gt;#&lt;/a&gt; Java 集合&lt;/h1&gt;
+&lt;h2 id=&#34;集合框架的概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#集合框架的概述&#34;&gt;#&lt;/a&gt; 集合框架的概述&lt;/h2&gt;
+&lt;h3 id=&#34;集合概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#集合概述&#34;&gt;#&lt;/a&gt; 集合概述&lt;/h3&gt;
+&lt;p&gt;集合、数组都是对多个数据进行存储操作的结构，简称 Java 容器。&lt;/p&gt;
+&lt;p&gt;说明：此时的存储，主要指的是内存层面的存储，不涉及到持久化的存储（.txt,.jpg,.avi，数据库中）&lt;/p&gt;
+&lt;p&gt;在 Java5 之前，Java 集合会丢失容器中所有对象的数据类型，把所有对象都当成 Object 类型处理；从 JDK 5.0 增加了 泛型以后，Java 集合可以记住容器中对象的数据类型&lt;/p&gt;
+&lt;h3 id=&#34;数组优缺点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组优缺点&#34;&gt;#&lt;/a&gt; 数组优缺点&lt;/h3&gt;
+&lt;p&gt;①数组在存储多个数据方面的特点：&lt;/p&gt;
+&lt;p&gt;1. 一旦初始化以后，其长度就确定了。&lt;/p&gt;
+&lt;p&gt;2. 数组一旦定义好，其元素的类型也就确定了。我们也就只能操作指定类型的数据了。&lt;/p&gt;
+&lt;p&gt;比如：String [] arr;int [] arr1;Object [] arr2;&lt;/p&gt;
+&lt;p&gt;②数组在存储多个数据方面的缺点：&lt;/p&gt;
+&lt;p&gt;1. 一旦初始化以后，其长度就不可修改。&lt;/p&gt;
+&lt;p&gt;2. 数组中提供的方法非常有限，对于添加、删除、插入数据等操作，非常不便，同时效率不高。&lt;/p&gt;
+&lt;p&gt;3. 获取数组中实际元素的个数的需求，数组没有现成的属性或方法可用&lt;/p&gt;
+&lt;p&gt;4. 数组存储数据的特点：有序、可重复。对于无序、不可重复的需求，不能满足。&lt;/p&gt;
+&lt;h3 id=&#34;集合框架&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#集合框架&#34;&gt;#&lt;/a&gt; 集合框架&lt;/h3&gt;
+&lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;/*
+ *      |----Collection接口：单列集合，用来存储一个一个的对象
+ *          |----List接口：存储有序的、可重复的数据。  --&amp;gt;“动态”数组
+ *              |----ArrayList、LinkedList、Vector
+ *
+ *          |----Set接口：存储无序的、不可重复的数据   --&amp;gt;高中讲的“集合”
+ *              |----HashSet、LinkedHashSet、TreeSet
+ *
+ *      |----Map接口：双列集合，用来存储一对(key - value)一对的数据   --&amp;gt;高中函数：y = f(x)
+ *              |----HashMap、LinkedHashMap、TreeMap、Hashtable、Properties
+ */&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="JavaSE" />
+        <updated>2021-02-01T08:09:08.000Z</updated>
+    </entry>
     <entry>
         <id>http://fsh010816.github.io/2021/01/31/10-mei-ju-lei-yu-zhu-jie/</id>
         <title>10-枚举类与注解</title>
