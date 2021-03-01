@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -449,6 +449,8 @@
 <h3 id="关键字"><a class="markdownIt-Anchor" href="#关键字">#</a> 关键字</h3>
 <p><strong>定义</strong>：被 Java 语言赋予了特殊含义，用做专门用途的字符串（单词）<br>
 <strong>特点</strong>：关键字中所有字母都为小写</p>
+<p><img src="https://img-blog.csdnimg.cn/20210301165754796.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/20210301165754885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <h3 id="保留字"><a class="markdownIt-Anchor" href="#保留字">#</a> 保留字</h3>
 <p><strong>Java 保留字</strong>：现有 Java 版本尚未使用，但以后版本可能会作为关键字使用。自己命名标识符时要避免使用这些保留字<br>
  goto 、const</p>
@@ -531,7 +533,7 @@ Java 的浮点型常量默认为 double 型，声明 float 型常量，须后加
 <li>直接使用 Unicode 值来表示字符型常量：‘\uXXXX’。其中，XXXX 代表一个十六进制整数。如：\u000a 表示 \n。</li>
 </ol>
 <p><img src="https://img-blog.csdnimg.cn/20210110010352220.png" alt="转义字符"></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">char</span> c <span class="token operator">=</span> <span class="token number">97</span><span class="token punctuation">;</span><span class="token comment">//开发中非常少见</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">char</span> c <span class="token operator">=</span> <span class="token number">97</span><span class="token punctuation">;</span><span class="token comment">//开发中非常少见，输出的话是'a'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="布尔类型"><a class="markdownIt-Anchor" href="#布尔类型">#</a> 布尔类型</h2>
 <p>Java 虚拟机中没有任何供 boolean 值专用的字节码指令，Java 语言表达所操作的 boolean 值，在编译之后都使用 java 虚拟机中的 int 数据类型来代替：true 用 1 表示，false 用 0 表示。</p>
 <h2 id="基本数据类型转换"><a class="markdownIt-Anchor" href="#基本数据类型转换">#</a> 基本数据类型转换</h2>
@@ -574,34 +576,32 @@ Java 的浮点型常量默认为 double 型，声明 float 型常量，须后加
 <h3 id="比较运算符"><a class="markdownIt-Anchor" href="#比较运算符">#</a> 比较运算符</h3>
 <p>比较运算符的结果都是 boolean 型，也就是要么是 true，要么是 false。</p>
 <p>instanceof 检查是否是类的对象 “Hello” instanceof String //true</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i <span class="token operator">=</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="逻辑运算符"><a class="markdownIt-Anchor" href="#逻辑运算符">#</a> 逻辑运算符</h3>
-<p>&amp;— 逻辑与 | — 逻辑或 ！— 逻辑非  &amp;&amp; — 短路与 || — 短路或 ^ — 逻辑异或</p>
+<p>&amp;— 逻辑与   | — 逻辑或    ！— 逻辑非     &amp;&amp; — 短路与    || — 短路或    ^ — 逻辑异或</p>
 <p>逻辑运算符用于连接布尔型表达式</p>
 <p>“&amp;” 和 “&amp;&amp;” 的区别：<br>
-单 &amp; 时，左边无论真假，右边都进行运算；<br>
-双 &amp; 时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。</p>
+①: 单 &amp; 时，左边无论真假，右边都进行运算；<br>
+②: 双 &amp; 时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。</p>
+<p>开发中，推荐使用 &amp;&amp;</p>
 <h3 id="位运算符"><a class="markdownIt-Anchor" href="#位运算符">#</a> 位运算符</h3>
 <p>位运算是直接对整数的二进制进行的运算</p>
-<p>运算符 运算 范例<br>
- &lt;&lt;左移 3 &lt;&lt; 2 = 12 --&gt; 3×2×2=12</p>
-<p>右移 3 &gt;&gt; 1 = 1 --&gt; 3/2=1</p>
-<p>无符号右移 3 &gt;&gt;&gt; 1 = 1 --&gt; 3/2=1<br>
-&amp; 与运算 6 &amp; 3 = 2<br>
-| 或运算 6 | 3 = 7<br>
-^ 异或运算 6 ^ 3 = 5<br>
-~ 取反运算～6 = -7</p>
-<p>&lt;&lt; 空位补 0，被移除的高位丢弃，空缺位补 0。</p>
-<p>//&gt;&gt; 被移位的二进制最高位是 0，右移后，空缺位补 0；最高位是 1，空缺位补 1。</p>
-<p>// &gt;&gt;&gt; 被移位二进制最高位无论是 0 或者是 1，空缺位都用 0 补</p>
+<p><img src="https://img-blog.csdnimg.cn/20210301171621607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
+<img src="https://img-blog.csdnimg.cn/20210301171801279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center" style="zoom:80%;">
 <h3 id="三元运算符"><a class="markdownIt-Anchor" href="#三元运算符">#</a> 三元运算符</h3>
 <p>(条件表达式)? 表达式 1 ：表达式 2</p>
-<p>表达式 1 和表达式 2 为同种类型</p>
+<p>表达式 1 和表达式 2 要求是一致的</p>
 <h2 id="运算符的优先级"><a class="markdownIt-Anchor" href="#运算符的优先级">#</a> 运算符的优先级</h2>
-<p>只有单目运算符、三元运算符、	赋值运算符是从右向左运算的。</p>
+<p>只有单目运算符、三元运算符、赋值运算符是从右向左运算的。</p>
+<img src="https://img-blog.csdnimg.cn/20210301171952306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center" style="zoom:50%;">
 <h2 id="程序流程控制"><a class="markdownIt-Anchor" href="#程序流程控制">#</a> 程序流程控制</h2>
-<p>顺序结构<br>
-分支结构<br>
-循环结构</p>
+<ul>
+<li>顺序结构</li>
+<li>分支结构</li>
+<li>循环结构</li>
+</ul>
 <h3 id="scanner"><a class="markdownIt-Anchor" href="#scanner">#</a> Scanner</h3>
 <p>1 &gt; 导包</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Scanner</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -628,19 +628,22 @@ Java 的浮点型常量默认为 double 型，声明 float 型常量，须后加
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>1&gt;break 语句用来在执行完一个 case 分支后使程序跳出 switch 语句块；如果没有 break，程序会顺序执行到 switch 结尾</p>
 <p>2&gt;switch (表达式) 中表达式的值 必须是下述几种类型之一：byte ，short,char ，int， 枚举 (jdk 5.0) ，String (jdk 7.0)；</p>
-<p>3&gt; default 子句是 可任选的 的。同时，位置也是灵活的。当没有匹配的 case 时，执行 default</p>
+<p>3&gt; default 子句是可任选的。同时，位置也是灵活的。当没有匹配的 case 时，执行 default</p>
+<p>4 &gt; 如果 switch-case 结构中的多个 case 执行语句相同，则可以考虑进行合并</p>
 <h3 id="循环结构"><a class="markdownIt-Anchor" href="#循环结构">#</a> 循环结构</h3>
-<p>for 循环<br>
-while 循环<br>
-do-while 循环</p>
+<ol>
+<li>for 循环</li>
+<li>while 循环</li>
+<li>do-while 循环</li>
+</ol>
 <p>循环语句的四个组成部分<br>
 ①初始化部分 (init_statement)<br>
 ②循环条件部分 (test_exp)<br>
 ③循环体部分 (body_statement)<br>
 ④迭代部分 (alter_statement)</p>
 <h4 id="for循环"><a class="markdownIt-Anchor" href="#for循环">#</a> for 循环</h4>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>① 初始化 部分<span class="token punctuation">;</span> ② 循环条件部分<span class="token punctuation">;</span> ④ 迭代部分<span class="token punctuation">)</span>｛
-	③ 循环体部分<span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>①初始化部分<span class="token punctuation">;</span> ②循环条件部分<span class="token punctuation">;</span> ④迭代部分<span class="token punctuation">)</span>｛
+	③循环体部分<span class="token punctuation">;</span>
 ｝<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>①初始化部分可以声明多个变量，但必须是同一个类型，用逗号分隔<br>
 ④可以有多个变量更新，用逗号分隔</p>
@@ -665,18 +668,19 @@ Java 的浮点型常量默认为 double 型，声明 float 型常量，须后加
 ③循环体部分；<br>
 ④迭代部分；<br>
 }</p>
+<p>for 和 while 区别：初始化条件部分的作用范围不同</p>
 <h4 id="do-while"><a class="markdownIt-Anchor" href="#do-while">#</a> do-while</h4>
 <p>①初始化部分；<br>
 do{<br>
-③ 循环体部分<br>
-④ 迭代部分<br>
+③循环体部分<br>
+④迭代部分<br>
 } while (②循环条件部分);</p>
 <p>do-while 循环至少执行一次循环体</p>
 <h3 id="最简单无限循环"><a class="markdownIt-Anchor" href="#最简单无限循环">#</a> 最简单 “无限” 循环</h3>
 <p>最简单 “无限” ”  循环： 格式：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>无限循环存在的原因是并不知道循环多少次， 需要 根据循环体内部某些 条件，来 控制 循环的结束</p>
+<p>无限循环存在的原因是并不知道循环多少次， 需要根据循环体内部某些条件，来控制循环的结束</p>
 <h3 id="currenttimemillis"><a class="markdownIt-Anchor" href="#currenttimemillis">#</a> currentTimeMillis()</h3>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">long</span> start<span class="token operator">=</span><span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="break-continue"><a class="markdownIt-Anchor" href="#break-continue">#</a> break continue</h3>
@@ -687,8 +691,8 @@ break;<br>
 }</p>
 <p>continue 语句用于跳过其所在循环语句块的一次执行，继续下一次循环，结束当次循环</p>
 <p>两个关键字后面都不能声明执行语句，会报错</p>
-<p>break 只能用于 switch 语句和 循环语句中。<br>
-continue 只能用于 循环语句中。</p>
+<p>1&gt;break 只能用于 switch 语句和循环语句中。<br>
+2&gt;continue 只能用于循环语句中。</p>
 <h4 id="label"><a class="markdownIt-Anchor" href="#label">#</a> label</h4>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">LabelTest</span><span class="token punctuation">{</span>
 	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -705,6 +709,7 @@ break;<br>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="return"><a class="markdownIt-Anchor" href="#return">#</a> return</h3>
 <p>return：并非专门用于结束循环的，它的功能是结束一个方法。当一个方法执行到一个 return 语句时，这个方法将被结束。</p>
+<p>与 break 和 continue 不同的是，return 直接结束整个方法，不管这个 return 处于多少层循环之内</p>
 
                 
             </div>
