@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    2.8k
                 </div>
                 
 
@@ -459,8 +459,8 @@
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">类名 对象名 <span class="token operator">=</span> <span class="token keyword">new</span> 类名<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>3. 通过 “对象。属性” 或 “对象。方法” 调用对象的结构</p>
 <p>类的访问机制:</p>
-<p>在一个类中的访问机制：类中的方法可以直接访问类中的成员变量 。</p>
-<p> 在不同类中的访问机制：先创建要访问类的对象 ， 再用对象访问类中定义的成员 。</p>
+<p>1. 在一个类中的访问机制：类中的方法可以直接访问类中的成员变量 。（例外：static 方法访问非 static，编译不通过）</p>
+<p>2. 在不同类中的访问机制：先创建要访问类的对象 ，再用对象访问类中定义的成员 。</p>
 <h2 id="类"><a class="markdownIt-Anchor" href="#类">#</a> 类</h2>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">修饰符 <span class="token keyword">class</span>  类名 <span class="token punctuation">{</span>
     属性声明<span class="token punctuation">;</span>
@@ -493,7 +493,7 @@
 <p>3. 变量都有其对应的作用域</p>
 <h3 id="不同点"><a class="markdownIt-Anchor" href="#不同点">#</a> 不同点</h3>
 <p>1. 在类中声明的位置不同</p>
-<p>成员变量：在方法体外，类体内声明的变量</p>
+<p>成员变量：在方法体外，类体内声明的变量。直接定义在类的一对 {} 内</p>
 <p>局部变量：声明在方法内、方法形参、代码块内、构造器形参、构造器内部的变量</p>
 <p>2. 关于权限修饰符的不同</p>
 <p>属性：可以在声明属性时，指明其权限，使用权限修饰符</p>
@@ -524,19 +524,27 @@
 <p>定义方法时，方法的结果应该返回给调用者，交由调用者处理。</p>
 <h3 id="重载"><a class="markdownIt-Anchor" href="#重载">#</a> 重载</h3>
 <p>概念：在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或者参数类型不同即可。</p>
+<h4 id="面试题"><a class="markdownIt-Anchor" href="#面试题">#</a> 面试题</h4>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//[I@1540e19d</span>
+
+<span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//abc</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="可变个数的形参"><a class="markdownIt-Anchor" href="#可变个数的形参">#</a> 可变个数的形参</h3>
 <p>JavaSE 5.0 中提供了 Varargs (variable number of arguments) 机制，允许直接定义能和多个实参相匹配的形参。从而，可以用一种更简单的方式，来传递个数可变的实参。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">int</span> a <span class="token punctuation">,</span><span class="token class-name">String</span>…books<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>声明格式：方法名 (参数的类型名 … 参数名) 此参数名也有 length 属性</p>
-<p>可变参数：方法参数部分指定类型的参数个数是可变多个：0 个，1 个或多个</p>
-<p>可变参数方法的使用与方法参数部分使用数组是一致的</p>
-<p>可变个数形参的方法与同名的方法之间，彼此构成重载</p>
-<p>方法的参数部分有可变形参，需要放在形参声明的最后</p>
-<p>可变个数形参的方法与本类中方法名相同，形参类型也相同的数组之间不构成重载。换句话说，二者不能共存。</p>
+<p>1. 声明格式：方法名 (参数的类型名 … 参数名) 此参数名也有 length 属性</p>
+<p>2. 可变参数：方法参数部分指定类型的参数个数是可变多个：0 个，1 个或多个</p>
+<p>3. 可变参数方法的使用与方法参数部分使用数组是一致的</p>
+<p>4. 可变个数形参的方法与同名的方法之间，彼此构成重载</p>
+<p>5. 方法的参数部分有可变形参，需要放在形参声明的最后。在一个方法的形参位置，最多只能声明一个可变个数形参</p>
+<p>6. 可变个数形参的方法与本类中方法名相同，形参类型也相同的数组之间不构成重载。换句话说，二者不能共存。</p>
 <h3 id="方法参数的值传递机制"><a class="markdownIt-Anchor" href="#方法参数的值传递机制">#</a> 方法参数的值传递机制</h3>
 <p>Java 里方法的参数传递方式只有一种：值传递。 即将实际参数值的副本（复制品）传入方法内，而参数本身不受影响。	<br>
-形参是基本数据类型：将实参基本数据类型变量的 “数据值” 传递给形参<br>
-形参是引用数据类型：将实参引用数据类型变量的 “地址值” 传递给形参</p>
+1 &gt; 形参是基本数据类型：将实参基本数据类型变量的 “数据值” 传递给形参<br>
+ 2 &gt; 形参是引用数据类型：将实参引用数据类型变量的 “地址值” 传递给形参</p>
+<p><img src="https://img-blog.csdnimg.cn/20210303204900858.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/20210303204900930.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <h2 id="封装和隐藏"><a class="markdownIt-Anchor" href="#封装和隐藏">#</a> 封装和隐藏</h2>
 <p>信息的封装和隐藏</p>
 <p>Java 中通过将数据声明为私有的 (private)，再提供公共的（public）方法:getXxx () 和 setXxx () 实现对该属性的操作，以实现下述目的：<br>
