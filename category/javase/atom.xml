@@ -2630,7 +2630,7 @@ out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#
 &lt;h2 id=&#34;一维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一维数组&#34;&gt;#&lt;/a&gt; 一维数组&lt;/h2&gt;
 &lt;h3 id=&#34;声明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明&#34;&gt;#&lt;/a&gt; 声明&lt;/h3&gt;
 &lt;pre class=&#34;line-numbers language-java&#34; data-language=&#34;java&#34;&gt;&lt;code class=&#34;language-java&#34;&gt;type &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; 或 type&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Java 语言中声明数组时不能指定其长度 (数组中元素的数)&lt;/p&gt;
+&lt;p&gt;Java 语言中声明数组时不能指定其长度 (数组中元素的数)   例如：int a [5];&lt;/p&gt;
 &lt;h3 id=&#34;初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初始化&#34;&gt;#&lt;/a&gt; 初始化&lt;/h3&gt;
 &lt;h4 id=&#34;静态初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#静态初始化&#34;&gt;#&lt;/a&gt; 静态初始化&lt;/h4&gt;
 &lt;p&gt;静态初始化 ：在定义数组的同时就为数组元素分配空间并赋值。&lt;/p&gt;
@@ -2647,6 +2647,7 @@ arr&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#
 &lt;p&gt;定义并用运算符 new 为之分配空间后，才可以引用数组中的每个元素&lt;/p&gt;
 &lt;p&gt;数组元素下标可以是整型常量或整型表达式&lt;/p&gt;
 &lt;p&gt;数组元素下标从 0 开始&lt;/p&gt;
+&lt;p&gt;每个数组都有一个属性 length 指明它的长度，数组一旦初始化，其长度是不可变的&lt;/p&gt;
 &lt;h4 id=&#34;数组元素的默认初始化值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组元素的默认初始化值&#34;&gt;#&lt;/a&gt; 数组元素的默认初始化值&lt;/h4&gt;
 &lt;p&gt;数组是引用类型，它的元素相当于类的成员变量，因此数组一经分配空间，其中的每个元素也被按照成员变量同样的方式被隐式初始化&lt;/p&gt;
 &lt;h4 id=&#34;内存解析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内存解析&#34;&gt;#&lt;/a&gt; 内存解析&lt;/h4&gt;
