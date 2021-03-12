@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.6k
+                    3.7k
                 </div>
                 
 
@@ -481,7 +481,7 @@
 <p>父类被重写的方法的返回值类型是 A 类型，则子类重写的方法的返回值类型可以是 A 类或 A 类的子类</p>
 <p>父类被重写的方法的返回值类型是基本数据类型 (比如：double)，则子类重写的方法的返回值类型必须是相同的基本数据类型 (必须也是 double)</p>
 <p>④ 子类重写的方法抛出的异常类型不大于父类被重写的方法抛出的异常类型</p>
-<p>子类和父类中的同名同参数的方法要么都声明为非 static 的（考虑重写），要么都声明为 static 的（不是重写）。</p>
+<p>子类和父类中的同名同参数的方法要么都声明为非 static 的（考虑重写），要么都声明为 static 的（不是重写）。因为 static 方法是属于类的，子类无法覆盖父类的方法。</p>
 <h2 id="super"><a class="markdownIt-Anchor" href="#super">#</a> super</h2>
 <p>super 关键字的使用</p>
 <p>1.super 理解为：父类的</p>
@@ -507,6 +507,7 @@
 <h2 id="多态性"><a class="markdownIt-Anchor" href="#多态性">#</a> 多态性</h2>
 <p>1. 何为多态性：</p>
 <p>对象的多态性：父类的引用指向子类的对象（或子类的对象赋给父类的引用）</p>
+<p>可以直接应用在抽象类和接口上</p>
 <p>2. 多态的使用：虚拟方法调用</p>
 <p>有了对象的多态性以后，我们在编译期，只能调用父类中声明的方法，但在运行期，我们实际执行的是子类重写父类的方法。</p>
 <p>子类中定义了与父类同名同参数的方法，在多态情况下，将此时父类的方法称为虚拟方法，父类根据赋给它的不同子类对象，动态调用属于子类的该方法。这样的方法调用在编译期是无法确定的。</p>
@@ -516,7 +517,7 @@
 <p>5.Java 引用变量有两个类型： 编译时类型和 运行时类型。编译时类型由声明该变量时使用的类型决定，运行时类型由实际赋给该变量的对象决定。简称：编译时，看左边；运行时，看右边。</p>
 <p>若编译时类型和运行时类型不一致 ， 就出现了对象的多态性</p>
 <p>多态是运行时行为</p>
-<p>6. 一个引用类型变量如果声明为父类的类型，但实际引用的是子类对象，那么该变量就 不能 再访问子类中添加的属性和方法</p>
+<p>6. 一个引用类型变量如果声明为父类的类型，但实际引用的是子类对象，那么该变量就不能再访问子类中添加的属性和方法</p>
 <p>7. 若子类重写了父类方法，就意味着子类里定义的方法彻底覆盖了父类里的同名方法，系统将不可能把父类里的方法转移到子类中：编译看左边，运行看右边</p>
 <p>对于实例变量则不存在这样的现象，即使子类里定义了与父类完全相同的实例变量，这个实例变量依然不可能覆盖父类中定义的实例变量：编译运行都看左边</p>
 <h2 id="方法的重载与重写"><a class="markdownIt-Anchor" href="#方法的重载与重写">#</a> 方法的重载与重写</h2>
@@ -529,6 +530,7 @@
 <h2 id=""><a class="markdownIt-Anchor" href="#">#</a> ==</h2>
 <p>==：对于引用数据类型来讲，比较的是两个引用数据类型变量的地址值是否相同</p>
 <h2 id="instanceof"><a class="markdownIt-Anchor" href="#instanceof">#</a> instanceof</h2>
+<p>有了对象的多态性以后，内存中实际上是加载了子类特有的属性和方法的，但是由于变量声明为父类类型，导致编译时，只能调用父类中声明的属性和方法。子类特有的属性和方法不能调用。</p>
 <p>a instanceof A: 判断对象 a 是否是类 A 的实例。如果是，返回 true；如果不是，返回 false。</p>
 <p>要求 a 所属的类与类 A 必须是子类和父类的关系，否则编译错误</p>
 <p>如果 a 属于类 A 的子类 B，a instanceof A 值也为 true</p>
@@ -549,6 +551,8 @@
 <p>2. 如果比较的是基本数据类型变量：比较两个变量保存的数据是否相等。（不一定类型要相同）</p>
 <p>如果比较的是引用数据类型变量：比较两个对象的地址值是否相同。即两个引用是否指向同一个对象实体</p>
 <p>补充： == 符号使用时，必须保证符号左右两边的变量类型一致。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">char</span> c <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token operator">==</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="equals方法的使用"><a class="markdownIt-Anchor" href="#equals方法的使用">#</a> equals () 方法的使用</h3>
 <p>1. 是一个方法，而非运算符</p>
 <p>2. 只能适用于引用数据类型</p>
@@ -573,8 +577,9 @@ s <span class="token operator">=</span> <span class="token keyword">null</span><
 <p>3. 像 String、Date、File、包装类等都重写了 Object 类中的 toString () 方法。使得在调用对象的 toString () 时，返回 "实体内容" 信息</p>
 <p>4. 自定义类也可以重写 toString () 方法，当调用此方法时，返回对象的 "实体内容"</p>
 <p>toString () 方法在 Object 类中定义 ，其返回值是 String 类型 ， 返回类名和它的引用地址 。<br>
-在进行 String 与其它类型数据的连接操作时 ，调用了自动调用 toString () 方法</p>
-<p>基本类型数据转换为 String 类型时 ，调用了对应包装类的 toString () 方法</p>
+在进行 String 与其它类型数据的连接操作时 ，自动调用 toString () 方法</p>
+<p>基本类型数据转换	为 String 类型时 ，调用了对应包装类的 toString () 方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>“a<span class="token operator">=</span>”<span class="token operator">+</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="包装类"><a class="markdownIt-Anchor" href="#包装类">#</a> 包装类</h2>
 <p>java 提供了 8 种基本数据类型对应的包装类，使得基本数据类型的变量具有类的特征</p>
 <img src="https://img-blog.csdnimg.cn/20210121161225569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" style="zoom:50%;">

@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.2k
+                    4.6k
                 </div>
                 
 
@@ -458,15 +458,16 @@
 <p>② 静态变量的加载要早于对象的创建。</p>
 <p>③ 由于类只会加载一次，则静态变量在内存中也只会存在一份：存在方法区的静态域中。</p>
 <p>④		类变量	实例变量</p>
-<p>类		yes		no</p>
+<p>类			yes		no</p>
 <p>对象		yes		yes</p>
 <p>类不能直接调用实例变量</p>
+<p>⑤静态变量和静态方法前省略的是 “类.”</p>
 <p>3.3 静态属性举例：System.out; Math.PI;</p>
 <p>4. 使用 static 修饰方法：静态方法</p>
 <p>① 随着类的加载而加载，可以通过 "类。静态方法" 的方式进行调用</p>
 <p>②			静态方法	非静态方法</p>
-<p>类		yes		no</p>
-<p>对象		yes		yes</p>
+<p>类			yes				no</p>
+<p>对象		yes				yes</p>
 <p>③ 静态方法中，只能调用静态的方法或属性</p>
 <p>非静态方法中，既可以调用非静态的方法或属性，也可以调用静态的方法或属性</p>
 <p>5.static 注意点：</p>
@@ -492,6 +493,8 @@
 <p>好处：饿汉式是线程安全的</p>
 <p>懒汉式：好处：延迟对象的创建。</p>
 <p>目前的写法坏处：线程不安全。—&gt; 到多线程内容时，再修改</p>
+<p>4. 单例模式的优点：</p>
+<p>由于单例模式只生成一个实例，减少了系统性能开销，当一个对象的产生需要比较多的资源时，如读取配置、产生其他依赖对象时，则可以通过在应用启动时直接产生一个单例对象，然后永久驻留内存的方式来解决。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//饿汉式</span>
 <span class="token keyword">class</span> <span class="token class-name">Bank</span><span class="token punctuation">{</span>
 	<span class="token comment">//1.私有化类的构造器</span>
@@ -534,23 +537,9 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="理解main方法的语法"><a class="markdownIt-Anchor" href="#理解main方法的语法">#</a> 理解 main 方法的语法</h2>
 <p>main () 方法的使用说明：</p>
-<ul>
-<li>
-<ol>
-<li>main () 方法作为程序的入口</li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>main () 方法也是一个普通的静态方法</li>
-</ol>
-</li>
-<li>
-<ol start="3">
-<li>main () 方法可以作为我们与控制台交互的方式。（之前：使用 Scanner）</li>
-</ol>
-</li>
-</ul>
+<p>1.main () 方法作为程序的入口</p>
+<p>2.main () 方法也是一个普通的静态方法</p>
+<p>3.main () 方法可以作为我们与控制台交互的方式。（之前：使用 Scanner）</p>
 <p>由于 Java 虚拟机需要调用类的 main () 方法，所以该方法的访问权限必须是 public，又因为 Java 虚拟机在执行 main () 方法时不必创建对象，所以该方法必须是 static 的，该方法接收一个 String 类型的数组参数，该数组中保存执 Java 命令时传递给所运行的类的参数。</p>
 <p><img src="https://img-blog.csdnimg.cn/20210122150639663.png#pic_center" alt=""></p>
 <h2 id="代码块"><a class="markdownIt-Anchor" href="#代码块">#</a> 代码块</h2>
@@ -561,33 +550,31 @@
 <p>4. 静态代码块</p>
 <p>内部可以有输出语句</p>
 <p>随着类的加载而执行，而且只执行一次</p>
-<p>作用：初始化类的信息</p>
+<p>作用：初始化类的信息。</p>
 <p>如果一个类中定义了多个静态代码块，则按照声明的先后顺序执行</p>
 <p>静态代码块的执行要优先于非静态代码块的执行</p>
 <p>静态代码块内只能调用静态的属性、静态的方法，不能调用非静态的结构</p>
 <p>5. 非静态代码块</p>
 <p>内部可以有输出语句</p>
 <p>随着对象的创建而执行</p>
-<p>每创建一个对象，就执行一次非静态代码块</p>
+<p>每创建一个对象，就执行一次非静态代码块。且先于构造器执行。</p>
 <p>作用：可以在创建对象时，对对象的属性等进行初始化</p>
 <p>如果一个类中定义了多个非静态代码块，则按照声明的先后顺序执行</p>
 <p>非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法</p>
+<p>静态代码块 非静态代码块 构造器 // 总结：由父及子，静态先行</p>
 <h2 id="对属性可以赋值的位置"><a class="markdownIt-Anchor" href="#对属性可以赋值的位置">#</a> 对属性可以赋值的位置：</h2>
-<ul>
-<li>①默认初始化</li>
-<li>②显式初始化 /⑤在代码块中赋值</li>
-<li>③构造器中初始化</li>
-<li>④有了对象以后，可以通过 "对象。属性" 或 "对象。方法" 的方式，进行赋值</li>
-<li></li>
-<li>执行的先后顺序：① - ② / ⑤ - ③ - ④</li>
-</ul>
+<p>①默认初始化</p>
+<p>②显式初始化 /⑤在代码块中赋值</p>
+<p>③构造器中初始化</p>
+<p>④有了对象以后，可以通过 "对象。属性" 或 "对象。方法" 的方式，进行赋值</p>
+<p>执行的先后顺序：① - ② / ⑤ - ③ - ④</p>
 <h2 id="final"><a class="markdownIt-Anchor" href="#final">#</a> final</h2>
 <p>1.final 可以用来修饰的结构：类、方法、变量</p>
 <p>2.final 用来修饰一个类：此类不能被其他类所继承。</p>
 <p>比如：String 类、System 类、StringBuffer 类</p>
 <p>3.final 用来修饰方法：表明此方法不可以被重写</p>
 <p>比如：Object 类中 getClass ();</p>
-<p>4.final 用来修饰变量：此时的 "变量" 就称为是一个常量</p>
+<p>4.final 用来修饰变量（成员变量或局部变量）：此时的 "变量" 就称为是一个常量</p>
 <p>4.1 final 修饰属性：可以考虑赋值的位置有：显式初始化、代码块中初始化、构造器中初始化</p>
 <p>4.2 final 修饰局部变量：</p>
 <p>尤其是使用 final 修饰形参时，表明此形参是一个常量。当我们调用此方法时，给常量形参赋一个实参。一旦赋值以后，就只能在方法体内使用此形参，但不能进行重新赋值。</p>
@@ -606,7 +593,7 @@
 <p>若子类重写了父类中的所有的抽象方法后，此子类方可实例化</p>
 <p>若子类没有重写父类中的所有的抽象方法，则此子类也是一个抽象类，需要使用 abstract 修饰</p>
 <p>abstract 使用上的注意点：</p>
-<p>1.abstract 不能用来修饰：属性、构造器等结构</p>
+<p>1.abstract 不能用来修饰：属性、构造器等结构  不能用 abstract 修饰变量、代码块、构造器；</p>
 <p>2.abstract 不能用来修饰私有方法、静态方法、final 的方法、final 的类</p>
 <h2 id="匿名子类"><a class="markdownIt-Anchor" href="#匿名子类">#</a> 匿名子类</h2>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Person是抽象类 创建了一匿名子类的对象：p</span>
@@ -706,7 +693,7 @@
 <p>3.1 JDK7 及以前：只能定义全局常量和抽象方法</p>
 <p>全局常量：public static final 的。但是书写时，可以省略不写</p>
 <p>抽象方法：public abstract 的</p>
-<p>3.2 JDK8：除了定义全局常量和抽象方法之外，还可以定义静态方法、默认方法（略）</p>
+<p>3.2 JDK8：除了定义全局常量和抽象方法之外，还可以定义静态方法、默认方法</p>
 <p>4. 接口中不能定义构造器的！意味着接口不可以实例化</p>
 <p>5.Java 开发中，接口通过让类去实现 (implements) 的方式来使用.</p>
 <p>如果实现类覆盖了接口中的所有抽象方法，则此实现类就可以实例化</p>
@@ -714,8 +701,12 @@
 <p>6.Java 类可以实现多个接口   —&gt; 弥补了 Java 单继承性的局限性</p>
 <p>格式：class AA extends BB implements CC,DD,EE</p>
 <p>7. 接口与接口之间可以继承，而且可以多继承</p>
-<p>8. 接口的具体使用，体现多态性</p>
+<p>8. 接口的具体使用，体现多态性。接口与实现类之间存在多态性</p>
 <p>9. 接口，实际上可以看做是一种规范</p>
+<p>10. 接口中的所有成员变量都默认是由 public static final 修饰的。<br>
+接口中的所有抽象方法都默认是由 public abstract 修饰的。</p>
+<p>11. 静态方法：使用 static 关键字修饰。可以通过接口直接调用静态方法，并执行其方法体</p>
+<p>12. 默认方法：默认方法使用 default 关键字修饰。可以通过实现类对象来调用。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
  * 接口的应用：代理模式
  * 
@@ -770,11 +761,9 @@
 	
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>接口的使用</p>
-<ul>
-<li>1. 接口使用上也满足多态性</li>
-<li>2. 接口，实际上就是定义了一种规范</li>
-<li>3. 开发中，体会面向接口编程！</li>
-</ul>
+<p>1. 接口使用上也满足多态性</p>
+<p>2. 接口，实际上就是定义了一种规范</p>
+<p>3. 开发中，体会面向接口编程！</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">USBTest</span> <span class="token punctuation">{</span>
 	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 		
@@ -940,6 +929,11 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://img-blog.csdnimg.cn/2021012223281746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center" alt=""></p>
 <h2 id="内部类"><a class="markdownIt-Anchor" href="#内部类">#</a> 内部类</h2>
+<p>1. 非 static 的成员内部类中的成员不能声明为 static 的</p>
+<p>2. 如何使用局部内部类<br>
+ 2.1 只能在声明它的方法或代码块中使用，而且是先声明后使用。除此之外的任何地方都不能使用该类</p>
+<p>2.2 但是它的对象可以通过外部方法的返回值返回使用，返回值类型只能是局部内部类的父类或父接口类型</p>
+<p>3. 匿名内部类不能定义任何静态成员、方法和类，只能创建匿名内部类的一个实例。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>java2</span><span class="token punctuation">;</span>
 <span class="token comment">/*
  * 类的内部成员之五：内部类
