@@ -630,6 +630,7 @@ Java 的浮点型常量默认为 double 型，声明 float 型常量，须后加
 <p>2&gt;switch (表达式) 中表达式的值 必须是下述几种类型之一：byte ，short,char ，int， 枚举 (jdk 5.0) ，String (jdk 7.0)；</p>
 <p>3&gt; default 子句是可任选的。同时，位置也是灵活的。当没有匹配的 case 时，执行 default</p>
 <p>4 &gt; 如果 switch-case 结构中的多个 case 执行语句相同，则可以考虑进行合并</p>
+<p>5 &gt; 在 switch-case 的括号里定义的变量，出了括号不能调用，在括号内只能定义一次（不同的 case 不能定义同名变量）。</p>
 <h3 id="循环结构"><a class="markdownIt-Anchor" href="#循环结构">#</a> 循环结构</h3>
 <ol>
 <li>for 循环</li>
