@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    420
+                    596
                 </div>
                 
 
@@ -445,25 +445,36 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="java语言概述"><a class="markdownIt-Anchor" href="#java语言概述">#</a> Java 语言概述</h1>
-<h2 id="jdk-jre"><a class="markdownIt-Anchor" href="#jdk-jre">#</a> JDK JRE</h2>
+<h2 id="1常用的命令行指令"><a class="markdownIt-Anchor" href="#1常用的命令行指令">#</a> 1. 常用的命令行指令</h2>
+<img src="/2021/01/08/1-java-yu-yan-gai-shu/Users\HP\AppData\Roaming\Typora\typora-user-images\image-20221003150653254.png" alt="image-20221003150653254" style="zoom:67%;">
+<pre class="line-numbers language-none"><code class="language-none">echo javase&gt;1.doc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>创建 1.doc，内容是 javase</p>
+<h2 id="2前端-后端-前台-后台的区别"><a class="markdownIt-Anchor" href="#2前端-后端-前台-后台的区别">#</a> 2. 前端、后端、前台、后台的区别</h2>
+<img src="/2021/01/08/1-java-yu-yan-gai-shu/Users\HP\AppData\Roaming\Typora\typora-user-images\image-20221003153705114.png" alt="image-20221003153705114" style="zoom:67%;">
+<img src="/2021/01/08/1-java-yu-yan-gai-shu/Users\HP\AppData\Roaming\Typora\typora-user-images\image-20221003153720418.png" alt="image-20221003153720418" style="zoom:67%;">
+<img src="/2021/01/08/1-java-yu-yan-gai-shu/Users\HP\AppData\Roaming\Typora\typora-user-images\image-20221003153735326.png" alt="image-20221003153735326" style="zoom:67%;">
+<h2 id="3jdk-jre"><a class="markdownIt-Anchor" href="#3jdk-jre">#</a> 3.JDK JRE</h2>
 <p>・JDK = JRE + 开发工具集（例如 Javac 编译工具等）<br>
 ・JRE = JVM + Java SE 标准类库</p>
-<h3 id="jdk"><a class="markdownIt-Anchor" href="#jdk">#</a> JDK</h3>
+<h3 id="31-jdk"><a class="markdownIt-Anchor" href="#31-jdk">#</a> 3.1 JDK</h3>
 <p>JDK (Java Development Kit Java 开发工具包)</p>
 <p>JDK 是提供给 Java 开发人员使用的，其中包含了 java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用在单独安装 JRE 了。其中的开发工具：编译工具 (javac.exe)  打包工具 (jar.exe) 等</p>
-<h3 id="jre"><a class="markdownIt-Anchor" href="#jre">#</a> JRE</h3>
+<h3 id="32-jre"><a class="markdownIt-Anchor" href="#32-jre">#</a> 3.2 JRE</h3>
 <p>JRE (Java Runtime Environment Java 运行环境)</p>
 <p>包括 Java 虚拟机 (JVM Java Virtual Machine) 和 Java 程序所需的核心类库等，如果想要运行一个开发好的 Java 程序，计算机中只需要安装 JRE 即可</p>
-<h2 id="jdk安装"><a class="markdownIt-Anchor" href="#jdk安装">#</a> JDK 安装</h2>
+<p>JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器。</p>
+<p>简单而言，使用 JDK 的开发工具完成的 java 程序，交给 JRE 去运行。</p>
+<h2 id="4jdk安装"><a class="markdownIt-Anchor" href="#4jdk安装">#</a> 4.JDK 安装</h2>
 <p>安装时会跳出安装 jre。</p>
-<h3 id="环境变量"><a class="markdownIt-Anchor" href="#环境变量">#</a> 环境变量</h3>
+<h3 id="41-环境变量"><a class="markdownIt-Anchor" href="#41-环境变量">#</a> 4.1 环境变量</h3>
 <p>path：windows 系统执行命令时要搜寻的路径。</p>
 <p>JAVA_HOME:bin 的上一层目录</p>
 <p>path:%JAVA_HOME%\bin</p>
-<h2 id="第一个java程序"><a class="markdownIt-Anchor" href="#第一个java程序">#</a> 第一个 Java 程序</h2>
+<h2 id="5第一个java程序"><a class="markdownIt-Anchor" href="#5第一个java程序">#</a> 5. 第一个 Java 程序</h2>
 <p><img src="https://img-blog.csdnimg.cn/20210109001413925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="avatar"></p>
 <p>字节码文件名是类名</p>
-<h2 id="注释"><a class="markdownIt-Anchor" href="#注释">#</a> 注释</h2>
+<p>有了 java 源文件，通过编译器将其编译成 JVM 可以识别的字节码文件。</p>
+<h2 id="6注释"><a class="markdownIt-Anchor" href="#6注释">#</a> 6. 注释</h2>
 <p>1.// 单行</p>
 <ol start="2">
 <li></li>
@@ -480,14 +491,21 @@
 <p>注释内容可以被 JDK 提供的工具 javadoc 所解析，生成一套以网页文件形式体现的该程序的说明文档。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">javadoc <span class="token operator">-</span>encoding UTF<span class="token operator">-</span><span class="token number">8</span> <span class="token operator">-</span>charset UTF<span class="token operator">-</span><span class="token number">8</span> <span class="token operator">-</span>d myHello <span class="token operator">-</span>author <span class="token operator">-</span>version <span class="token class-name">HelloJava</span><span class="token punctuation">.</span>java
 <span class="token comment">//myHello是要生成的文件夹的名字</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="api"><a class="markdownIt-Anchor" href="#api">#</a> API</h2>
+<h2 id="7api"><a class="markdownIt-Anchor" href="#7api">#</a> 7.API</h2>
 <p>API （Application Programming Interface, 应用程序编程接口）是 Java 提供的基本编程接口。</p>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h2>
+<h2 id="8总结"><a class="markdownIt-Anchor" href="#8总结">#</a> 8. 总结</h2>
 <p>1. 在一个 Java 源文件中可以声明多个 class, 只能有一个声明为 public 的，而且声明为 public 的类的类命必须与源文件名相同。</p>
 <p>2. 程序的入口是 main 方法</p>
 <p>3. 编译后，会生成一个或多个字节码文件，字节码文件的文件名与 Java 源文件中的类名相同</p>
-<h2 id="ide"><a class="markdownIt-Anchor" href="#ide">#</a> IDE</h2>
-<p>Integrated Development Environment</p>
+<p>4. 编译：javac 源文件名.java</p>
+<p>运行：java 类名</p>
+<h2 id="9ide"><a class="markdownIt-Anchor" href="#9ide">#</a> 9.IDE</h2>
+<p>Integrated Development Environment 集成开发环境</p>
+<h2 id="10java两种核心机制"><a class="markdownIt-Anchor" href="#10java两种核心机制">#</a> 10.Java 两种核心机制</h2>
+<ul>
+<li>Java 虚拟机</li>
+<li>垃圾收集机制</li>
+</ul>
 
                 
             </div>
@@ -993,7 +1011,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020-2021</span>
+                <span id="year">2020-2022</span>
             
             <span id="year">2020</span>
             <a href="/about" target="_blank">fsh</a>

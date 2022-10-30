@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.3k
                 </div>
                 
 
@@ -445,7 +445,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="枚举类与注解"><a class="markdownIt-Anchor" href="#枚举类与注解">#</a> 枚举类与注解</h1>
-<h2 id="枚举类"><a class="markdownIt-Anchor" href="#枚举类">#</a> 枚举类</h2>
+<h2 id="1枚举类"><a class="markdownIt-Anchor" href="#1枚举类">#</a> 1. 枚举类</h2>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
  * 一、枚举类的使用
  * 1.枚举类的理解：类的对象只有有限个，确定的。我们称此类为枚举类
@@ -515,6 +515,7 @@
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
  * 使用enum关键字定义枚举类
  * 说明：定义的枚举类默认继承于java.lang.Enum类，因此不能再继承其他类
+   枚举类的构造器只能使用 private 权限修饰符
  *JDK 1.5 中可以在 switch 表达式中使用Enum定义的枚举类的对象作为表达式, case 子句可
  *以直接使用枚举值的名字, 无需添加枚举类作为限定。
  * @author shkstart
@@ -553,7 +554,7 @@
     <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment">//使用enum关键字枚举类</span>
+<span class="token comment">//使用enum关键字枚举类  </span>
 <span class="token keyword">enum</span> <span class="token class-name">Season1</span> <span class="token keyword">implements</span> <span class="token class-name">Info</span><span class="token punctuation">{</span>
     <span class="token comment">//1.提供当前枚举类的对象，多个对象之间用","隔开，末尾对象";"结束。必须在枚举类的第一行声明枚举类对象</span>
     <span class="token function">SPRING</span><span class="token punctuation">(</span><span class="token string">"春天"</span><span class="token punctuation">,</span><span class="token string">"春暖花开"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -615,18 +616,29 @@
 <span class="token comment">//    public void show() {</span>
 <span class="token comment">//        System.out.println("这是一个季节");</span>
 <span class="token comment">//    }</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="注解"><a class="markdownIt-Anchor" href="#注解">#</a> 注解</h2>
-<p>Annotation 修饰包，类，构造器，方法，成员变量，参数，局部变量的声明。</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2注解"><a class="markdownIt-Anchor" href="#2注解">#</a> 2. 注解</h2>
+<ul>
+<li>
+<p>Annotation 可用于修饰包，类，构造器，方法，成员变量，参数，局部变量的声明。</p>
+</li>
+<li>
+<p>使用 Annotation 时要在其前面增加 @ 符号，并 把该 Annotation  当成一个修饰符使用。用于修饰它支持的程序元素</p>
+</li>
+<li>
 <p>自定义注解自动继承了 java.lang.annotation.Annotation 接口</p>
+</li>
+<li>
+<p>没有成员定义的 Annotation 称为 标记；包含成员变量的 Annotation 称为元数据 Annotation</p>
+</li>
+</ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
  * 注解的使用
  *
  * 1. 理解Annotation:
  * ① jdk 5.0 新增的功能
  *
- * ② Annotation 其实就是代码里的特殊标记, 这些标记可以在编译, 类加载, 运行时被读取, 并执行相应的处理。通过使用 Annotation,
- * 程序员可以在不改变原有逻辑的情况下, 在源文件中嵌入一些补充信息。
+ * ② Annotation 其实就是代码里的特殊标记, 这些标记可以在编译, 类加载, 运行时被读取, 并执行相应的处理。通过使用 Annotation,程序员可以在不改变原有逻辑的情况下, 在源文件中嵌入一些补充信息。
  *
  * ③在JavaSE中，注解的使用目的比较简单，例如标记过时的功能，忽略警告等。在JavaEE/Android
  * 中注解占据了更重要的角色，例如用来配置应用程序的任何切面，代替JavaEE旧版中所遗留的繁冗
@@ -658,12 +670,12 @@
 
      4. jdk 提供的4种元注解
        元注解：对现有的注解进行解释说明的注解
-     Retention：指定所修饰的 Annotation 的生命周期：SOURCE\CLASS（默认行为）\RUNTIME
+     Retention：指定所修饰的 Annotation 的生命周期：SOURCE（在源文件中有效）\CLASS（在class文件中有效）（默认行为）\（在运行时有效）RUNTIME
             只有声明为RUNTIME生命周期的注解，才能通过反射获取。
      Target:用于指定被修饰的 Annotation 能用于修饰哪些程序元素
      *******出现的频率较低*******
      Documented:表示所修饰的注解在被javadoc解析时，保留下来。定义为Documented的注解必须设置Retention值为RUNTIME
-     Inherited:被它修饰的 Annotation 将具有继承性。
+     Inherited:被它修饰的 Annotation 将具有继承性。如果某个类使用了被@Inherited 修饰的 Annotation, 则其子类将自动具有该注解
 
      5.通过反射获取注解信息 ---到反射内容时系统讲解
 
@@ -679,7 +691,126 @@
       *
  * @author shkstart
  * @create 2019 上午 11:37
- */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/2021/01/31/10-mei-ju-lei-yu-zhu-jie/C:%5CUsers%5CHP%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221030173146782.png" alt="image-20221030173146782"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>java1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token keyword">static</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * @author shkstart
+ * @create 2019 上午 11:56
+ */</span>
+<span class="token annotation punctuation">@Inherited</span>
+<span class="token annotation punctuation">@Repeatable</span><span class="token punctuation">(</span><span class="token class-name">MyAnnotations</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span>RUNTIME<span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">{</span>TYPE<span class="token punctuation">,</span>FIELD<span class="token punctuation">,</span>METHOD<span class="token punctuation">,</span>PARAMETER<span class="token punctuation">,</span>CONSTRUCTOR<span class="token punctuation">,</span>LOCAL_VARIABLE<span class="token punctuation">,</span>TYPE_PARAMETER<span class="token punctuation">,</span>TYPE_USE<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">MyAnnotation</span> <span class="token punctuation">{</span>
+
+    <span class="token class-name">String</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>java1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Inherited</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Retention</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Target</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token keyword">static</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ *
+ * @author shkstart
+ * @create 2019 下午 2:41
+ */</span>
+<span class="token annotation punctuation">@Inherited</span>
+<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span>RUNTIME<span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">{</span>TYPE<span class="token punctuation">,</span> FIELD<span class="token punctuation">,</span> METHOD<span class="token punctuation">,</span> PARAMETER<span class="token punctuation">,</span> CONSTRUCTOR<span class="token punctuation">,</span> LOCAL_VARIABLE<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">MyAnnotations</span> <span class="token punctuation">{</span>
+
+    <span class="token class-name">MyAnnotation</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationTest</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Person</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">.</span><span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Date</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">"unused"</span><span class="token punctuation">)</span>
+        <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token comment">//        System.out.println(num);</span>
+
+        <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">"unused"</span><span class="token punctuation">,</span> <span class="token string">"rawtypes"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token class-name">ArrayList</span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testGetAnnotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Class</span> clazz <span class="token operator">=</span> <span class="token class-name">Student</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">;</span>
+        <span class="token class-name">Annotation</span><span class="token punctuation">[</span><span class="token punctuation">]</span> annotations <span class="token operator">=</span> clazz<span class="token punctuation">.</span><span class="token function">getAnnotations</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> annotations<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>annotations<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">//jdk 8之前的写法：</span>
+<span class="token comment">//@MyAnnotations({@MyAnnotation(value="hi"),@MyAnnotation(value="hi")})</span>
+<span class="token annotation punctuation">@MyAnnotation</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@MyAnnotation</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@MyAnnotation</span>
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@MyAnnotation</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"人走路"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"人吃饭"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Info</span><span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token keyword">implements</span> <span class="token class-name">Info</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">walk</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学生走路"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Generic</span><span class="token operator">&lt;</span><span class="token annotation punctuation">@MyAnnotation</span> <span class="token class-name">T</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token annotation punctuation">@MyAnnotation</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">{</span>
+
+        <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token annotation punctuation">@MyAnnotation</span> <span class="token class-name">String</span><span class="token operator">&gt;</span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token annotation punctuation">@MyAnnotation</span> <span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token number">10L</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1197,7 +1328,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020-2021</span>
+                <span id="year">2020-2022</span>
             
             <span id="year">2020</span>
             <a href="/about" target="_blank">fsh</a>

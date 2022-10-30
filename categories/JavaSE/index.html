@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -321,11 +321,11 @@
                 
                 
                 
-                <a href="/categories/JavaSE/" title="JavaSE: 18">
+                <a href="/categories/JavaSE/" title="JavaSE: 19">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #F9EBEA;">JavaSE
-                        <span class="tag-length">18</span>
+                        <span class="tag-length">19</span>
                     </span>
                 </a>
                 
@@ -340,6 +340,54 @@
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/26/mysql-ji-chu/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="MySQL基础">
+                            
+                            <span class="card-title">MySQL基础</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                # MySQL 基础
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JavaSE/" class="post-category">
+                                    JavaSE
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaSE/">
+                            <span class="chip bg-color">JavaSE</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -661,12 +709,12 @@
                         <div class="summary block-with-text">
                             
                                 # 枚举类与注解
-# 枚举类
+# 1. 枚举类
 /**
  * 一、枚举类的使用
  * 1.枚举类的理解：类的对象只有有限个，确定的。我们称此类为枚举类
  * 2.当需要定义一组常量时，强烈建议使用枚举类
- * 3.如果枚举类中只有一个对象，则可以作为单例模式
+ * 3.如果枚举类中只有一个对象，则可以作为单
                             
                         </div>
                         <div class="publish-info">
@@ -713,11 +761,10 @@
                         <div class="summary block-with-text">
                             
                                 # Java 常用类
-# 字符串相关的类
-# String
-# String: 字符串，使用一对 "" 引起来表示。
-1.String 声明为 final 的，不可被继承
-2.String 实现了 Serializable 接口：表示字符串
+# 1. 字符串相关的类
+# 1.1 String
+# 1.1.1 String 的特性
+1.String: 字符串，使用一对 "" 引起来表示。Java 程序中的所有字符串字面值（如 “abc” ）都作为此类的实例实
                             
                         </div>
                         <div class="publish-info">
@@ -764,22 +811,17 @@
                         <div class="summary block-with-text">
                             
                                 # IDEA
-# Project Module
+# 1.Project Module
 在 project 下新建 Module
-# 删除模块 / 导入模块
+# 1.1 删除模块 / 导入模块
 
 
 
 再右键项目名删除
 导入模块点加号
-# 配置
-# 主题
-# 鼠标滚轮控制字体大小
-
-# 鼠标悬浮提示
-
-# 自动导包
-
+# 2. 配置 General
+# 2.1 主题
+# 2.2 鼠标滚轮
                             
                         </div>
                         <div class="publish-info">
@@ -826,10 +868,15 @@
                         <div class="summary block-with-text">
                             
                                 # 多线程
-# 基本概念
+# 1. 基本概念
+
+
 程序：是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码，静态对象
+
+
 进程：是程序的一次执行过程，或是正在运行的一个程序。是一个动态的过程：有它自身的产生、存在和消亡的过程。
-如：运行中的 QQ，运
+
+如：运
                             
                         </div>
                         <div class="publish-info">
@@ -876,70 +923,15 @@
                         <div class="summary block-with-text">
                             
                                 # 异常处理
-# 异常体系结构
-/*
- * 一、异常体系结构
- * 
- * java.lang.Throwable
- * 		|-----java.lang.Error:一般不编写针对性的代码进行处理。
- * 		|-----java.la
+# 1. 异常体系结构
+
+Error:Java 虚拟机无法解决的严重问题。如：JVM 系统内部错误、资源耗尽等严重情况。比如：StackOverflowError 和 OOM。一般不编写针对性的代码进行处理。
+Exceptio
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaSE/" class="post-category">
-                                    JavaSE
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSE/">
-                            <span class="chip bg-color">JavaSE</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/01/21/6-mian-xiang-dui-xiang-xia/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="6-面向对象(下)">
-                            
-                            <span class="card-title">6-面向对象(下)</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                # 面向对象 (下)
-# static
-static 关键字的使用
-1.static: 静态的
-2.static 可以用来修饰：属性、方法、代码块、内部类
-3. 使用 static 修饰属性：静态变量（或类变量）
-3.1 属性，按是否使用 
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-21
                             </span>
                             <span class="publish-author">
                                 
@@ -1057,7 +1049,7 @@ static 关键字的使用
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020-2021</span>
+                <span id="year">2020-2022</span>
             
             <span id="year">2020</span>
             <a href="/about" target="_blank">fsh</a>
