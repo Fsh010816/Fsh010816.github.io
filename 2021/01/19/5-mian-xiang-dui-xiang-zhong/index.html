@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Fsh" type="application/atom+xml">
 </head>
 
 
@@ -500,7 +500,7 @@
 <p>4.6 如果子类构造器中既未显式调用父类或本类的构造器，且父类中又没有无参的构造器，则编译出错</p>
 <p>4.7  当父类中没有空参数的构造器时，子类的构造器必须通过 this (参数列表) 或者 super ( 参数列表) 语句指定调用本类或者父类中相应的构造器。</p>
 <h3 id="32-this和super的区别"><a class="markdownIt-Anchor" href="#32-this和super的区别">#</a> 3.2 this 和 super 的区别</h3>
-<p><img src="/2021/01/19/5-mian-xiang-dui-xiang-zhong/C:%5CUsers%5CHP%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221011201924731.png" alt="image-20221011201924731"></p>
+<p><img src="https://img-blog.csdnimg.cn/c807cfc0958142c9adb96b18d080e6bf.png" alt="请添加图片描述"></p>
 <p>为什么 super (…) 和 this (…) 只能作为构造器的第一句出现？</p>
 <p>答：无论通过哪个构造器创建子类对象，需要保证先初始化父类。</p>
 <p>目的：当子类继承父类后，“继承 " 父类中所有的属性和方法，因此子类有必要知道父类如何为对象进行初始化。</p>
@@ -511,7 +511,7 @@
 <p>2. 从过程上来看：</p>
 <p>当我们通过子类的构造器创建子类对象时，我们一定会直接或间接的调用其父类的构造器，进而调用父类的父类的构造器，… 直到调用了 java.lang.Object 类中空参的构造器为止。正因为加载过所有的父类的结构，所以才可以看到内存中有父类中的结构，子类对象才可以考虑进行调用。</p>
 <p>明确：虽然创建子类对象时，调用了父类的构造器，但是自始至终就创建过一个对象，即为 new 的子类对象。</p>
-<img src="/2021/01/19/5-mian-xiang-dui-xiang-zhong/Users\HP\AppData\Roaming\Typora\typora-user-images\image-20221011202521653.png" alt="image-20221011202521653" style="zoom:50%;">
+<img src="https://img-blog.csdnimg.cn/0fdb1aaca58840de8666222c5bc9ae4e.png" alt="请添加图片描述" style="zoom:50%;">
 <h2 id="5多态性"><a class="markdownIt-Anchor" href="#5多态性">#</a> 5. 多态性</h2>
 <p>1. 何为多态性：</p>
 <p>对象的多态性：父类的引用指向子类的对象（或子类的对象赋给父类的引用）</p>
@@ -576,7 +576,7 @@
 <li>无继承关系的引用类型间的转换是非法的</li>
 <li>在造型前可以使用 instanceof 操作符测试一个对象的类型</li>
 </ul>
-<img src="/2021/01/19/5-mian-xiang-dui-xiang-zhong/Users\HP\AppData\Roaming\Typora\typora-user-images\image-20221013093131591.png" alt="image-20221013093131591" style="zoom: 50%;">
+<img src="https://img-blog.csdnimg.cn/106f78e9949c4f11b7a76e0799178be9.png" alt="请添加图片描述" style="zoom:50%;">
 <h2 id="6javalangobject类"><a class="markdownIt-Anchor" href="#6javalangobject类">#</a> 6.java.lang.Object 类</h2>
 <p>1.Object 类是所有 Java 类的根父类</p>
 <p>2. 如果在类的声明中未使用 extends 关键字指明其父类，则默认父类为 java.lang.Object 类</p>
@@ -682,7 +682,7 @@ s <span class="token operator">=</span> <span class="token keyword">null</span><
 <span class="token class-name">Integer</span> y <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span><span class="token comment">//相当于new了一个Integer对象</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x <span class="token operator">==</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="76-总结"><a class="markdownIt-Anchor" href="#76-总结">#</a> 7.6 总结</h3>
-<p><img src="https://img-blog.csdnimg.cn/20210121161225670.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/20210121161225670.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTg1Mjk5Ng==,size_16,color_FFFFFF,t_70" alt></p>
 
                 
             </div>
